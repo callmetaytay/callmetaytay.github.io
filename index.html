@@ -69,6 +69,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-用命令行将文件提交至github仓库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/02/20/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B0%86%E6%96%87%E4%BB%B6%E6%8F%90%E4%BA%A4%E8%87%B3github%E4%BB%93%E5%BA%93/" class="article-date">
+  <time class="dt-published" datetime="2024-02-20T10:13:34.065Z" itemprop="datePublished">2024-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>要使用命令行将文件提交到 GitHub 仓库中，你需要执行以下步骤：</p>
+<ol>
+<li><p><strong>克隆仓库（如果没有）：</strong> 如果你还没有将仓库克隆到本地，你需要先使用 <code>git clone</code> 命令将仓库克隆到本地。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/your-username/your-repository.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>进入仓库目录：</strong> 使用 <code>cd</code> 命令进入克隆下来的仓库目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd your-repository</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>添加文件到暂存区：</strong> 使用 <code>git add</code> 命令将要提交的文件添加到 Git 的暂存区。你可以添加单个文件或者多个文件。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add file2.txt</span><br></pre></td></tr></table></figure>
+
+<p>或者你也可以使用 <code>git add .</code> 命令将当前目录下所有文件添加到暂存区。</p>
+</li>
+<li><p><strong>提交文件到本地仓库：</strong> 使用 <code>git commit</code> 命令将添加到暂存区的文件提交到本地仓库，并添加提交消息说明。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;Add new files&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>推送文件到远程仓库：</strong> 最后，使用 <code>git push</code> 命令将本地仓库的提交推送到 GitHub 远程仓库。你需要指定远程仓库的名称和分支。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin main</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>origin</code> 是远程仓库的名称，<code>main</code> 是要推送的分支名称。</p>
+</li>
+</ol>
+<p>执行完以上步骤后，你的文件就会被提交到 GitHub 仓库中了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/02/20/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B0%86%E6%96%87%E4%BB%B6%E6%8F%90%E4%BA%A4%E8%87%B3github%E4%BB%93%E5%BA%93/" data-id="clsu7mbyz0002wwtg5zmx8p9i" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-高精度加减乘除" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/02/19/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" class="article-date">
@@ -113,36 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/02/19/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" data-id="clssui6wa0002awtg9p2t4heu" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-my-first-blog" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/02/19/my-first-blog/" class="article-date">
-  <time class="dt-published" datetime="2024-02-19T10:43:22.178Z" itemprop="datePublished">2024-02-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>第一篇文章</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/02/19/my-first-blog/" data-id="clssui6vw0001awtg1gq2apfy" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/02/19/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" data-id="clsu7mbyx0001wwtg50eofuil" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -193,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/02/19/hello-world/" data-id="clssui6vq0000awtg0i5d0bg6" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/02/19/hello-world/" data-id="clsu7mbyr0000wwtg6bgwfc4y" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -236,11 +258,11 @@
       <ul>
         
           <li>
-            <a href="/2024/02/19/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/">(no title)</a>
+            <a href="/2024/02/20/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B0%86%E6%96%87%E4%BB%B6%E6%8F%90%E4%BA%A4%E8%87%B3github%E4%BB%93%E5%BA%93/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2024/02/19/my-first-blog/">(no title)</a>
+            <a href="/2024/02/19/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/">(no title)</a>
           </li>
         
           <li>
