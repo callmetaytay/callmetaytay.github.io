@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>3.17小结 | TAY&#39;S BLOG</title>
+  <title>ctf 3.21 | TAY&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="昨晚熬夜熬到4.，wuuuuuu，早起计划被完全打乱。。。。。熬夜真是误人，现在两点半了才开始学习 不管怎么样至少buuctf和线代，高数的计划一定要完成！！！ buuctf两个小时刷了5道。 新学了wireshark抓包，但还没太搞懂原理。。。。 第一次遇到了与二进制有关的题目，猜测转码思路：二进制其它进制ascii码~base或者其它编码 52 61 72 21是.rar的文件头，50 4B">
+  <meta name="description" content="荷兰宽带数据泄露打开是一个.bin文件，再根据题目信息，上网搜索知道应该是个记录路由器数据的文件，要用routerpassview打开，看了里面的数据，猜测flag不是id就是password，一个个试，拿到flag  九连环打开是个图片，winhex打开，里面果然藏有zip文件，分离出来，发现里面包含了一个加密图片和一个加密zip文件（以后碰见加密都先判断一下是不是伪加密），由于没有信息，猜测图">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.17小结">
-<meta property="og:url" content="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/index.html">
+<meta property="og:title" content="ctf 3.21">
+<meta property="og:url" content="http://example.com/2024/03/21/ctf-3-21/index.html">
 <meta property="og:site_name" content="TAY&#39;S BLOG">
-<meta property="og:description" content="昨晚熬夜熬到4.，wuuuuuu，早起计划被完全打乱。。。。。熬夜真是误人，现在两点半了才开始学习 不管怎么样至少buuctf和线代，高数的计划一定要完成！！！ buuctf两个小时刷了5道。 新学了wireshark抓包，但还没太搞懂原理。。。。 第一次遇到了与二进制有关的题目，猜测转码思路：二进制其它进制ascii码~base或者其它编码 52 61 72 21是.rar的文件头，50 4B">
+<meta property="og:description" content="荷兰宽带数据泄露打开是一个.bin文件，再根据题目信息，上网搜索知道应该是个记录路由器数据的文件，要用routerpassview打开，看了里面的数据，猜测flag不是id就是password，一个个试，拿到flag  九连环打开是个图片，winhex打开，里面果然藏有zip文件，分离出来，发现里面包含了一个加密图片和一个加密zip文件（以后碰见加密都先判断一下是不是伪加密），由于没有信息，猜测图">
 <meta property="og:locale" content="zh_CH">
-<meta property="article:published_time" content="2024-03-17T06:34:07.000Z">
-<meta property="article:modified_time" content="2024-03-18T14:44:01.402Z">
+<meta property="article:published_time" content="2024-03-21T08:13:28.000Z">
+<meta property="article:modified_time" content="2024-03-21T08:33:16.621Z">
 <meta property="article:author" content="tay">
-<meta property="article:tag" content="每日一小结">
+<meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="TAY'S BLOG" type="application/atom+xml">
@@ -76,10 +76,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-3-17小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-ctf-3-21" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-03-17T06:34:07.000Z" itemprop="datePublished">2024-03-17</time>
+    <a href="/2024/03/21/ctf-3-21/" class="article-date">
+  <time class="dt-published" datetime="2024-03-21T08:13:28.000Z" itemprop="datePublished">2024-03-21</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      3.17小结
+      ctf 3.21
     </h1>
   
 
@@ -98,24 +98,27 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>昨晚熬夜熬到4.，wuuuuuu，早起计划被完全打乱。。。。。熬夜真是误人，现在两点半了才开始学习</p>
-<p>不管怎么样至少buuctf和线代，高数的计划一定要完成！！！</p>
-<p>buuctf两个小时刷了5道。</p>
-<p>新学了wireshark抓包，但还没太搞懂原理。。。。</p>
-<p>第一次遇到了与二进制有关的题目，猜测转码思路：二进制<del>其它进制</del>ascii码~base或者其它编码</p>
-<p>52 61 72 21是.rar的文件头，50 4B 03 04时.zip的文件头</p>
-<p>对于需要密码打开压缩包但是题目没有给任何有关密码的信息时，一般暴力破解行不通，要去寻找其它地方有没有信息</p>
+        <h2 id="荷兰宽带数据泄露"><a href="#荷兰宽带数据泄露" class="headerlink" title="荷兰宽带数据泄露"></a>荷兰宽带数据泄露</h2><p>打开是一个.bin文件，再根据题目信息，上网搜索知道应该是个记录路由器数据的文件，要用routerpassview打开，看了里面的数据，猜测flag不是id就是password，一个个试，拿到flag</p>
 <hr>
-<p>线代还是没完成呃呃呃呃呃，高数没预习</p>
+<h2 id="九连环"><a href="#九连环" class="headerlink" title="九连环"></a>九连环</h2><p>打开是个图片，winhex打开，里面果然藏有zip文件，分离出来，发现里面包含了一个加密图片和一个加密zip文件（以后碰见加密都先判断一下是不是伪加密），由于没有信息，猜测图片是伪加密，01 08改为00 08后打开图片，图片照之前的方法都没能拿到有效信息，那么就用steghide破解，拿到txt文件，里面包含着压缩包的密码，打开压缩包，拿到flag</p>
+<hr>
+<p>Steghide 是一个流行的隐写术工具，用于隐藏数据在图像和音频文件等媒体文件中。它可以将数据嵌入到图像文件中，而不影响图像的可见外观，从而实现隐写术的目的。Steghide 使用密码来加密隐藏的数据，以确保数据的安全性。</p>
+<p>Steghide 主要用途包括但不限于：</p>
+<ol>
+<li>隐藏敏感信息：可以将敏感信息隐藏在图像文件中，以防止被未经授权的人发现。</li>
+<li>隐藏数字水印：可以将数字水印嵌入到图像文件中，以验证图像的真实性和完整性。</li>
+<li>隐藏消息传递：可以用于隐秘地传递消息或文件，以防止被拦截或监视。</li>
+</ol>
+<p>使用 Steghide 工具，用户可以通过命令行界面来嵌入和提取隐藏在图像文件中的数据，还可以设置密码来保护隐藏的数据。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" data-id="clu0zlklg00008gtghe0pe7ed" data-title="3.17小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/21/ctf-3-21/" data-id="clu0zlkmj000p8gtgc9y5alt6" data-title="ctf 3.21" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
 
     </footer>
   </div>
@@ -123,19 +126,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/03/17/ctf-3-17/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/03/21/3-21%E5%B0%8F%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          ctf 3.17
+          3.21小结
         
       </div>
     </a>
   
   
-    <a href="/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">3.16小结</div>
+      <div class="article-nav-title">3.20小结</div>
     </a>
   
 </nav>

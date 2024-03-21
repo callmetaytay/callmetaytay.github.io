@@ -73,6 +73,101 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-3-21小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/21/3-21%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-03-21T08:13:44.000Z" itemprop="datePublished">2024-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/21/3-21%E5%B0%8F%E7%BB%93/">3.21小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今天把工概课翘了，跑c楼刷buuctf，但是只刷了两题，感觉越到后面越依赖kali，搞个虚拟机非常有必要（（，明天或者周末，这个东西一定要搞下来，不然严重影响学习进度</p>
+<p>目前最常见的形式将图片隐写，压缩包加密，密码破译紧密联系在一起，伪加密，识别文件头来判断是否藏有文件在其中是容易卡我的点，且没有kali的话一些压缩文件的解压和zip文件的分离都更麻烦</p>
+<p>打算等下大补特补物理（因为我是个傻逼，一直没发现物理练习册有两本😅😅）,线代也要往后写下新学的东西</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/21/3-21%E5%B0%8F%E7%BB%93/" data-id="clu0zlkma000a8gtgdqzh0ulp" data-title="3.21小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ctf-3-21" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/21/ctf-3-21/" class="article-date">
+  <time class="dt-published" datetime="2024-03-21T08:13:28.000Z" itemprop="datePublished">2024-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/21/ctf-3-21/">ctf 3.21</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="荷兰宽带数据泄露"><a href="#荷兰宽带数据泄露" class="headerlink" title="荷兰宽带数据泄露"></a>荷兰宽带数据泄露</h2><p>打开是一个.bin文件，再根据题目信息，上网搜索知道应该是个记录路由器数据的文件，要用routerpassview打开，看了里面的数据，猜测flag不是id就是password，一个个试，拿到flag</p>
+<hr>
+<h2 id="九连环"><a href="#九连环" class="headerlink" title="九连环"></a>九连环</h2><p>打开是个图片，winhex打开，里面果然藏有zip文件，分离出来，发现里面包含了一个加密图片和一个加密zip文件（以后碰见加密都先判断一下是不是伪加密），由于没有信息，猜测图片是伪加密，01 08改为00 08后打开图片，图片照之前的方法都没能拿到有效信息，那么就用steghide破解，拿到txt文件，里面包含着压缩包的密码，打开压缩包，拿到flag</p>
+<hr>
+<p>Steghide 是一个流行的隐写术工具，用于隐藏数据在图像和音频文件等媒体文件中。它可以将数据嵌入到图像文件中，而不影响图像的可见外观，从而实现隐写术的目的。Steghide 使用密码来加密隐藏的数据，以确保数据的安全性。</p>
+<p>Steghide 主要用途包括但不限于：</p>
+<ol>
+<li>隐藏敏感信息：可以将敏感信息隐藏在图像文件中，以防止被未经授权的人发现。</li>
+<li>隐藏数字水印：可以将数字水印嵌入到图像文件中，以验证图像的真实性和完整性。</li>
+<li>隐藏消息传递：可以用于隐秘地传递消息或文件，以防止被拦截或监视。</li>
+</ol>
+<p>使用 Steghide 工具，用户可以通过命令行界面来嵌入和提取隐藏在图像文件中的数据，还可以设置密码来保护隐藏的数据。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/21/ctf-3-21/" data-id="clu0zlkmj000p8gtgc9y5alt6" data-title="ctf 3.21" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-3-20小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" class="article-date">
@@ -103,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" data-id="clu0uhl340009o8tg4ahpfv2v" data-title="3.20小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" data-id="clu0zlkm600058gtght55fljx" data-title="3.20小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -152,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="clu0uhl3e000mo8tgbjz2525r" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="clu0zlkmh000k8gtg69v08vvp" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -194,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" data-id="clu0uhl330008o8tggzgahmjv" data-title="3.19小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" data-id="clu0zlkm500048gtgdhq5b41f" data-title="3.19小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -240,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/19/ctf-3-19/" data-id="clu0uhl39000ho8tg4oa4faqg" data-title="3.19 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/19/ctf-3-19/" data-id="clu0zlkmi000n8gtggtblexwx" data-title="3.19 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -282,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/18/ctf-3-18/" data-id="clu0uhl3b000jo8tg0w5lbxch" data-title="3.18 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/18/ctf-3-18/" data-id="clu0zlkmg000i8gtg2elzdsf3" data-title="3.18 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -326,7 +421,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/18/3-18%E5%B0%8F%E7%BB%93/" data-id="clu0uhl2w0003o8tgc53895xj" data-title="3.18小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/18/3-18%E5%B0%8F%E7%BB%93/" data-id="clu0zlkm400038gtgbn4d90uw" data-title="3.18小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -377,7 +472,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/ctf-3-17/" data-id="clu0uhl35000co8tg2qlqhqrw" data-title="ctf 3.17" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/17/ctf-3-17/" data-id="clu0zlkme000f8gtg4bbx54kn" data-title="ctf 3.17" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -426,125 +521,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" data-id="clu0uhl2r0001o8tgfehbflml" data-title="3.17小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" data-id="clu0zlklg00008gtghe0pe7ed" data-title="3.17小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-3-16小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-03-16T10:15:53.000Z" itemprop="datePublished">2024-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/16/3-16%E5%B0%8F%E7%BB%93/">3.16小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>buuctf刷了10个题，昨天一直是按着题解来写的，今天可以做到自己解题了，爽爽爽！！</p>
-<p>晚上只学了线代，中间还扣了至少两小时手机wuuuuu，专注力低下啊啊啊啊啊啊啊，线代感觉上课听了个寂寞<del>虽然本来也没咋听（罪恶ing</del>，明天非常有必要在b站上找个课程听听，感觉目前对线代完全处于一头雾水阶段</p>
-<p>今晚回宿舍的路上又在听all too well了，百听不厌，妈咪就是最伟大的！！！</p>
-<p>博客的图片没法显示，看看什么时候有时间搞搞</p>
-<p>明天争取早起，buuctf 2h，acwing 2h<del>看群u都在打cf手痒了kkkk，顺便恢复下手感</del>，大雾至少把课本上的题写个一章，高数完成练习册，把空间几何的课后习题写完，线代找个靠谱的网课或者教材从头看。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" data-id="clu0uhl2j0000o8tg0kgud2p2" data-title="3.16小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-3-16" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/16/ctf-3-16/" class="article-date">
-  <time class="dt-published" datetime="2024-03-16T05:59:35.000Z" itemprop="datePublished">2024-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/16/ctf-3-16/">ctf 3.16</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h2><p>打开是二维码，直接扫码后发现没有有用的信息，遂用010editor打开，发现</p>
-<p><img src="E:\buuctf\笔记\149c9f12653599e308136c4c69dea2df.png"></p>
-<p>.png的文件尾是AE 42 60 82，按理来说在文件尾之后就应该结束，我们却发现png的文件尾后还跟着50 4B 03 04，这是.zip的文件头，说明在该照片下还隐藏着一个.zip文件，到这一步有两种方法：1.将50 4B 03 04之前的东西全部删掉，之后保存，将文件后缀名改为.zip 2.用Linux中的binwalk将隐藏的.zip文件分离出来。语句：binwalk -e 文件名</p>
-<p>打开这个zip文件后，发现有加密，无法直接解压</p>
-<p>先考虑伪加密，010editor打开，发现50 4B 01 02 后面是 09 00，说明是真加密</p>
-<p>用archpr暴力破解密码即可</p>
-<hr>
-<h2 id="基础破解"><a href="#基础破解" class="headerlink" title="基础破解"></a>基础破解</h2><p>发现是加密压缩包，archpr暴力破解后，txt文档里是一串base64编码，解码即可得到flag</p>
-<hr>
-<h2 id="文件中的秘密"><a href="#文件中的秘密" class="headerlink" title="文件中的秘密"></a>文件中的秘密</h2><p>打开属性，在备注中直接找到flag</p>
-<hr>
-<h2 id="LSB"><a href="#LSB" class="headerlink" title="LSB"></a>LSB</h2><p>在大多数PNG问图像中，没个像素都由R、G、B三原色组成，每种颜色一般用8位数据表示，如果修改其最低位，人眼是不能区分出这种微笑的变化的，因此可以利用没个像素的R、G、B颜色的分量的最低有效位来隐藏信息，这样每个像素可以携带3位的信息</p>
-<p>根据题目提示，可以猜到大概率考的是这个知识点，用stegsolve打开，</p>
-<p><img src="C:\Users\梁韵扬\AppData\Roaming\Typora\typora-user-images\image-20240316163533760.png" alt="image-20240316163533760"></p>
-<p>直接看图片的最低有效位，发现隐藏了一个.png文件，将它保存下来，后缀名改为.png，打开发现是二维码，扫描即得flag</p>
-<hr>
-<h2 id="zip伪加密"><a href="#zip伪加密" class="headerlink" title="zip伪加密"></a>zip伪加密</h2><p>根据题目，就知道考的是zip伪加密，010editor打开，将50 4B 01 02 后的 09 00 改为 00 00，就可直接解压得到txt文件内flag</p>
-<hr>
-<h2 id="被嗅探的流量"><a href="#被嗅探的流量" class="headerlink" title="被嗅探的流量"></a>被嗅探的流量</h2><p>010editor打开，text中查找flag即可</p>
-<hr>
-<h2 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h2><p>archpr暴力破解密码</p>
-<p>（有个奇怪的事是，当文件下载在c盘download位置时，archpr破解出的不是正确密码，目前未解决</p>
-<hr>
-<h2 id="qr"><a href="#qr" class="headerlink" title="qr"></a>qr</h2><p>用QR_search扫描即可</p>
-<hr>
-<h2 id="镜子里的世界"><a href="#镜子里的世界" class="headerlink" title="镜子里的世界"></a>镜子里的世界</h2><p>同lsb那题，stegsolve打开，data etract看图片的最低有效位，拿到flag</p>
-<hr>
-<h2 id="ningen"><a href="#ningen" class="headerlink" title="ningen"></a>ningen</h2><p>010editor打开，发现没有flag，查找 50 4B 03 04，发现其中确实藏着一个zip文件，把 50 4B 03 04前的内容都删掉，后缀名改为zip，解压发现有密码，用archpr暴力破解得flag</p>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/16/ctf-3-16/" data-id="clu0uhl2z0005o8tg2wgn6ii8" data-title="ctf 3.16" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
 
     </footer>
   </div>
@@ -604,6 +585,14 @@
       <ul>
         
           <li>
+            <a href="/2024/03/21/3-21%E5%B0%8F%E7%BB%93/">3.21小结</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/21/ctf-3-21/">ctf 3.21</a>
+          </li>
+        
+          <li>
             <a href="/2024/03/20/3-20%E5%B0%8F%E7%BB%93/">3.20小结</a>
           </li>
         
@@ -613,14 +602,6 @@
         
           <li>
             <a href="/2024/03/19/3-19%E5%B0%8F%E7%BB%93/">3.19小结</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/19/ctf-3-19/">3.19 ctf</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/18/ctf-3-18/">3.18 ctf</a>
           </li>
         
       </ul>
