@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>git的使用 | TAY&#39;S BLOG</title>
+  <title>ctf 3.20 | TAY&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="要使用命令行将文件提交到 GitHub 仓库中，你需要执行以下步骤：  克隆仓库（如果没有）： 如果你还没有将仓库克隆到本地，你需要先使用 git clone 命令将仓库克隆到本地。例如： git clone https:&#x2F;&#x2F;github.com&#x2F;your-username&#x2F;your-repository.git  进入仓库目录： 使用 cd 命令进入克隆下来的仓库目录： cd your-repo">
+  <meta name="description" content="后门查杀Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作 通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag  webshell后门和前一题的解法一样  来一首歌吧用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可  面具下的flag图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git的使用">
-<meta property="og:url" content="http://example.com/2024/03/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="ctf 3.20">
+<meta property="og:url" content="http://example.com/2024/03/20/ctf-3-20/index.html">
 <meta property="og:site_name" content="TAY&#39;S BLOG">
-<meta property="og:description" content="要使用命令行将文件提交到 GitHub 仓库中，你需要执行以下步骤：  克隆仓库（如果没有）： 如果你还没有将仓库克隆到本地，你需要先使用 git clone 命令将仓库克隆到本地。例如： git clone https:&#x2F;&#x2F;github.com&#x2F;your-username&#x2F;your-repository.git  进入仓库目录： 使用 cd 命令进入克隆下来的仓库目录： cd your-repo">
+<meta property="og:description" content="后门查杀Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作 通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag  webshell后门和前一题的解法一样  来一首歌吧用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可  面具下的flag图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，">
 <meta property="og:locale" content="zh_CH">
-<meta property="article:published_time" content="2024-03-15T10:04:55.000Z">
-<meta property="article:modified_time" content="2024-03-15T15:45:06.941Z">
+<meta property="article:published_time" content="2024-03-20T09:57:45.000Z">
+<meta property="article:modified_time" content="2024-03-21T06:11:25.748Z">
 <meta property="article:author" content="tay">
-<meta property="article:tag" content="tip">
+<meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="TAY'S BLOG" type="application/atom+xml">
@@ -76,10 +76,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-git的使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-ctf-3-20" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
-  <time class="dt-published" datetime="2024-03-15T10:04:55.000Z" itemprop="datePublished">2024-03-15</time>
+    <a href="/2024/03/20/ctf-3-20/" class="article-date">
+  <time class="dt-published" datetime="2024-03-20T09:57:45.000Z" itemprop="datePublished">2024-03-20</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      git的使用
+      ctf 3.20
     </h1>
   
 
@@ -98,38 +98,24 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>要使用命令行将文件提交到 GitHub 仓库中，你需要执行以下步骤：</p>
-<ol>
-<li><p><strong>克隆仓库（如果没有）：</strong> 如果你还没有将仓库克隆到本地，你需要先使用 <code>git clone</code> 命令将仓库克隆到本地。例如：</p>
-<pre><code class="hljs plaintext">git clone https://github.com/your-username/your-repository.git</code></pre>
-</li>
-<li><p><strong>进入仓库目录：</strong> 使用 <code>cd</code> 命令进入克隆下来的仓库目录：</p>
-<pre><code class="hljs plaintext">cd your-repository</code></pre>
-</li>
-<li><p><strong>添加文件到暂存区：</strong> 使用 <code>git add</code> 命令将要提交的文件添加到 Git 的暂存区。你可以添加单个文件或者多个文件。例如：</p>
-<pre><code class="hljs plaintext">git add file2.txt</code></pre>
-
-<p>或者你也可以使用 <code>git add .</code> 命令将当前目录下所有文件添加到暂存区。</p>
-</li>
-<li><p><strong>提交文件到本地仓库：</strong> 使用 <code>git commit</code> 命令将添加到暂存区的文件提交到本地仓库，并添加提交消息说明。例如：</p>
-<pre><code class="hljs plaintext">git commit -m &quot;Add new files&quot;</code></pre>
-</li>
-<li><p><strong>推送文件到远程仓库：</strong> 最后，使用 <code>git push</code> 命令将本地仓库的提交推送到 GitHub 远程仓库。你需要指定远程仓库的名称和分支。例如：</p>
-<pre><code class="hljs plaintext">git push origin main</code></pre>
-
-<p>其中 <code>origin</code> 是远程仓库的名称，<code>main</code> 是要推送的分支名称。</p>
-</li>
-</ol>
-<p>执行完以上步骤后，你的文件就会被提交到 GitHub 仓库中了。</p>
+        <h2 id="后门查杀"><a href="#后门查杀" class="headerlink" title="后门查杀"></a>后门查杀</h2><p>Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作</p>
+<p>通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag</p>
+<hr>
+<h2 id="webshell后门"><a href="#webshell后门" class="headerlink" title="webshell后门"></a>webshell后门</h2><p>和前一题的解法一样</p>
+<hr>
+<h2 id="来一首歌吧"><a href="#来一首歌吧" class="headerlink" title="来一首歌吧"></a>来一首歌吧</h2><p>用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可</p>
+<hr>
+<h2 id="面具下的flag"><a href="#面具下的flag" class="headerlink" title="面具下的flag"></a>面具下的flag</h2><p>图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，但是题目没有给任何关于密码的信息，不太可能暴力破解，因此应该是伪加密，09 00改为00 00后成功打开，发现是个.vmdk文件，照题解的意思，应该是要用kali里的7z解压，得到两个文件里面分别是Ook密码和brainfuck密码，解码后即得flag。</p>
+<p>但是由于我电脑上还没安装kali系统，遂选择用winhex打开，在里面也可以找到这两串密码，但是不知道什么原因brainfuck密码在winhex里面少了两个字节，导致题目一直没解出来((</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="clu0udyd4000jn4tg1mf56mf3" data-title="git的使用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="clu0udyd3000in4tga84ddzen" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tip/" rel="tag">tip</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
 
     </footer>
   </div>
@@ -137,19 +123,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/03/15/ctf-3-15/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          ctf 3.15
+          3.20小结
         
       </div>
     </a>
   
   
-    <a href="/2024/03/15/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">高精度加减乘除</div>
+      <div class="article-nav-title">3.19小结</div>
     </a>
   
 </nav>
