@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>3.16小结 | TAY&#39;S BLOG</title>
+  <title>ctf 3.23 | TAY&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="buuctf刷了10个题，昨天一直是按着题解来写的，今天可以做到自己解题了，爽爽爽！！ 晚上只学了线代，中间还扣了至少两小时手机wuuuuu，专注力低下啊啊啊啊啊啊啊，线代感觉上课听了个寂寞虽然本来也没咋听（罪恶ing，明天非常有必要在b站上找个课程听听，感觉目前对线代完全处于一头雾水阶段 今晚回宿舍的路上又在听all too well了，百听不厌，妈咪就是最伟大的！！！ 博客的图片没法显示，看看">
+  <meta name="description" content="佛系青年解压，发现txt文件加密了，winhex查看了一下，伪加密，打开后应该是个与佛论禅密码，解密后拿到flag  刷新过的图片完全没有头绪就是了（（ 题解的写法是，题目中有提到过刷新键（F5），由此联想到F5隐写术，这要用到F5-steganography工具，提取出文件，winhex里面判断是伪加密的zip文件，解开后即得flag （F5-steganography在windows中又又又用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3.16小结">
-<meta property="og:url" content="http://example.com/2024/03/16/3-16%E5%B0%8F%E7%BB%93/index.html">
+<meta property="og:title" content="ctf 3.23">
+<meta property="og:url" content="http://example.com/2024/03/23/ctf-3-23/index.html">
 <meta property="og:site_name" content="TAY&#39;S BLOG">
-<meta property="og:description" content="buuctf刷了10个题，昨天一直是按着题解来写的，今天可以做到自己解题了，爽爽爽！！ 晚上只学了线代，中间还扣了至少两小时手机wuuuuu，专注力低下啊啊啊啊啊啊啊，线代感觉上课听了个寂寞虽然本来也没咋听（罪恶ing，明天非常有必要在b站上找个课程听听，感觉目前对线代完全处于一头雾水阶段 今晚回宿舍的路上又在听all too well了，百听不厌，妈咪就是最伟大的！！！ 博客的图片没法显示，看看">
+<meta property="og:description" content="佛系青年解压，发现txt文件加密了，winhex查看了一下，伪加密，打开后应该是个与佛论禅密码，解密后拿到flag  刷新过的图片完全没有头绪就是了（（ 题解的写法是，题目中有提到过刷新键（F5），由此联想到F5隐写术，这要用到F5-steganography工具，提取出文件，winhex里面判断是伪加密的zip文件，解开后即得flag （F5-steganography在windows中又又又用">
 <meta property="og:locale" content="zh_CH">
-<meta property="article:published_time" content="2024-03-16T10:15:53.000Z">
-<meta property="article:modified_time" content="2024-03-16T15:45:49.572Z">
+<meta property="article:published_time" content="2024-03-23T05:10:26.000Z">
+<meta property="article:modified_time" content="2024-03-23T08:57:06.979Z">
 <meta property="article:author" content="tay">
-<meta property="article:tag" content="每日一小结">
+<meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="TAY'S BLOG" type="application/atom+xml">
@@ -76,10 +76,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-3-16小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-ctf-3-23" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-03-16T10:15:53.000Z" itemprop="datePublished">2024-03-16</time>
+    <a href="/2024/03/23/ctf-3-23/" class="article-date">
+  <time class="dt-published" datetime="2024-03-23T05:10:26.000Z" itemprop="datePublished">2024-03-23</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      3.16小结
+      ctf 3.23
     </h1>
   
 
@@ -98,20 +98,27 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>buuctf刷了10个题，昨天一直是按着题解来写的，今天可以做到自己解题了，爽爽爽！！</p>
-<p>晚上只学了线代，中间还扣了至少两小时手机wuuuuu，专注力低下啊啊啊啊啊啊啊，线代感觉上课听了个寂寞<del>虽然本来也没咋听（罪恶ing</del>，明天非常有必要在b站上找个课程听听，感觉目前对线代完全处于一头雾水阶段</p>
-<p>今晚回宿舍的路上又在听all too well了，百听不厌，妈咪就是最伟大的！！！</p>
-<p>博客的图片没法显示，看看什么时候有时间搞搞</p>
-<p>明天争取早起，buuctf 2h，acwing 2h<del>看群u都在打cf手痒了kkkk，顺便恢复下手感</del>，大雾至少把课本上的题写个一章，高数完成练习册，把空间几何的课后习题写完，线代找个靠谱的网课或者教材从头看。</p>
+        <h2 id="佛系青年"><a href="#佛系青年" class="headerlink" title="佛系青年"></a>佛系青年</h2><p>解压，发现txt文件加密了，winhex查看了一下，伪加密，打开后应该是个与佛论禅密码，解密后拿到flag</p>
+<hr>
+<h2 id="刷新过的图片"><a href="#刷新过的图片" class="headerlink" title="刷新过的图片"></a>刷新过的图片</h2><p>完全没有头绪就是了（（</p>
+<p>题解的写法是，题目中有提到过刷新键（F5），由此联想到F5隐写术，这要用到F5-steganography工具，提取出文件，winhex里面判断是伪加密的zip文件，解开后即得flag</p>
+<p>（F5-steganography在windows中又又又用不了了，我的java环境因为一些我目前无法解决的原因无法运行这个软件。。。。</p>
+<hr>
+<h2 id="你猜我是个啥"><a href="#你猜我是个啥" class="headerlink" title="你猜我是个啥"></a>你猜我是个啥</h2><p>zip文件发现打不开，winhex打开看一下，拉到最底下，发现flag就在那里</p>
+<hr>
+<h2 id="snake"><a href="#snake" class="headerlink" title="snake"></a>snake</h2><p>binwalk分析，果然有个zip文件，分离出来，key中的一串编码很像base64，解码发现是个问题：What is Nicki Minaj’s favorite song that refers to snakes?，google搜索得到是anaconda，这应该是某个东西的密码。另一个文件的命名是cipher（翻译：密码（加密算法，暗号）所以应该是在提醒这个文件和一种密码有关，又因为题目名字叫snake，遂搜索发现了一种叫做serpent（蛇）的对称加密算法，anaconda刚好就是解密时要用到的key，解出来即可</p>
+<hr>
+<h2 id="被偷走的文件"><a href="#被偷走的文件" class="headerlink" title="被偷走的文件"></a>被偷走的文件</h2><p>流量包，wireshark打开查找，发现有个rar文件，binwalk分离出来，archpr四位数暴力破解，得flag</p>
+<p>这告诉我们，有真加密且无其它信息时，姑且试试暴力破解，<del>说不定会有奇迹发生</del></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" data-id="clu3v9ud80003jgtg4e4m1kwb" data-title="3.16小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2024/03/23/ctf-3-23/" data-id="clu3v9udo000zjgtgclnd4zhz" data-title="ctf 3.23" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
 
     </footer>
   </div>
@@ -119,19 +126,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/03/23/3-23-%E5%B0%8F%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          3.17小结
+          3.23 小结
         
       </div>
     </a>
   
   
-    <a href="/2024/03/16/ctf-3-16/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/03/22/misc%E4%B9%8B%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">ctf 3.16</div>
+      <div class="article-nav-title">misc之流量分析</div>
     </a>
   
 </nav>

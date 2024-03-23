@@ -61,10 +61,10 @@
         
           <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
       </div>
     </div>
   </div>
@@ -72,6 +72,94 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-3-19小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-03-19T13:17:00.000Z" itemprop="datePublished">2024-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/19/3-19%E5%B0%8F%E7%BB%93/">3.19小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今天buuctf刷了三道，效率有点低😓，，，，见的都是新题型🤔</p>
+<p>今晚一定要学线代！！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" data-id="clu3v9ud90004jgtg7fo11as2" data-title="3.19小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ctf-3-19" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/19/ctf-3-19/" class="article-date">
+  <time class="dt-published" datetime="2024-03-19T10:32:29.000Z" itemprop="datePublished">2024-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/19/ctf-3-19/">3.19 ctf</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="FLAG"><a href="#FLAG" class="headerlink" title="FLAG"></a>FLAG</h2><p>打开发现是一张图，winhex打开也没发现什么有用的信息，用stegsolve打开，调到最低有效位，看见了50 4B 03 04和PK的文件头，说明里面藏了一个zip文件，savebin下来，添加.zip的后缀名，强行解压再用winhex打开，根据题目提示搜索hctf，拿到flag</p>
+<p>这个电脑上的winrar不能强制打开破损的压缩文件。。。。。</p>
+<hr>
+<h2 id="数据包中的线索"><a href="#数据包中的线索" class="headerlink" title="数据包中的线索"></a>数据包中的线索</h2><p>打开是个数据包，用wireshark打开，观察发现，有一种类型的数据包里面的包含的数据特别多，追踪它的tcp流，发现了一大串疑似base64编码的东西，很长一串，因此排除直接转码得flag的情况，考虑将base64转图片，拿到flag。</p>
+<hr>
+<h2 id="假如给我三天光明"><a href="#假如给我三天光明" class="headerlink" title="假如给我三天光明"></a>假如给我三天光明</h2><p>打开是一张图和一个压缩包，图片下面的一串点阵猜测是某种密码，解密出来是压缩包密码，google得知是一种盲文，成功打开压缩包，发现里面是个音频，听了一下猜测是摩斯密码，用剪辑软件打开，记录下摩斯密码再翻译出来：CTFWPEI08732?23DZ，发现还不是flag，试着改为小写，也不对，再把ctf删掉，成功！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/19/ctf-3-19/" data-id="clu3v9udl000pjgtgcvtr4mpk" data-title="3.19 ctf" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-ctf-3-18" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -101,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/18/ctf-3-18/" data-id="clu2uhqjn000kcstg9zch22om" data-title="3.18 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/18/ctf-3-18/" data-id="clu3v9udi000kjgtgaekw65vr" data-title="3.18 ctf" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -145,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/18/3-18%E5%B0%8F%E7%BB%93/" data-id="clu2uhqjc0001cstg4yk29lgw" data-title="3.18小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/18/3-18%E5%B0%8F%E7%BB%93/" data-id="clu3v9ud30001jgtg38u0dbn9" data-title="3.18小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -196,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/ctf-3-17/" data-id="clu2uhqjn000icstggb8u2spp" data-title="ctf 3.17" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/17/ctf-3-17/" data-id="clu3v9udg000fjgtg207hcev8" data-title="ctf 3.17" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -245,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" data-id="clu2uhqjf0003cstgflek4s2d" data-title="3.17小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" data-id="clu3v9ucx0000jgtghlvfcny6" data-title="3.17小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -290,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" data-id="clu2uhqj80000cstg5o262bqu" data-title="3.16小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" data-id="clu3v9ud80003jgtg4e4m1kwb" data-title="3.16小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -359,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/16/ctf-3-16/" data-id="clu2uhqjm000fcstg2aia5fcq" data-title="ctf 3.16" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/16/ctf-3-16/" data-id="clu3v9udd000ajgtg0brm4ezm" data-title="ctf 3.16" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -417,7 +505,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/15/ctf-3-15/" data-id="clu2uhqjl000dcstg462a8z7z" data-title="ctf 3.15" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/15/ctf-3-15/" data-id="clu3v9udk000njgtg388pbzeh" data-title="ctf 3.15" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -480,7 +568,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="clu2uhqjr000ycstg7bj3a1gk" data-title="git的使用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="clu3v9udo000xjgtg7kr88pqq" data-title="git的使用" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -494,273 +582,11 @@
 
 
   
-    <article id="post-高精度加减乘除" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/15/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" class="article-date">
-  <time class="dt-published" datetime="2024-03-15T10:04:55.000Z" itemprop="datePublished">2024-03-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/15/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/">高精度加减乘除</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="高精度加减乘除"><a href="#高精度加减乘除" class="headerlink" title="高精度加减乘除"></a>高精度加减乘除</h1><hr>
-<p><strong>本质</strong>：模拟人工手算（竖式计算</p>
-<p><strong>注</strong>：</p>
-<p>1.输出格式要统一，因为在实际应用中大部分会是加减乘除的混合运算,<del>but为什么不用python（滑稽，c++输麻了</del></p>
-<p>2.推荐用<code>printf</code>进行输出，因为当输出内容比较多时，<code>printf</code>比<code>cout</code>的速度快，可以节省大量运行时间（需要输入大量数据时同理，使用<code>scanf</code>的速度会比<code>cin</code>快</p>
-<p>3.除了加法，其他三个都要考虑前导零的存在</p>
-<p>4.<code> size_t</code>只可能大于零，无法小于或等于零</p>
-<h2 id="高精度加法"><a href="#高精度加法" class="headerlink" title="高精度加法"></a>高精度加法</h2><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;algorithm&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;string&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;vector&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
-<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">const</span> string &amp;a, <span class="hljs-type">const</span> string &amp;b)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-type">int</span> x = <span class="hljs-number">0</span>;
-    <span class="hljs-type">size_t</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;
-    vector&lt;<span class="hljs-type">int</span>&gt; ret;
-    <span class="hljs-keyword">while</span> (i &lt; a.<span class="hljs-built_in">length</span>() || j &lt; b.<span class="hljs-built_in">length</span>())
-    &#123;
-        <span class="hljs-keyword">if</span> (i &lt; a.<span class="hljs-built_in">length</span>())
-            x += a[i] - <span class="hljs-string">&#x27;0&#x27;</span>;
-        <span class="hljs-keyword">if</span> (j &lt; b.<span class="hljs-built_in">length</span>())
-            x += b[j] - <span class="hljs-string">&#x27;0&#x27;</span>;
-        ret.<span class="hljs-built_in">push_back</span>(x % <span class="hljs-number">10</span>);
-        x /= <span class="hljs-number">10</span>;
-        i++, j++;
-    &#125;
-    <span class="hljs-keyword">if</span> (x)&#123;
-         ret.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">1</span>);
-    &#125;
-    <span class="hljs-keyword">return</span> ret;
-&#125;
-<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    string a, b;
-    <span class="hljs-built_in">getline</span>(cin, a);
-    <span class="hljs-built_in">getline</span>(cin, b);
-    <span class="hljs-built_in">reverse</span>(a.<span class="hljs-built_in">begin</span>(), a.<span class="hljs-built_in">end</span>());
-    <span class="hljs-built_in">reverse</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">end</span>());
-    <span class="hljs-keyword">auto</span> ret = <span class="hljs-built_in">add</span>(a, b);
-    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> t = ret.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>; t &gt;= <span class="hljs-number">0</span>; t--)&#123;
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,ret[i]);
-    &#125;
-&#125;</code></pre>
-
-<p><em>用vector可以避免数组开得不够大</em></p>
-<h2 id="高精度减法"><a href="#高精度减法" class="headerlink" title="高精度减法"></a>高精度减法</h2><p>如有负数的情况可视情况转化为高精加或高精减</p>
-<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;vector&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
-<span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">judge</span><span class="hljs-params">(<span class="hljs-type">const</span> string&amp; a, <span class="hljs-type">const</span> string&amp; b)</span> </span>&#123;
-    <span class="hljs-keyword">return</span> a.<span class="hljs-built_in">size</span>() &gt; b.<span class="hljs-built_in">size</span>() || (a.<span class="hljs-built_in">size</span>() == b.<span class="hljs-built_in">size</span>() &amp;&amp; a &gt;= b);
-&#125;<span class="hljs-comment">//字符串的比较方式是根据acill码依次比较字符大小</span>
-<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">sub</span><span class="hljs-params">(string a,string b)</span></span>&#123;
-    vector&lt;<span class="hljs-type">int</span>&gt; ret;
-    <span class="hljs-type">size_t</span> i=<span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span>(i&lt;a.<span class="hljs-built_in">length</span>())&#123;
-        <span class="hljs-type">int</span> x=<span class="hljs-number">10</span>;
-        x+=a[i]-<span class="hljs-string">&#x27;0&#x27;</span>;
-        <span class="hljs-keyword">if</span>(i&lt;b.<span class="hljs-built_in">length</span>())x-=b[i]-<span class="hljs-string">&#x27;0&#x27;</span>;
-        <span class="hljs-keyword">if</span>(x&lt;<span class="hljs-number">10</span>&amp;&amp;i+<span class="hljs-number">1</span>&lt;a.<span class="hljs-built_in">length</span>())a[i+<span class="hljs-number">1</span>]-=<span class="hljs-number">1</span>;
-        ret.<span class="hljs-built_in">push_back</span>(x%<span class="hljs-number">10</span>);
-        i++;
-    &#125;
-    <span class="hljs-keyword">return</span> ret;
-&#125;
-<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    string a,b;
-    <span class="hljs-built_in">getline</span>(cin,a);
-    <span class="hljs-built_in">getline</span>(cin,b);
-    <span class="hljs-type">bool</span> flag=<span class="hljs-built_in">judge</span>(a,b);<span class="hljs-comment">//判断a，b大小</span>
-    <span class="hljs-keyword">if</span>(flag==<span class="hljs-number">0</span>)<span class="hljs-built_in">swap</span>(a,b);<span class="hljs-comment">//保证a一定大于等于b</span>
-    <span class="hljs-built_in">reverse</span>(a.<span class="hljs-built_in">begin</span>(),a.<span class="hljs-built_in">end</span>());
-    <span class="hljs-built_in">reverse</span>(b.<span class="hljs-built_in">begin</span>(),b.<span class="hljs-built_in">end</span>());
-    <span class="hljs-keyword">auto</span> RET=<span class="hljs-built_in">sub</span>(a,b);
-    <span class="hljs-keyword">if</span>(flag==<span class="hljs-number">0</span>)cout&lt;&lt;<span class="hljs-string">&#x27;-&#x27;</span>;
-    <span class="hljs-keyword">while</span> (RET.<span class="hljs-built_in">size</span>() &gt; <span class="hljs-number">1</span> &amp;&amp; RET.<span class="hljs-built_in">back</span>() == <span class="hljs-number">0</span>)
-    RET.<span class="hljs-built_in">pop_back</span>();<span class="hljs-comment">//删去前导0，防止出现类似34-34=00的情况</span>
-    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=RET.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,ret[i]);
-    &#125;
-&#125;</code></pre>
-
-<h2 id="高精度乘法"><a href="#高精度乘法" class="headerlink" title="高精度乘法"></a>高精度乘法</h2><p><strong>方法一</strong>：这个理论上可适用于大整数×大整数，but由于是本人自己写的，<del>经检验好像也没啥问题</del>但是不排除有可能存在bug（雾</p>
-<p>本质是直接一位一位地模拟乘法竖式计算</p>
-<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;vector&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
-vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">mul</span>(<span class="hljs-type">const</span> string &amp;a,<span class="hljs-type">const</span> string &amp;b)&#123;
-    <span class="hljs-comment">//a相当于竖式计算中下面的那一个数，b相当于上面的那一个数</span>
-    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">Ret</span>(a.<span class="hljs-built_in">length</span>());
-    <span class="hljs-comment">//a有n位，那么就会进行n次乘法计算，产生n个后续需要相加的数；</span>
-    <span class="hljs-keyword">for</span>(<span class="hljs-type">size_t</span> i=<span class="hljs-number">0</span>;i&lt;a.<span class="hljs-built_in">length</span>();i++)&#123;
-        <span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;
-        <span class="hljs-keyword">for</span>(<span class="hljs-type">size_t</span> k=i;k&gt;<span class="hljs-number">0</span>;k--)&#123;
-            Ret[i].<span class="hljs-built_in">push_back</span>(<span class="hljs-number">0</span>);
-        &#125;<span class="hljs-comment">//补0，例如a的第三位和b相乘，就需要补两个0</span>
-        <span class="hljs-keyword">for</span>(<span class="hljs-type">size_t</span> j=<span class="hljs-number">0</span>;j&lt;b.<span class="hljs-built_in">length</span>();j++)&#123;
-            t+=(b[j]-<span class="hljs-string">&#x27;0&#x27;</span>)*(a[i]-<span class="hljs-string">&#x27;0&#x27;</span>);
-            Ret[i].<span class="hljs-built_in">push_back</span>(t%<span class="hljs-number">10</span>);
-            t/=<span class="hljs-number">10</span>;
-        &#125;
-        <span class="hljs-keyword">if</span>(t)Ret[i].<span class="hljs-built_in">push_back</span>(t);
-    &#125;
-   <span class="hljs-keyword">return</span> Ret;
-&#125;
-<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-type">const</span> vector&lt;<span class="hljs-type">int</span>&gt; &amp;RET,<span class="hljs-type">const</span> vector&lt;<span class="hljs-type">int</span>&gt; &amp;Ret)</span></span>&#123;
-    <span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;
-    <span class="hljs-type">size_t</span> i=<span class="hljs-number">0</span>,j=<span class="hljs-number">0</span>;
-    vector&lt;<span class="hljs-type">int</span>&gt; result;
-    <span class="hljs-keyword">while</span>(i&lt;RET.<span class="hljs-built_in">size</span>()||j&lt;Ret.<span class="hljs-built_in">size</span>())&#123;
-        <span class="hljs-keyword">if</span>(i&lt;RET.<span class="hljs-built_in">size</span>())t+=RET[i];
-        <span class="hljs-keyword">if</span>(j&lt;Ret.<span class="hljs-built_in">size</span>())t+=Ret[j];
-        result.<span class="hljs-built_in">push_back</span>(t%<span class="hljs-number">10</span>);
-        t/=<span class="hljs-number">10</span>;
-        i++,j++;
-    &#125;
-    <span class="hljs-keyword">if</span>(t)result.<span class="hljs-built_in">push_back</span>(t);
-    <span class="hljs-keyword">return</span> result;
-&#125;
-<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    string a,b;
-    cin&gt;&gt;a&gt;&gt;b;
-    <span class="hljs-built_in">reverse</span>(a.<span class="hljs-built_in">begin</span>(),a.<span class="hljs-built_in">end</span>());
-    <span class="hljs-built_in">reverse</span>(b.<span class="hljs-built_in">begin</span>(),b.<span class="hljs-built_in">end</span>());
-    <span class="hljs-keyword">auto</span> Ret=<span class="hljs-built_in">mul</span>(a,b);
-    vector&lt;<span class="hljs-type">int</span>&gt; RET;
-    <span class="hljs-keyword">for</span>(<span class="hljs-type">size_t</span> i=<span class="hljs-number">0</span>;i&lt;a.<span class="hljs-built_in">length</span>();i++)&#123;
-        RET=<span class="hljs-built_in">add</span>(RET,Ret[i]);
-    &#125;<span class="hljs-comment">//将得出的n个数相加</span>
-    <span class="hljs-keyword">while</span>(RET.<span class="hljs-built_in">size</span>()&gt;<span class="hljs-number">1</span>&amp;&amp;RET.<span class="hljs-built_in">back</span>()==<span class="hljs-number">0</span>)&#123;
-        RET.<span class="hljs-built_in">pop_back</span>();
-    &#125;<span class="hljs-comment">//删除前导零</span>
-    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=RET.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,RET[i]);
-    &#125;
-&#125;</code></pre>
-
-<p><strong>方法二</strong>：适用于大整数×小整数</p>
-<p>这个计算方式不同于传统的竖式计算，它把小整数视作一位数，整体与大整数的每一位数相乘  </p>
-<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;vector&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
-<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">mul</span><span class="hljs-params">(<span class="hljs-type">const</span> string &amp;A,<span class="hljs-type">const</span> <span class="hljs-type">int</span> &amp;b)</span></span>&#123;
-    <span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;
-    vector&lt;<span class="hljs-type">int</span>&gt; ret;
-    <span class="hljs-type">size_t</span> i=<span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span>(i&lt;A.<span class="hljs-built_in">size</span>())&#123;
-        t+=(A[i]-<span class="hljs-string">&#x27;0&#x27;</span>)*b;
-        ret.<span class="hljs-built_in">push_back</span>(t%<span class="hljs-number">10</span>);
-        t/=<span class="hljs-number">10</span>;
-        i++;
-    &#125;
-    <span class="hljs-comment">//把b视作一位数，整个过程就按大整数×一位数的方式进行</span>
-    <span class="hljs-keyword">if</span>(t)
-        ret.<span class="hljs-built_in">push_back</span>(t);
-    <span class="hljs-keyword">return</span> ret;
-&#125;
-<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    string A;
-    <span class="hljs-type">int</span> b;
-    cin&gt;&gt;A&gt;&gt;b;
-    <span class="hljs-built_in">reverse</span>(A.<span class="hljs-built_in">begin</span>(),A.<span class="hljs-built_in">end</span>());
-    <span class="hljs-keyword">auto</span> ret=<span class="hljs-built_in">mul</span>(A,b);
-    <span class="hljs-keyword">while</span>(ret.<span class="hljs-built_in">size</span>()&gt;<span class="hljs-number">1</span>&amp;&amp;ret.<span class="hljs-built_in">back</span>()==<span class="hljs-number">0</span>)
-        ret.<span class="hljs-built_in">pop_back</span>();<span class="hljs-comment">//删除前导零</span>
-    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=ret.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,ret[i]);
-    &#125;
-&#125;</code></pre>
-
-<h2 id="高精度除法"><a href="#高精度除法" class="headerlink" title="高精度除法"></a>高精度除法</h2><p>适用于大整数&#x2F;小整数，除法与之前加减乘不一样，不需要倒序从个位开始计算</p>
-<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;string&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;vector&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;algorithm&gt;</span></span>
-<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;
-<span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">div</span><span class="hljs-params">(<span class="hljs-type">const</span> string &amp;A,<span class="hljs-type">const</span> <span class="hljs-type">int</span> &amp;b,<span class="hljs-type">int</span> &amp;RET)</span></span>&#123;
-    vector&lt;<span class="hljs-type">int</span>&gt; ret;
-    <span class="hljs-type">int</span> t=<span class="hljs-number">0</span>;
-    <span class="hljs-type">int</span> i=A.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;
-    <span class="hljs-keyword">while</span>(i&gt;=<span class="hljs-number">0</span>)&#123;
-        t=t*<span class="hljs-number">10</span>+(A[i]-<span class="hljs-string">&#x27;0&#x27;</span>);
-        ret.<span class="hljs-built_in">push_back</span>(t/b);
-        t=t%b;
-        i--;
-    &#125;
-    RET=t;
-    <span class="hljs-built_in">reverse</span>(ret.<span class="hljs-built_in">begin</span>(),ret.<span class="hljs-built_in">end</span>());<span class="hljs-comment">//ret是正序储存的，为了方便后续删除前导零，将其反转</span>
-    <span class="hljs-keyword">return</span> ret;
-&#125;
-<span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
-<span class="hljs-function"></span>&#123;
-    string A;
-    <span class="hljs-type">int</span> b;
-    cin&gt;&gt;A&gt;&gt;b;
-    <span class="hljs-keyword">if</span>(b==<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-    <span class="hljs-built_in">reverse</span>(A.<span class="hljs-built_in">begin</span>(),A.<span class="hljs-built_in">end</span>());
-    <span class="hljs-type">int</span> RET;<span class="hljs-comment">//储存余数</span>
-    <span class="hljs-keyword">auto</span> ret=<span class="hljs-built_in">div</span>(A,b,RET);
-    <span class="hljs-keyword">while</span>(ret.<span class="hljs-built_in">size</span>()&gt;<span class="hljs-number">1</span>&amp;&amp;ret.<span class="hljs-built_in">back</span>()==<span class="hljs-number">0</span>)&#123;
-        ret.<span class="hljs-built_in">pop_back</span>();
-    &#125;
-    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=ret.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;
-        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d&quot;</span>,ret[i]);
-    &#125;
-    cout&lt;&lt;endl&lt;&lt;RET;
-&#125;</code></pre>
-
-
-
-
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/15/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" data-id="clu2uhqjt0013cstgdokt4o61" data-title="高精度加减乘除" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; zurück</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -791,7 +617,7 @@ vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
     </div>
@@ -801,9 +627,17 @@ vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/03/23/3-23-%E5%B0%8F%E7%BB%93/">3.23 小结</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/23/ctf-3-23/">ctf 3.23</a>
+          </li>
         
           <li>
             <a href="/2024/03/22/misc%E4%B9%8B%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">misc之流量分析</a>
@@ -815,14 +649,6 @@ vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs
         
           <li>
             <a href="/2024/03/22/3-22%E5%B0%8F%E7%BB%93/">3.22小结</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/22/ctf-3-22/">ctf 3.22</a>
-          </li>
-        
-          <li>
-            <a href="/2024/03/21/3-21%E5%B0%8F%E7%BB%93/">3.21小结</a>
           </li>
         
       </ul>
