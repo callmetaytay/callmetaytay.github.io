@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>ctf 3.20 | TAY&#39;S BLOG</title>
+  <title>ctf 3.26 | TAY&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="后门查杀Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作 通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag  webshell后门和前一题的解法一样  来一首歌吧用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可  面具下的flag图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，">
+  <meta name="description" content="一叶障目涉及到有关crc的知识点， 通过编写脚本，暴力破解出正确的宽高，修改宽高，flag就显现了出来 （还不会python，遂还不会写  神奇的二维码二维码一扫，果然啥有用信息都没有（（，binwalk一下，分离出了一堆文件，encode.txt的文件里面是base64码，解码打开其中一个压缩包，拿到几张p用都没有的图片；flag.doc的文件里面也是base64码（需要经过很多很多次的反复解码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ctf 3.20">
-<meta property="og:url" content="http://example.com/2024/03/20/ctf-3-20/index.html">
+<meta property="og:title" content="ctf 3.26">
+<meta property="og:url" content="http://example.com/2024/03/26/ctf-3-26/index.html">
 <meta property="og:site_name" content="TAY&#39;S BLOG">
-<meta property="og:description" content="后门查杀Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作 通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag  webshell后门和前一题的解法一样  来一首歌吧用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可  面具下的flag图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，">
+<meta property="og:description" content="一叶障目涉及到有关crc的知识点， 通过编写脚本，暴力破解出正确的宽高，修改宽高，flag就显现了出来 （还不会python，遂还不会写  神奇的二维码二维码一扫，果然啥有用信息都没有（（，binwalk一下，分离出了一堆文件，encode.txt的文件里面是base64码，解码打开其中一个压缩包，拿到几张p用都没有的图片；flag.doc的文件里面也是base64码（需要经过很多很多次的反复解码">
 <meta property="og:locale" content="zh_CH">
-<meta property="article:published_time" content="2024-03-20T09:57:45.000Z">
-<meta property="article:modified_time" content="2024-03-21T06:11:25.748Z">
+<meta property="article:published_time" content="2024-03-26T09:13:13.000Z">
+<meta property="article:modified_time" content="2024-03-26T12:18:55.069Z">
 <meta property="article:author" content="tay">
 <meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary">
@@ -76,10 +76,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ctf-3-20" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-ctf-3-26" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/20/ctf-3-20/" class="article-date">
-  <time class="dt-published" datetime="2024-03-20T09:57:45.000Z" itemprop="datePublished">2024-03-20</time>
+    <a href="/2024/03/26/ctf-3-26/" class="article-date">
+  <time class="dt-published" datetime="2024-03-26T09:13:13.000Z" itemprop="datePublished">2024-03-26</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      ctf 3.20
+      ctf 3.26
     </h1>
   
 
@@ -98,20 +98,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="后门查杀"><a href="#后门查杀" class="headerlink" title="后门查杀"></a>后门查杀</h2><p>Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作</p>
-<p>通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag</p>
+        <h2 id="一叶障目"><a href="#一叶障目" class="headerlink" title="一叶障目"></a>一叶障目</h2><p>涉及到有关crc的知识点，</p>
+<p>通过编写脚本，暴力破解出正确的宽高，修改宽高，flag就显现了出来</p>
+<p>（还不会python，遂还不会写</p>
 <hr>
-<h2 id="webshell后门"><a href="#webshell后门" class="headerlink" title="webshell后门"></a>webshell后门</h2><p>和前一题的解法一样</p>
-<hr>
-<h2 id="来一首歌吧"><a href="#来一首歌吧" class="headerlink" title="来一首歌吧"></a>来一首歌吧</h2><p>用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可</p>
-<hr>
-<h2 id="面具下的flag"><a href="#面具下的flag" class="headerlink" title="面具下的flag"></a>面具下的flag</h2><p>图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，但是题目没有给任何关于密码的信息，不太可能暴力破解，因此应该是伪加密，09 00改为00 00后成功打开，发现是个.vmdk文件，照题解的意思，应该是要用kali里的7z解压，得到两个文件里面分别是Ook密码和brainfuck密码，解码后即得flag。</p>
-<p>但是由于我电脑上还没安装kali系统，遂选择用winhex打开，在里面也可以找到这两串密码，但是不知道什么原因brainfuck密码在winhex里面少了两个字节，导致题目一直没解出来((</p>
+<h2 id="神奇的二维码"><a href="#神奇的二维码" class="headerlink" title="神奇的二维码"></a>神奇的二维码</h2><p>二维码一扫，果然啥有用信息都没有（（，binwalk一下，分离出了一堆文件，encode.txt的文件里面是base64码，解码打开其中一个压缩包，拿到几张p用都没有的图片；flag.doc的文件里面也是base64码（需要经过很多很多次的反复解码才能解出来<del>byd搁着套娃是吧</del>，以至于刚开始我根本没意识到那是base64，开始有过猜测，但是它仅一次解码出来的东西看起来不太有用，以及我之前一直以为base64码的末尾是一定会有“&#x3D;”的），解码后用它打开第二个压缩包，把音频文件用auducity打开，果然是摩斯密码，解码，拿到flag</p>
+<p><strong>此题教训</strong>：base64不一定是会以“&#x3D;”结尾；有些编码是套娃而成的，需要反复解码</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="clu8dfxb6000wvgtgflxa63gn" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/26/ctf-3-26/" data-id="clu8dfxba0019vgtgbp4ge6ie" data-title="ctf 3.26" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -123,19 +120,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/03/26/3-26%E5%B0%8F%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          3.20小结
+          3.26小结
         
       </div>
     </a>
   
   
-    <a href="/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/03/25/3-25%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">3.19小结</div>
+      <div class="article-nav-title">3.25小结</div>
     </a>
   
 </nav>

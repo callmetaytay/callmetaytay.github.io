@@ -73,6 +73,341 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ctf-3-17" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/17/ctf-3-17/" class="article-date">
+  <time class="dt-published" datetime="2024-03-17T06:48:00.000Z" itemprop="datePublished">2024-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/17/ctf-3-17/">ctf 3.17</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a>爱因斯坦</h2><p>010editor打开，发现里面还藏着一个zip文件，提取出来，发现加密，试着在010editor上改了下，发现是真加密，由于题目没有给出有关密码的任何信息，不知道密码长度的话光是暴力破解需要很久时间，因此我们应该是可以通过其它方法直接拿到密码的。</p>
+<p>打开属性，发现备注那里有信息，试着当作密码填进去，成功打开文件，拿到flag</p>
+<hr>
+<h2 id="小明的保险箱"><a href="#小明的保险箱" class="headerlink" title="小明的保险箱"></a>小明的保险箱</h2><p>看题目就可直接猜测是要转换成zip格式，archpr暴力破解密码</p>
+<p>010editor打开，发现FF D9就是.jpg的文件尾了，但是后面还有内容——52 61 72 21正是.rar的文件头，说明里面藏着一个.rar文件，符合了我们之前的猜想，接下来archpr解开密码即可</p>
+<hr>
+<h2 id="easycap"><a href="#easycap" class="headerlink" title="easycap"></a>easycap</h2><p>发现是.pcap文件，用wireshark打开，在分组字节流中没找到flag，那就追踪数据包的tcp流，拿到flag</p>
+<hr>
+<h2 id="隐藏的钥匙"><a href="#隐藏的钥匙" class="headerlink" title="隐藏的钥匙"></a>隐藏的钥匙</h2><p>010editor打开，发现有flag，同时有base64的提示，猜测是base64编码，解码后拿到flag</p>
+<hr>
+<h2 id="另一个世界"><a href="#另一个世界" class="headerlink" title="另一个世界"></a>另一个世界</h2><p>010editor打开，搜索flag没有结果，拉到最后，发现了一串二进制，将其转化为ascii码，即是flag</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/17/ctf-3-17/" data-id="clu8dfxb4000qvgtg8kbpdoic" data-title="ctf 3.17" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-3-17小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-03-17T06:34:07.000Z" itemprop="datePublished">2024-03-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/17/3-17%E5%B0%8F%E7%BB%93/">3.17小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>昨晚熬夜熬到4.，wuuuuuu，早起计划被完全打乱。。。。。熬夜真是误人，现在两点半了才开始学习</p>
+<p>不管怎么样至少buuctf和线代，高数的计划一定要完成！！！</p>
+<p>buuctf两个小时刷了5道。</p>
+<p>新学了wireshark抓包，但还没太搞懂原理。。。。</p>
+<p>第一次遇到了与二进制有关的题目，猜测转码思路：二进制<del>其它进制</del>ascii码~base或者其它编码</p>
+<p>52 61 72 21是.rar的文件头，50 4B 03 04时.zip的文件头</p>
+<p>对于需要密码打开压缩包但是题目没有给任何有关密码的信息时，一般暴力破解行不通，要去寻找其它地方有没有信息</p>
+<hr>
+<p>线代还是没完成呃呃呃呃呃，高数没预习</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" data-id="clu8dfxam0001vgtg68qgcylq" data-title="3.17小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-3-16小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-03-16T10:15:53.000Z" itemprop="datePublished">2024-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/16/3-16%E5%B0%8F%E7%BB%93/">3.16小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>buuctf刷了10个题，昨天一直是按着题解来写的，今天可以做到自己解题了，爽爽爽！！</p>
+<p>晚上只学了线代，中间还扣了至少两小时手机wuuuuu，专注力低下啊啊啊啊啊啊啊，线代感觉上课听了个寂寞<del>虽然本来也没咋听（罪恶ing</del>，明天非常有必要在b站上找个课程听听，感觉目前对线代完全处于一头雾水阶段</p>
+<p>今晚回宿舍的路上又在听all too well了，百听不厌，妈咪就是最伟大的！！！</p>
+<p>博客的图片没法显示，看看什么时候有时间搞搞</p>
+<p>明天争取早起，buuctf 2h，acwing 2h<del>看群u都在打cf手痒了kkkk，顺便恢复下手感</del>，大雾至少把课本上的题写个一章，高数完成练习册，把空间几何的课后习题写完，线代找个靠谱的网课或者教材从头看。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" data-id="clu8dfxae0000vgtg8mnmhw6z" data-title="3.16小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ctf-3-16" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/16/ctf-3-16/" class="article-date">
+  <time class="dt-published" datetime="2024-03-16T05:59:35.000Z" itemprop="datePublished">2024-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/16/ctf-3-16/">ctf 3.16</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h2><p>打开是二维码，直接扫码后发现没有有用的信息，遂用010editor打开，发现</p>
+<p><img src="E:\buuctf\笔记\149c9f12653599e308136c4c69dea2df.png"></p>
+<p>.png的文件尾是AE 42 60 82，按理来说在文件尾之后就应该结束，我们却发现png的文件尾后还跟着50 4B 03 04，这是.zip的文件头，说明在该照片下还隐藏着一个.zip文件，到这一步有两种方法：1.将50 4B 03 04之前的东西全部删掉，之后保存，将文件后缀名改为.zip 2.用Linux中的binwalk将隐藏的.zip文件分离出来。语句：binwalk -e 文件名</p>
+<p>打开这个zip文件后，发现有加密，无法直接解压</p>
+<p>先考虑伪加密，010editor打开，发现50 4B 01 02 后面是 09 00，说明是真加密</p>
+<p>用archpr暴力破解密码即可</p>
+<hr>
+<h2 id="基础破解"><a href="#基础破解" class="headerlink" title="基础破解"></a>基础破解</h2><p>发现是加密压缩包，archpr暴力破解后，txt文档里是一串base64编码，解码即可得到flag</p>
+<hr>
+<h2 id="文件中的秘密"><a href="#文件中的秘密" class="headerlink" title="文件中的秘密"></a>文件中的秘密</h2><p>打开属性，在备注中直接找到flag</p>
+<hr>
+<h2 id="LSB"><a href="#LSB" class="headerlink" title="LSB"></a>LSB</h2><p>在大多数PNG问图像中，没个像素都由R、G、B三原色组成，每种颜色一般用8位数据表示，如果修改其最低位，人眼是不能区分出这种微笑的变化的，因此可以利用没个像素的R、G、B颜色的分量的最低有效位来隐藏信息，这样每个像素可以携带3位的信息</p>
+<p>根据题目提示，可以猜到大概率考的是这个知识点，用stegsolve打开，</p>
+<p><img src="C:\Users\梁韵扬\AppData\Roaming\Typora\typora-user-images\image-20240316163533760.png" alt="image-20240316163533760"></p>
+<p>直接看图片的最低有效位，发现隐藏了一个.png文件，将它保存下来，后缀名改为.png，打开发现是二维码，扫描即得flag</p>
+<hr>
+<h2 id="zip伪加密"><a href="#zip伪加密" class="headerlink" title="zip伪加密"></a>zip伪加密</h2><p>根据题目，就知道考的是zip伪加密，010editor打开，将50 4B 01 02 后的 09 00 改为 00 00，就可直接解压得到txt文件内flag</p>
+<hr>
+<h2 id="被嗅探的流量"><a href="#被嗅探的流量" class="headerlink" title="被嗅探的流量"></a>被嗅探的流量</h2><p>010editor打开，text中查找flag即可</p>
+<hr>
+<h2 id="rar"><a href="#rar" class="headerlink" title="rar"></a>rar</h2><p>archpr暴力破解密码</p>
+<p>（有个奇怪的事是，当文件下载在c盘download位置时，archpr破解出的不是正确密码，目前未解决</p>
+<hr>
+<h2 id="qr"><a href="#qr" class="headerlink" title="qr"></a>qr</h2><p>用QR_search扫描即可</p>
+<hr>
+<h2 id="镜子里的世界"><a href="#镜子里的世界" class="headerlink" title="镜子里的世界"></a>镜子里的世界</h2><p>同lsb那题，stegsolve打开，data etract看图片的最低有效位，拿到flag</p>
+<hr>
+<h2 id="ningen"><a href="#ningen" class="headerlink" title="ningen"></a>ningen</h2><p>010editor打开，发现没有flag，查找 50 4B 03 04，发现其中确实藏着一个zip文件，把 50 4B 03 04前的内容都删掉，后缀名改为zip，解压发现有密码，用archpr暴力破解得flag</p>
+<hr>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/16/ctf-3-16/" data-id="clu8dfxb3000nvgtg05i73ltf" data-title="ctf 3.16" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ctf-3-15" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/15/ctf-3-15/" class="article-date">
+  <time class="dt-published" datetime="2024-03-15T10:04:55.000Z" itemprop="datePublished">2024-03-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/15/ctf-3-15/">ctf 3.15</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="金三胖"><a href="#金三胖" class="headerlink" title="金三胖"></a>金三胖</h2><p>仔细观察，发现动图中会快速闪过文字，遂用stegsolve打开，将动图逐帧分解，拿到flag</p>
+<hr>
+<h2 id="你竟然赶我走"><a href="#你竟然赶我走" class="headerlink" title="你竟然赶我走"></a>你竟然赶我走</h2><p>用010editor打开图片，用search直接找到flag</p>
+<hr>
+<h2 id="大白"><a href="#大白" class="headerlink" title="大白"></a>大白</h2><p>看到图片，猜测下面还有一节未显示，用010editor打开</p>
+<p><img src="C:\blog\tay_blog\source_posts{DE75A984-6CC6-4487-8C89-BD1A9A6D8E20}.png"></p>
+<p>发现宽为02A7，高为0100，并不相等，将高也改为02A7后，就可以拿到flag</p>
+<hr>
+<h2 id="乌镇峰会种图"><a href="#乌镇峰会种图" class="headerlink" title="乌镇峰会种图"></a>乌镇峰会种图</h2><p>010editor打开，search直接找flag</p>
+<hr>
+<h2 id="n种解决方法"><a href="#n种解决方法" class="headerlink" title="n种解决方法"></a>n种解决方法</h2><p>无法直接打开，用010editor打开后</p>
+<p><img src="C:\blog\tay_blog\source_posts{924D8477-BA84-432c-9655-91F3171DEFBC}.png"></p>
+<p>发现是一串base64编码，直接解码得flag</p>
+<p><strong>base64编码</strong>：由A<del>Z，a</del>z，0~9，+，&#x2F;，这几个字符组成，且尾部有两个‘&#x3D;’</p>
+<hr>
+<h2 id="wireshark"><a href="#wireshark" class="headerlink" title="wireshark"></a>wireshark</h2><p>题目：黑客通过wireshark抓到管理员登陆网站的一段流量包（管理员的密码即是答案) </p>
+<p>流量分析题，010editor打开，找flag</p>
+<p><img src="C:\blog\tay_blog\source_posts{C4CA282A-2AF7-46a8-B06C-6CF19DB8A937}.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/15/ctf-3-15/" data-id="clu8dfxb2000lvgtgdapk6z78" data-title="ctf 3.15" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git的使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2024-03-15T10:04:55.000Z" itemprop="datePublished">2024-03-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>要使用命令行将文件提交到 GitHub 仓库中，你需要执行以下步骤：</p>
+<ol>
+<li><p><strong>克隆仓库（如果没有）：</strong> 如果你还没有将仓库克隆到本地，你需要先使用 <code>git clone</code> 命令将仓库克隆到本地。例如：</p>
+<pre><code class="hljs plaintext">git clone https://github.com/your-username/your-repository.git</code></pre>
+</li>
+<li><p><strong>进入仓库目录：</strong> 使用 <code>cd</code> 命令进入克隆下来的仓库目录：</p>
+<pre><code class="hljs plaintext">cd your-repository</code></pre>
+</li>
+<li><p><strong>添加文件到暂存区：</strong> 使用 <code>git add</code> 命令将要提交的文件添加到 Git 的暂存区。你可以添加单个文件或者多个文件。例如：</p>
+<pre><code class="hljs plaintext">git add file2.txt</code></pre>
+
+<p>或者你也可以使用 <code>git add .</code> 命令将当前目录下所有文件添加到暂存区。</p>
+</li>
+<li><p><strong>提交文件到本地仓库：</strong> 使用 <code>git commit</code> 命令将添加到暂存区的文件提交到本地仓库，并添加提交消息说明。例如：</p>
+<pre><code class="hljs plaintext">git commit -m &quot;Add new files&quot;</code></pre>
+</li>
+<li><p><strong>推送文件到远程仓库：</strong> 最后，使用 <code>git push</code> 命令将本地仓库的提交推送到 GitHub 远程仓库。你需要指定远程仓库的名称和分支。例如：</p>
+<pre><code class="hljs plaintext">git push origin main</code></pre>
+
+<p>其中 <code>origin</code> 是远程仓库的名称，<code>main</code> 是要推送的分支名称。</p>
+</li>
+</ol>
+<p>执行完以上步骤后，你的文件就会被提交到 GitHub 仓库中了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/15/git%E7%9A%84%E4%BD%BF%E7%94%A8/" data-id="clu8dfxba001bvgtg2bofap16" data-title="git的使用" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tip/" rel="tag">tip</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-高精度加减乘除" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/15/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" class="article-date">
@@ -321,7 +656,7 @@ vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/15/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" data-id="clu4a0nue0017pwtgg0y59w5o" data-title="高精度加减乘除" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/15/%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4/" data-id="clu8dfxbe001ivgtg44gy2j49" data-title="高精度加减乘除" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -385,23 +720,23 @@ vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs
       <ul>
         
           <li>
-            <a href="/2024/03/23/3-23-%E5%B0%8F%E7%BB%93/">3.23 小结</a>
+            <a href="/2024/03/26/3-26%E5%B0%8F%E7%BB%93/">3.26小结</a>
           </li>
         
           <li>
-            <a href="/2024/03/23/ctf-3-23/">ctf 3.23</a>
+            <a href="/2024/03/26/ctf-3-26/">ctf 3.26</a>
           </li>
         
           <li>
-            <a href="/2024/03/22/misc%E4%B9%8B%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">misc之流量分析</a>
+            <a href="/2024/03/25/3-25%E5%B0%8F%E7%BB%93/">3.25小结</a>
           </li>
         
           <li>
-            <a href="/2024/03/22/misc%E4%B9%8B%E9%9A%90%E5%86%99/">misc之隐写</a>
+            <a href="/2024/03/25/ctf-3-25/">ctf 3.25</a>
           </li>
         
           <li>
-            <a href="/2024/03/22/3-22%E5%B0%8F%E7%BB%93/">3.22小结</a>
+            <a href="/2024/03/24/3-24%E5%B0%8F%E7%BB%93/">3.24小结</a>
           </li>
         
       </ul>

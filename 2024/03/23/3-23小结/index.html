@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>ctf 3.20 | TAY&#39;S BLOG</title>
+  <title>3.23 小结 | TAY&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="后门查杀Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作 通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag  webshell后门和前一题的解法一样  来一首歌吧用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可  面具下的flag图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，">
+  <meta name="description" content="今日重大收获！！成功把binwalk下下来了！！耶耶耶，（在下了三个版本的py，两个版本的binwalk之后。以后找隐藏的文件会方便了很多了，好耶！！！ 今日buuctf刷题量五道，感觉还行，也没摸鱼，唯一遗憾的是图片隐写有个工具因为java的问题无法运行（（，目前也没有解决方法，果然还是kali好 等下学大雾，再晚点想去听个汇编的讲座（目前还在考虑中  汇编的讲座听了，还蛮感兴趣的？？🤔但是r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ctf 3.20">
-<meta property="og:url" content="http://example.com/2024/03/20/ctf-3-20/index.html">
+<meta property="og:title" content="3.23 小结">
+<meta property="og:url" content="http://example.com/2024/03/23/3-23%E5%B0%8F%E7%BB%93/index.html">
 <meta property="og:site_name" content="TAY&#39;S BLOG">
-<meta property="og:description" content="后门查杀Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作 通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag  webshell后门和前一题的解法一样  来一首歌吧用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可  面具下的flag图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，">
+<meta property="og:description" content="今日重大收获！！成功把binwalk下下来了！！耶耶耶，（在下了三个版本的py，两个版本的binwalk之后。以后找隐藏的文件会方便了很多了，好耶！！！ 今日buuctf刷题量五道，感觉还行，也没摸鱼，唯一遗憾的是图片隐写有个工具因为java的问题无法运行（（，目前也没有解决方法，果然还是kali好 等下学大雾，再晚点想去听个汇编的讲座（目前还在考虑中  汇编的讲座听了，还蛮感兴趣的？？🤔但是r">
 <meta property="og:locale" content="zh_CH">
-<meta property="article:published_time" content="2024-03-20T09:57:45.000Z">
-<meta property="article:modified_time" content="2024-03-21T06:11:25.748Z">
+<meta property="article:published_time" content="2024-03-23T05:10:43.000Z">
+<meta property="article:modified_time" content="2024-03-23T15:59:46.959Z">
 <meta property="article:author" content="tay">
-<meta property="article:tag" content="ctf">
+<meta property="article:tag" content="每日一小结">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="TAY'S BLOG" type="application/atom+xml">
@@ -76,10 +76,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ctf-3-20" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-3-23小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/03/20/ctf-3-20/" class="article-date">
-  <time class="dt-published" datetime="2024-03-20T09:57:45.000Z" itemprop="datePublished">2024-03-20</time>
+    <a href="/2024/03/23/3-23%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-03-23T05:10:43.000Z" itemprop="datePublished">2024-03-23</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      ctf 3.20
+      3.23 小结
     </h1>
   
 
@@ -98,24 +98,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="后门查杀"><a href="#后门查杀" class="headerlink" title="后门查杀"></a>后门查杀</h2><p>Web shell（网络外壳）是一种恶意软件工具，通常以脚本文件的形式存在，用于在Web服务器上执行各种操作</p>
-<p>通过用d盾扫描网站文件，找到出问题的文件，再进去详细查看，找到flag</p>
+        <p>今日重大收获！！成功把binwalk下下来了！！耶耶耶，（在下了三个版本的py，两个版本的binwalk之后。以后找隐藏的文件会方便了很多了，好耶！！！</p>
+<p>今日buuctf刷题量五道，感觉还行，也没摸鱼，唯一遗憾的是图片隐写有个工具因为java的问题无法运行（（，目前也没有解决方法，果然还是kali好</p>
+<p>等下学大雾，再晚点想去听个汇编的讲座（目前还在考虑中</p>
 <hr>
-<h2 id="webshell后门"><a href="#webshell后门" class="headerlink" title="webshell后门"></a>webshell后门</h2><p>和前一题的解法一样</p>
-<hr>
-<h2 id="来一首歌吧"><a href="#来一首歌吧" class="headerlink" title="来一首歌吧"></a>来一首歌吧</h2><p>用audacity打开，看到了两条音轨，有一条明显是摩斯密码，解码即可</p>
-<hr>
-<h2 id="面具下的flag"><a href="#面具下的flag" class="headerlink" title="面具下的flag"></a>面具下的flag</h2><p>图片winhex打开，发现有压缩包，提取出来后发现压缩包是加密的，但是题目没有给任何关于密码的信息，不太可能暴力破解，因此应该是伪加密，09 00改为00 00后成功打开，发现是个.vmdk文件，照题解的意思，应该是要用kali里的7z解压，得到两个文件里面分别是Ook密码和brainfuck密码，解码后即得flag。</p>
-<p>但是由于我电脑上还没安装kali系统，遂选择用winhex打开，在里面也可以找到这两串密码，但是不知道什么原因brainfuck密码在winhex里面少了两个字节，导致题目一直没解出来((</p>
+<p>汇编的讲座听了，还蛮感兴趣的？？🤔但是rs佬讲得有点快，回头把x64dbg下了，自己调试一遍应该会好很多，不过这也等misc的搞得再熟练些再考虑学reverse，鼠鼠我分身乏术wuuu</p>
+<p>课内的东西又没咋学（（，明天一定啊啊啊啊啊</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="clu8dfxb6000wvgtgflxa63gn" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/23/3-23%E5%B0%8F%E7%BB%93/" data-id="clu8dfxax000dvgtgaxaxfp7i" data-title="3.23 小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
 
     </footer>
   </div>
@@ -123,19 +120,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/03/24/ctf-3-24/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          3.20小结
+          ctf 3.24
         
       </div>
     </a>
   
   
-    <a href="/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/03/23/ctf-3-23/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">3.19小结</div>
+      <div class="article-nav-title">ctf 3.23</div>
     </a>
   
 </nav>
