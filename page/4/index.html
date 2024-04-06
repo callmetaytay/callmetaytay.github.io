@@ -61,10 +61,10 @@
         
           <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
       </div>
     </div>
   </div>
@@ -72,6 +72,143 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-3-22小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/22/3-22%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-03-22T06:48:43.000Z" itemprop="datePublished">2024-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/22/3-22%E5%B0%8F%E7%BB%93/">3.22小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今日buuctf一下午就刷了三题，效率小低<del>我承认是我摆了</del>，晚上回来应该可以再搞一题罢（（</p>
+<p>今早因为那个口语课起得特别早啊，好不容易没早八的wuuu。后面去了图书馆说学下物理，结果都在扣手机。。。<del>我有罪，我有罪，阿弥陀佛</del></p>
+<p>中午看群里聊大类分流，又又又开始焦虑（（，还是太菜了啊啊啊</p>
+<p>早上高数课最后去找老师问了全微分的问题，好像终于会了一点了😭😭感动ing</p>
+<p>希望晚上排练完没有口语课，孩子想去操场唱歌😭😭😭😭😭😭😭😭😭😭</p>
+<hr>
+<p>祈祷生效了，没有英语课，所以去南操快乐的唱了好久的歌（（。回来又刷了道buuctf，卡在了rar文件的分离，明天研究下binwalk的使用，再看看有没有机会刷点acwing，毕竟到时候机试会有c语言的题~~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/22/3-22%E5%B0%8F%E7%BB%93/" data-id="clunve1gr000ni8tg7jdj6fif" data-title="3.22小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ctf-3-22" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/22/ctf-3-22/" class="article-date">
+  <time class="dt-published" datetime="2024-03-22T06:48:19.000Z" itemprop="datePublished">2024-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/22/ctf-3-22/">ctf 3.22</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="被劫持的神秘礼物"><a href="#被劫持的神秘礼物" class="headerlink" title="被劫持的神秘礼物"></a>被劫持的神秘礼物</h2><p>打开发现是流量包，过滤http包，发现有个包比较可疑，追踪它的tcp流，就找到了名字和密码，连起来照题目指示用32位的md5加密，即是flag</p>
+<hr>
+<h2 id="认真你就输了"><a href="#认真你就输了" class="headerlink" title="认真你就输了"></a>认真你就输了</h2><p>winhex打开，明显是个压缩包，且没加密，直接打开，一个个文件找，发现了个flag.txt的文件，拿到flag</p>
+<hr>
+<h2 id="藏藏藏"><a href="#藏藏藏" class="headerlink" title="藏藏藏"></a>藏藏藏</h2><p>打开是一张图片和一个txt文件，打开txt文件，里面是在提示flag的格式，猜测是五个数字？字母？单词？，再看图片，winhex打开，发现有zip压缩包且无加密，提取出来，是个docx文件，里面有一张二维码，扫描一下，拿到flag</p>
+<hr>
+<h2 id="被偷走的文件"><a href="#被偷走的文件" class="headerlink" title="被偷走的文件"></a>被偷走的文件</h2><p>流量包用wireshark打开，查找发现有一个rar文件，用binwalk提取出来（binwalk是网上题解的做法，but我还不会用binwalk，因为好像是要用py，所以目前这个题我还不会😓），发现加密且不是伪加密，暴力破解即可（没明白为什么网上的题解都是默认密码四位数，可能是四位数的密码比较常见？？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/22/ctf-3-22/" data-id="clunve1h0001ki8tg8mp1en5v" data-title="ctf 3.22" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-3-21小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/21/3-21%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-03-21T08:13:44.000Z" itemprop="datePublished">2024-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/21/3-21%E5%B0%8F%E7%BB%93/">3.21小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今天把工概课翘了，跑c楼刷buuctf，但是只刷了两题，感觉越到后面越依赖kali，搞个虚拟机非常有必要（（，明天或者周末，这个东西一定要搞下来，不然严重影响学习进度</p>
+<p>目前最常见的形式将图片隐写，压缩包加密，密码破译紧密联系在一起，伪加密，识别文件头来判断是否藏有文件在其中是容易卡我的点，且没有kali的话一些压缩文件的解压和zip文件的分离都更麻烦</p>
+<p>打算等下大补特补物理（因为我是个傻逼，一直没发现物理练习册有两本😅😅）,线代也要往后写下新学的东西</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/21/3-21%E5%B0%8F%E7%BB%93/" data-id="clunve1gl0008i8tgb7oid3jg" data-title="3.21小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-ctf-3-21" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -111,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/ctf-3-21/" data-id="clumrjncu001kggtgc1jyas9t" data-title="ctf 3.21" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/21/ctf-3-21/" data-id="clunve1gz001hi8tgfm09gpka" data-title="ctf 3.21" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -155,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" data-id="clumrjnci000dggtgdi51a0vk" data-title="3.20小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" data-id="clunve1gj0005i8tg7wkw4v8t" data-title="3.20小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -204,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="clumrjnct001fggtg7n0lfby2" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="clunve1gz001fi8tgh6ol6enc" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -246,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" data-id="clumrjnch0008ggtg77w9a0ph" data-title="3.19小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" data-id="clunve1gh0003i8tgem4d1ckp" data-title="3.19小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -292,7 +429,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/19/ctf-3-19/" data-id="clumrjncr0018ggtga4elgn1x" data-title="3.19 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/19/ctf-3-19/" data-id="clunve1gy001ci8tg2ryvbwlx" data-title="3.19 ctf" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -334,7 +471,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/18/ctf-3-18/" data-id="clumrjncs001aggtg2xqwbdqm" data-title="3.18 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/18/ctf-3-18/" data-id="clunve1gx001ai8tgddoigld1" data-title="3.18 ctf" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -378,152 +515,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/18/3-18%E5%B0%8F%E7%BB%93/" data-id="clumrjncd0003ggtg5wdb4w0h" data-title="3.18小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-3-17" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/17/ctf-3-17/" class="article-date">
-  <time class="dt-published" datetime="2024-03-17T06:48:00.000Z" itemprop="datePublished">2024-03-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/17/ctf-3-17/">ctf 3.17</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a>爱因斯坦</h2><p>010editor打开，发现里面还藏着一个zip文件，提取出来，发现加密，试着在010editor上改了下，发现是真加密，由于题目没有给出有关密码的任何信息，不知道密码长度的话光是暴力破解需要很久时间，因此我们应该是可以通过其它方法直接拿到密码的。</p>
-<p>打开属性，发现备注那里有信息，试着当作密码填进去，成功打开文件，拿到flag</p>
-<hr>
-<h2 id="小明的保险箱"><a href="#小明的保险箱" class="headerlink" title="小明的保险箱"></a>小明的保险箱</h2><p>看题目就可直接猜测是要转换成zip格式，archpr暴力破解密码</p>
-<p>010editor打开，发现FF D9就是.jpg的文件尾了，但是后面还有内容——52 61 72 21正是.rar的文件头，说明里面藏着一个.rar文件，符合了我们之前的猜想，接下来archpr解开密码即可</p>
-<hr>
-<h2 id="easycap"><a href="#easycap" class="headerlink" title="easycap"></a>easycap</h2><p>发现是.pcap文件，用wireshark打开，在分组字节流中没找到flag，那就追踪数据包的tcp流，拿到flag</p>
-<hr>
-<h2 id="隐藏的钥匙"><a href="#隐藏的钥匙" class="headerlink" title="隐藏的钥匙"></a>隐藏的钥匙</h2><p>010editor打开，发现有flag，同时有base64的提示，猜测是base64编码，解码后拿到flag</p>
-<hr>
-<h2 id="另一个世界"><a href="#另一个世界" class="headerlink" title="另一个世界"></a>另一个世界</h2><p>010editor打开，搜索flag没有结果，拉到最后，发现了一串二进制，将其转化为ascii码，即是flag</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/ctf-3-17/" data-id="clumrjncq0013ggtg3xjie95z" data-title="ctf 3.17" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-3-17小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-03-17T06:34:07.000Z" itemprop="datePublished">2024-03-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/17/3-17%E5%B0%8F%E7%BB%93/">3.17小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>昨晚熬夜熬到4.，wuuuuuu，早起计划被完全打乱。。。。。熬夜真是误人，现在两点半了才开始学习</p>
-<p>不管怎么样至少buuctf和线代，高数的计划一定要完成！！！</p>
-<p>buuctf两个小时刷了5道。</p>
-<p>新学了wireshark抓包，但还没太搞懂原理。。。。</p>
-<p>第一次遇到了与二进制有关的题目，猜测转码思路：二进制<del>其它进制</del>ascii码~base或者其它编码</p>
-<p>52 61 72 21是.rar的文件头，50 4B 03 04时.zip的文件头</p>
-<p>对于需要密码打开压缩包但是题目没有给任何有关密码的信息时，一般暴力破解行不通，要去寻找其它地方有没有信息</p>
-<hr>
-<p>线代还是没完成呃呃呃呃呃，高数没预习</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" data-id="clumrjnc50001ggtgg1059zpo" data-title="3.17小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-3-16小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-03-16T10:15:53.000Z" itemprop="datePublished">2024-03-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/16/3-16%E5%B0%8F%E7%BB%93/">3.16小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>buuctf刷了10个题，昨天一直是按着题解来写的，今天可以做到自己解题了，爽爽爽！！</p>
-<p>晚上只学了线代，中间还扣了至少两小时手机wuuuuu，专注力低下啊啊啊啊啊啊啊，线代感觉上课听了个寂寞<del>虽然本来也没咋听（罪恶ing</del>，明天非常有必要在b站上找个课程听听，感觉目前对线代完全处于一头雾水阶段</p>
-<p>今晚回宿舍的路上又在听all too well了，百听不厌，妈咪就是最伟大的！！！</p>
-<p>博客的图片没法显示，看看什么时候有时间搞搞</p>
-<p>明天争取早起，buuctf 2h，acwing 2h<del>看群u都在打cf手痒了kkkk，顺便恢复下手感</del>，大雾至少把课本上的题写个一章，高数完成练习册，把空间几何的课后习题写完，线代找个靠谱的网课或者教材从头看。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/16/3-16%E5%B0%8F%E7%BB%93/" data-id="clumrjnc00000ggtg5yhzbhj6" data-title="3.16小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/18/3-18%E5%B0%8F%E7%BB%93/" data-id="clunve1gi0004i8tg2wvo5o4n" data-title="3.18小结" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -541,7 +533,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -572,7 +564,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
     </div>
@@ -582,9 +574,21 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2024/04/06/py/">py</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/06/ctf-4-6/">ctf 4.6</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/06/4-6%E5%B0%8F%E7%BB%93/">4.6小结</a>
+          </li>
         
           <li>
             <a href="/2024/04/05/4-5%E5%B0%8F%E7%BB%93/">4.5小结</a>
@@ -592,18 +596,6 @@
         
           <li>
             <a href="/2024/04/05/ctf-4-5/">ctf 4.5</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/02/4-2%E5%B0%8F%E7%BB%93/">4.2小结</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/02/ctf-4-2/">ctf 4.2</a>
-          </li>
-        
-          <li>
-            <a href="/2024/04/01/4-1%E5%B0%8F%E7%BB%93/">4.1小结</a>
           </li>
         
       </ul>
