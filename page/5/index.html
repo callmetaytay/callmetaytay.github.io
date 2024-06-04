@@ -73,6 +73,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ctf-3-26" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/26/ctf-3-26/" class="article-date">
+  <time class="dt-published" datetime="2024-03-26T09:13:13.000Z" itemprop="datePublished">2024-03-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/26/ctf-3-26/">ctf 3.26</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="一叶障目"><a href="#一叶障目" class="headerlink" title="一叶障目"></a>一叶障目</h2><p>涉及到有关crc的知识点，</p>
+<p>通过编写脚本，暴力破解出正确的宽高，修改宽高，flag就显现了出来</p>
+<p>（还不会python，遂还不会写</p>
+<hr>
+<h2 id="神奇的二维码"><a href="#神奇的二维码" class="headerlink" title="神奇的二维码"></a>神奇的二维码</h2><p>二维码一扫，果然啥有用信息都没有（（，binwalk一下，分离出了一堆文件，encode.txt的文件里面是base64码，解码打开其中一个压缩包，拿到几张p用都没有的图片；flag.doc的文件里面也是base64码（需要经过很多很多次的反复解码才能解出来<del>byd搁着套娃是吧</del>，以至于刚开始我根本没意识到那是base64，开始有过猜测，但是它仅一次解码出来的东西看起来不太有用，以及我之前一直以为base64码的末尾是一定会有“&#x3D;”的），解码后用它打开第二个压缩包，把音频文件用auducity打开，果然是摩斯密码，解码，拿到flag</p>
+<p><strong>此题教训</strong>：base64不一定是会以“&#x3D;”结尾；有些编码是套娃而成的，需要反复解码</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/26/ctf-3-26/" data-id="clx05cvyf00280otg5qz08mjd" data-title="ctf 3.26" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-3-25小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/25/3-25%E5%B0%8F%E7%BB%93/" class="article-date">
@@ -100,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/25/3-25%E5%B0%8F%E7%BB%93/" data-id="clx03t54x000fwctgf9513n7y" data-title="3.25小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/25/3-25%E5%B0%8F%E7%BB%93/" data-id="clx05cvxw000f0otg1zal8swc" data-title="3.25小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -144,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/25/ctf-3-25/" data-id="clx03t55j0023wctg96uf9dki" data-title="ctf 3.25" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/25/ctf-3-25/" data-id="clx05cvye00260otg30u88b00" data-title="ctf 3.25" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -185,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/24/3-24%E5%B0%8F%E7%BB%93/" data-id="clx03t54z000lwctgerna0jn5" data-title="3.24小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/24/3-24%E5%B0%8F%E7%BB%93/" data-id="clx05cvxx000h0otg7g51a9vv" data-title="3.24小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -227,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/24/ctf-3-24/" data-id="clx03t55k0027wctggkvl57wp" data-title="ctf 3.24" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/24/ctf-3-24/" data-id="clx05cvye00240otg3k6s4wwj" data-title="ctf 3.24" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -273,7 +319,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/23/3-23%E5%B0%8F%E7%BB%93/" data-id="clx03t54v000awctg7wdwh8mn" data-title="3.23 小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/23/3-23%E5%B0%8F%E7%BB%93/" data-id="clx05cvxv000d0otg6ez3fvnv" data-title="3.23 小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -325,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/23/ctf-3-23/" data-id="clx03t55i0021wctgbeof6a7e" data-title="ctf 3.23" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/23/ctf-3-23/" data-id="clx05cvye00220otg3zbje91w" data-title="ctf 3.23" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -365,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/22/misc%E4%B9%8B%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" data-id="clx03t5620034wctga4qu780w" data-title="misc之流量分析" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/22/misc%E4%B9%8B%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" data-id="clx05cvyk002y0otgb0dffedu" data-title="misc之流量分析" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -420,7 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/22/misc%E4%B9%8B%E9%9A%90%E5%86%99/" data-id="clx03t5630035wctgd97xcna1" data-title="misc之隐写" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/22/misc%E4%B9%8B%E9%9A%90%E5%86%99/" data-id="clx05cvyn00350otgfv368aqs" data-title="misc之隐写" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -467,58 +513,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/22/3-22%E5%B0%8F%E7%BB%93/" data-id="clx03t54w000dwctgf893fugy" data-title="3.22小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/22/3-22%E5%B0%8F%E7%BB%93/" data-id="clx05cvxs00080otgf5f0e91m" data-title="3.22小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-3-22" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/22/ctf-3-22/" class="article-date">
-  <time class="dt-published" datetime="2024-03-22T06:48:19.000Z" itemprop="datePublished">2024-03-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/22/ctf-3-22/">ctf 3.22</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="被劫持的神秘礼物"><a href="#被劫持的神秘礼物" class="headerlink" title="被劫持的神秘礼物"></a>被劫持的神秘礼物</h2><p>打开发现是流量包，过滤http包，发现有个包比较可疑，追踪它的tcp流，就找到了名字和密码，连起来照题目指示用32位的md5加密，即是flag</p>
-<hr>
-<h2 id="认真你就输了"><a href="#认真你就输了" class="headerlink" title="认真你就输了"></a>认真你就输了</h2><p>winhex打开，明显是个压缩包，且没加密，直接打开，一个个文件找，发现了个flag.txt的文件，拿到flag</p>
-<hr>
-<h2 id="藏藏藏"><a href="#藏藏藏" class="headerlink" title="藏藏藏"></a>藏藏藏</h2><p>打开是一张图片和一个txt文件，打开txt文件，里面是在提示flag的格式，猜测是五个数字？字母？单词？，再看图片，winhex打开，发现有zip压缩包且无加密，提取出来，是个docx文件，里面有一张二维码，扫描一下，拿到flag</p>
-<hr>
-<h2 id="被偷走的文件"><a href="#被偷走的文件" class="headerlink" title="被偷走的文件"></a>被偷走的文件</h2><p>流量包用wireshark打开，查找发现有一个rar文件，用binwalk提取出来（binwalk是网上题解的做法，but我还不会用binwalk，因为好像是要用py，所以目前这个题我还不会😓），发现加密且不是伪加密，暴力破解即可（没明白为什么网上的题解都是默认密码四位数，可能是四位数的密码比较常见？？</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/22/ctf-3-22/" data-id="clx03t55h001xwctg5q91679w" data-title="ctf 3.22" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
 
     </footer>
   </div>
@@ -578,6 +577,10 @@
       <ul>
         
           <li>
+            <a href="/2024/06/04/%E8%81%9A%E7%B1%BB/">聚类</a>
+          </li>
+        
+          <li>
             <a href="/2024/06/04/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/">贝叶斯分类器</a>
           </li>
         
@@ -591,10 +594,6 @@
         
           <li>
             <a href="/2024/05/29/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/">模型评估与选择</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/25/machine-learning/">deep learning</a>
           </li>
         
       </ul>

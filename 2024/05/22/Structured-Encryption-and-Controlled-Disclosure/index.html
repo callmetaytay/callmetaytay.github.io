@@ -14,7 +14,7 @@
 <meta property="og:description" content="背景-&gt; 问题-&gt; 方案-&gt; 效果 Structured Encryption:generalizes previous work on symmetric searchable encryption to the setting of arbitrarily-structured data. controlled disclosure:a data owner wishes t">
 <meta property="og:locale" content="zh_CH">
 <meta property="article:published_time" content="2024-05-22T04:56:21.000Z">
-<meta property="article:modified_time" content="2024-06-02T14:47:04.542Z">
+<meta property="article:modified_time" content="2024-06-04T08:07:38.217Z">
 <meta property="article:author" content="tay">
 <meta property="article:tag" content="paper">
 <meta name="twitter:card" content="summary">
@@ -110,13 +110,15 @@
 <p>i：索引，用于将m和其对应的v联系起来</p>
 <p>j：经过随机置换后的i</p>
 <p>w：关键词，每一个w都关联到一个或多个数据项的索引（用L（w）表示）</p>
+<p>c：经过加密的m</p>
 <p><strong>m，v通过i相联系，w通过i与v，m联系</strong></p>
 <h2 id="Gen"><a href="#Gen" class="headerlink" title="Gen"></a>Gen</h2><p>K1，K2用于伪随机函数的加密，K3用于m的加密</p>
 <h2 id="Enc"><a href="#Enc" class="headerlink" title="Enc"></a>Enc</h2><p>i随机置换为j</p>
+<p><strong>这里的随机置换，即是PRP（伪随机置换），在这里的作用是切断c与m之间的直接联系</strong></p>
 <p>对v：以字典形式储存。搜索键：以K1进行为随机函数加密的w，值：v与j组成的数组与以K1进行为随机函数加密的w进行异或操作。</p>
 <p>对m：</p>
 <p>随机置换后，用K3进行私钥加密</p>
-<p><strong>需要注意的是m和v都要先填充为一个固定的长度</strong></p>
+<p><strong>需要注意的是m和v都要先填充为一个固定的长度，这是一个常用的保证安全性的手段，如果不padding，存储的字符串长度不相等，攻击者基于这个信息可以打破方案的安全性</strong></p>
 <h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>输出以K2进行伪随机函数加密的w，以K1进行为随机函数加密的w</p>
 <h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><p>将以K1进行为随机函数加密的w的搜索键所对应的v与j组成的数组与以K1进行为随机函数加密的w进行异或操作，复原出v和j</p>
 <h2 id="Dec"><a href="#Dec" class="headerlink" title="Dec"></a>Dec</h2><p>通过K3解密所有j对应的密文</p>
@@ -124,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" data-id="clx03t55d001iwctg5xu2b4ew" data-title="Structured Encryption and Controlled Disclosure" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" data-id="clx05cvy9001j0otg9n1b9n1a" data-title="Structured Encryption and Controlled Disclosure" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -200,6 +202,10 @@
       <ul>
         
           <li>
+            <a href="/2024/06/04/%E8%81%9A%E7%B1%BB/">聚类</a>
+          </li>
+        
+          <li>
             <a href="/2024/06/04/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/">贝叶斯分类器</a>
           </li>
         
@@ -213,10 +219,6 @@
         
           <li>
             <a href="/2024/05/29/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/">模型评估与选择</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/25/machine-learning/">deep learning</a>
           </li>
         
       </ul>
