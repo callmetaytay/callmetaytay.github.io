@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>ml | TAY&#39;S BLOG</title>
+  <title>deep learning | TAY&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="张量张量（Tensor）是数学和物理学中的一个概念，用于表示多维数组。它是向量和矩阵的推广，可以有任意数量的维度。张量在机器学习和深度学习中非常重要，特别是在使用像 PyTorch 和 TensorFlow 这样的框架时，数据通常表示为张量。 张量的维度类似与数组，从0开始算起  Pytorch函数1.torch.squeeze(torch,dim)： 用于且只能删除大小为1的维度 2.torch">
+  <meta name="description" content="Basic Data ExplprationMachine Learning ModelModel Validationeffectmeasure the quality of your model.It is the key to iteratively improving your model. metrics for summarizing model qualityMean Absolut">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ml">
-<meta property="og:url" content="http://example.com/2024/05/21/ml/index.html">
+<meta property="og:title" content="deep learning">
+<meta property="og:url" content="http://example.com/2024/05/25/machine-learning/index.html">
 <meta property="og:site_name" content="TAY&#39;S BLOG">
-<meta property="og:description" content="张量张量（Tensor）是数学和物理学中的一个概念，用于表示多维数组。它是向量和矩阵的推广，可以有任意数量的维度。张量在机器学习和深度学习中非常重要，特别是在使用像 PyTorch 和 TensorFlow 这样的框架时，数据通常表示为张量。 张量的维度类似与数组，从0开始算起  Pytorch函数1.torch.squeeze(torch,dim)： 用于且只能删除大小为1的维度 2.torch">
+<meta property="og:description" content="Basic Data ExplprationMachine Learning ModelModel Validationeffectmeasure the quality of your model.It is the key to iteratively improving your model. metrics for summarizing model qualityMean Absolut">
 <meta property="og:locale" content="zh_CH">
-<meta property="article:published_time" content="2024-05-21T13:19:54.000Z">
-<meta property="article:modified_time" content="2024-05-22T04:56:02.783Z">
+<meta property="article:published_time" content="2024-05-25T03:19:20.000Z">
+<meta property="article:modified_time" content="2024-05-26T15:46:33.204Z">
 <meta property="article:author" content="tay">
 <meta property="article:tag" content="machine learning">
 <meta name="twitter:card" content="summary">
@@ -76,10 +76,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-ml" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-machine-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/05/21/ml/" class="article-date">
-  <time class="dt-published" datetime="2024-05-21T13:19:54.000Z" itemprop="datePublished">2024-05-21</time>
+    <a href="/2024/05/25/machine-learning/" class="article-date">
+  <time class="dt-published" datetime="2024-05-25T03:19:20.000Z" itemprop="datePublished">2024-05-25</time>
 </a>
     
   </div>
@@ -90,7 +90,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      ml
+      deep learning
     </h1>
   
 
@@ -98,22 +98,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="张量"><a href="#张量" class="headerlink" title="张量"></a>张量</h1><p>张量（Tensor）是数学和物理学中的一个概念，用于表示多维数组。它是向量和矩阵的推广，可以有任意数量的维度。张量在机器学习和深度学习中非常重要，特别是在使用像 PyTorch 和 TensorFlow 这样的框架时，<strong>数据通常表示为张量</strong>。</p>
-<p>张量的维度类似与数组，从0开始算起</p>
-<hr>
-<h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>1.<code>torch.squeeze(torch,dim)</code>：</p>
-<p>用于且只能删除大小为1的维度</p>
-<p>2.<code>torch.unsqueeze(torch,dim)</code>：</p>
-<p>用于在指定维度插入一个大小为1的新维度</p>
-<p>3.<code>torch.transpose(torch,dim1,dim2)</code>：</p>
-<p>用于交换张量中指定的两个维度，类似于矩阵中的转置</p>
-<p>4.<code>torch.cat(torch,dim)</code>：</p>
-<p>用于沿指定维度连接张量</p>
+        <h1 id="Basic-Data-Explpration"><a href="#Basic-Data-Explpration" class="headerlink" title="Basic Data Explpration"></a>Basic Data Explpration</h1><h1 id="Machine-Learning-Model"><a href="#Machine-Learning-Model" class="headerlink" title="Machine Learning Model"></a>Machine Learning Model</h1><h1 id="Model-Validation"><a href="#Model-Validation" class="headerlink" title="Model Validation"></a>Model Validation</h1><h2 id="effect"><a href="#effect" class="headerlink" title="effect"></a>effect</h2><p>measure the quality of your model.<strong>It is the key to iteratively improving your model.</strong></p>
+<h2 id="metrics-for-summarizing-model-quality"><a href="#metrics-for-summarizing-model-quality" class="headerlink" title="metrics for summarizing model quality"></a>metrics for summarizing model quality</h2><p><strong>Mean Absolute Error</strong>(MAE):the average of those absolute errors.(error &#x3D; actual-predicted)</p>
+<h2 id="Split"><a href="#Split" class="headerlink" title="Split"></a>Split</h2><p>use the function <code>train_test_split</code> to break up the data into two pieces,<strong>training data and validation data.</strong></p>
+<h1 id="Underfitting-and-Overfitting"><a href="#Underfitting-and-Overfitting" class="headerlink" title="Underfitting and Overfitting"></a>Underfitting and Overfitting</h1><h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p>As the tree gets deeper,the dataset gets sliced up into leaves with fewer data.This will make predictions that are quite close to the actual data,but they make very unreliable predictions for the new data because of the small training data.</p>
+<h2 id="Underfitting"><a href="#Underfitting" class="headerlink" title="Underfitting"></a>Underfitting</h2><p>If the tree is very shallow,the model will fails to capture important distinctions and patterns in the data,so it performs poorly even in training data.</p>
+<p><strong>So the things we want to do is to find a compromise between underfitting and overfitting.</strong></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/21/ml/" data-id="clwhj1hi3002wsktghfhp1yjc" data-title="ml" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/05/25/machine-learning/" data-id="clx03t55r002xwctgbbnjdo8d" data-title="deep learning" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -125,19 +120,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2024/05/29/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
-          Structured Encryption and Controlled Disclosure
+          模型评估与选择
         
       </div>
     </a>
   
   
-    <a href="/2024/04/28/%E6%95%B0%E6%A8%A1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2024/05/23/Overfitting/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Älter</strong>
-      <div class="article-nav-title">数模常见模型及算法</div>
+      <div class="article-nav-title">Overfitting</div>
     </a>
   
 </nav>
@@ -167,7 +162,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 15px;">ctf-misc</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/paper/" style="font-size: 10px;">paper</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/tip/" style="font-size: 12.5px;">tip</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 17.5px;">每日一小结</a>
+      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 14px;">ctf-misc</a> <a href="/tags/machine-learning/" style="font-size: 16px;">machine learning</a> <a href="/tags/paper/" style="font-size: 10px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/tip/" style="font-size: 12px;">tip</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18px;">每日一小结</a>
     </div>
   </div>
 
@@ -176,7 +171,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
     </div>
   </div>
 
@@ -189,23 +184,23 @@
       <ul>
         
           <li>
-            <a href="/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/">Structured Encryption and Controlled Disclosure</a>
+            <a href="/2024/06/04/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/">贝叶斯分类器</a>
           </li>
         
           <li>
-            <a href="/2024/05/21/ml/">ml</a>
+            <a href="/2024/05/31/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">神经网络</a>
           </li>
         
           <li>
-            <a href="/2024/04/28/%E6%95%B0%E6%A8%A1/">数模常见模型及算法</a>
+            <a href="/2024/05/30/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/">线性模型</a>
           </li>
         
           <li>
-            <a href="/2024/04/18/ctf-4-18/">ctf 4.18</a>
+            <a href="/2024/05/29/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/">模型评估与选择</a>
           </li>
         
           <li>
-            <a href="/2024/04/09/4-9%E5%B0%8F%E7%BB%93/">4.9小结</a>
+            <a href="/2024/05/25/machine-learning/">deep learning</a>
           </li>
         
       </ul>
