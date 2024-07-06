@@ -73,10 +73,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-聚类" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Model-Stealing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2024/06/04/%E8%81%9A%E7%B1%BB/" class="article-date">
-  <time class="dt-published" datetime="2024-06-04T08:33:25.000Z" itemprop="datePublished">2024-06-04</time>
+    <a href="/2024/07/06/Model-Stealing/" class="article-date">
+  <time class="dt-published" datetime="2024-07-06T07:57:34.000Z" itemprop="datePublished">2024-07-06</time>
 </a>
     
   </div>
@@ -87,7 +87,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/04/%E8%81%9A%E7%B1%BB/">聚类</a>
+      <a class="p-name article-title" href="/2024/07/06/Model-Stealing/">Model Stealing</a>
     </h1>
   
 
@@ -95,15 +95,150 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="聚类任务"><a href="#聚类任务" class="headerlink" title="聚类任务"></a>聚类任务</h1>
+        <p>Formal model stealing</p>
+<p><img src="C:\Users\梁韵扬\AppData\Local\Temp\0003d5ef-cf56-4605-91c5-e81b7c6d19f0.png" alt="0003d5ef-cf56-4605-91c5-e81b7c6d19f0"></p>
+<p>data-free model stealing<img src="C:\Users\梁韵扬\AppData\Local\Temp\74d6f4d8-6993-4a01-bc65-3cfb68ce3dcb.png" alt="74d6f4d8-6993-4a01-bc65-3cfb68ce3dcb"></p>
+<p>similar to GAN</p>
+<p>use <strong>zeroth-order gradient estimation</strong> to approximate the gradient of the loss function LG.In black-box model we can’t comput the gradient directly so we use <strong>zeroth-order gradient estimation</strong> to comput the gradient indirectly by using the output of the model.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/06/04/%E8%81%9A%E7%B1%BB/" data-id="clx05cvyt003k0otgeeuwhec6" data-title="聚类" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/07/06/Model-Stealing/" data-id="cly9y5m5o0001gctgdawaers3" data-title="Model Stealing" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SEISA" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/27/SEISA/" class="article-date">
+  <time class="dt-published" datetime="2024-06-27T11:54:28.000Z" itemprop="datePublished">2024-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/27/SEISA/">SEISA</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h1><h2 id="Practical-problem"><a href="#Practical-problem" class="headerlink" title="Practical problem"></a>Practical problem</h2><p>Many organizations currently prefer to host their data and services on public cloud platforms, but it will cause privacy breaches and evenn legal issues.</p>
+<h2 id="Past-solutions"><a href="#Past-solutions" class="headerlink" title="Past solutions"></a>Past solutions</h2><p>1.Design over encrypted datasets by utilizing order preserving encryption (maintains the order of plaintext data in its encrypted form) and Min-Hashf (a probabilistic algorithm used to estimate the similarity between large sets).</p>
+<p>drawback:</p>
+<p>Only suitable for image search algorithm based on visual words representation of images and performed low search accuracy.</p>
+<p>2.Based on homomorphic encryption.</p>
+<p>drawback:</p>
+<p>High accuracy but more cost and also need frequent user engagement.</p>
+<h2 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h2><p>efficiency</p>
+<p>accuracy</p>
+<p>search access control:</p>
+<p>Existing secure image search techniques and access control techniques have different encryption mechanisms.</p>
+<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Design a lightweight encryption tool that makes search operations over ciphertexts have the same complexity as searches over plaintexts and can support search access control.</p>
+<h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><p><strong>SEISA</strong>:</p>
+<p>A secure and efficient image search scheme over encrypted dataset with access control .</p>
+<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>The search access control doesn’t need additional authorizing steps. </p>
+<p>High efficiency and accuracy</p>
+<h3 id="Measure"><a href="#Measure" class="headerlink" title="Measure"></a>Measure</h3><p>1.Using matrix based encryption design and encrypt image features based on the vector space model for high efficiency and accuracy.</p>
+<p>2.Design an efficient tree-based index construction by utilizing the k-means clustering algorithm for efficiency.</p>
+<p>3.Propose a secure k-means outsourcing algorithm ,which allows the data owner to delegate most computational tasks to the cloud.</p>
+<p>4.Achieve search access control by desingning a novel and lightweight polynommial based access policy.</p>
+<p>[3] [4] can be used as independent rools for other related fields.</p>
+<h3 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h3><p>Implemented a prototype of SEISA on Amazon EC2 cloud over 10 million images.</p>
+<h1 id="Backgrounds-And-Preliminarise"><a href="#Backgrounds-And-Preliminarise" class="headerlink" title="Backgrounds And Preliminarise"></a>Backgrounds And Preliminarise</h1><h2 id="Background-of-Image-Search"><a href="#Background-of-Image-Search" class="headerlink" title="Background of Image Search"></a>Background of Image Search</h2><p>BOF:</p>
+<p>Assign image descriptors into visual words and then compress them into a binary vector.</p>
+<p>Fisher vector:</p>
+<p>more accuracy than BOF.In this work,we use fisher vector to extract image descriptor vectors.</p>
+<h2 id="Mean-Average-Precision"><a href="#Mean-Average-Precision" class="headerlink" title="Mean Average Precision"></a>Mean Average Precision</h2><p>It is a way to measure the search accuracy of image search .</p>
+<h1 id="System-Model-And-Threat-Model"><a href="#System-Model-And-Threat-Model" class="headerlink" title="System Model And Threat Model"></a>System Model And Threat Model</h1><h2 id="System-Model"><a href="#System-Model" class="headerlink" title="System Model"></a>System Model</h2><p>three major entities: </p>
+<p>the cloud server, the data owner and users.</p>
+<h2 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h2><p>cloud server : curious but honest </p>
+<p>Preventing the cloud server from learning the following information: 1) Privacy of all images and their corresponding descriptor vectors; 2) Privacy of all search images from search requests; 3) Privacy of all data associated with the index construction; 4) Query unlinkability, attackers should not be able to tell whether or not two or more search are from the same search image.</p>
+<h3 id="Known-Ciphertext-Model"><a href="#Known-Ciphertext-Model" class="headerlink" title="Known Ciphertext Model"></a>Known Ciphertext Model</h3><p>encrypted images and corresponding descriptor vectors, encrypted searchable index construction, encrypted search requests.</p>
+<h3 id="Known-Background-Model"><a href="#Known-Background-Model" class="headerlink" title="Known Background Model"></a>Known Background Model</h3><p>A stronger threat model and may extract the statistical information of a specific encrypted image in the dataset. </p>
+<h1 id="Our-Construction"><a href="#Our-Construction" class="headerlink" title="Our  Construction"></a>Our  Construction</h1><h2 id="Construction-of-SEIS"><a href="#Construction-of-SEIS" class="headerlink" title="Construction  of  SEIS"></a>Construction  of  SEIS</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/27/SEISA/" data-id="cly9y5m5y0003gctg6waugry8" data-title="SEISA" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Membership-Inference-Attacks-Against-Machine-Learning-Models" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/27/Membership-Inference-Attacks-Against-Machine-Learning-Models/" class="article-date">
+  <time class="dt-published" datetime="2024-06-27T11:39:06.000Z" itemprop="datePublished">2024-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/27/Membership-Inference-Attacks-Against-Machine-Learning-Models/">Membership Inference Attacks Against Machine Learning Models</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>1.<strong>Membership inference attack</strong>: given a data record and black-box access to a model,determine if the record was in the model’s training dataset.</p>
+<p>2.Train our own inference model to recoginze differences in the target model’s predictions on the inputs that it trained on versus the inputs that it did not train on</p>
+<p>3.Some models cen be vulnerable to membership inference attacks.We then investigate the factors that influence this leakage and evaluate mitigation strategies.</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>The intenet giants offering “machine learning as a service” to the customer in possession of a dataset and a data classification task.And the dataset is usually made by the activities of individual users.</p>
+<h2 id="Our-contributions"><a href="#Our-contributions" class="headerlink" title="Our contributions"></a>Our contributions</h2><p>Quanitify membership information leakage through the prediction outputs of machine learning models.</p>
+<p>We turn machine learning against itself and train an attack model whose purpose is to distinguish the target model’s behavior on the training inputs from its behavior on the inputs that it did not encounter during training.<strong>turn this problem into a classification problem.</strong></p>
+<h1 id="Menbership-Inderence"><a href="#Menbership-Inderence" class="headerlink" title="Menbership Inderence"></a>Menbership Inderence</h1><h2 id="Overview-of-the-attack"><a href="#Overview-of-the-attack" class="headerlink" title="Overview of the attack"></a>Overview of the attack</h2><p>Principle of utilization：“behave differently on the data that they were trained on versus the data that they “see” for the first time.” </p>
+<p>Method: build multiple “shadow” models intended to behave similarly to the target model.So that we can know the ground truth for each shadow model.</p>
+<h2 id="Shadow-models"><a href="#Shadow-models" class="headerlink" title="Shadow models"></a>Shadow models</h2><p>Here the type and structure of the target model are not known, but the attacker can use exactly the same service (e.g., Google Prediction API) to train the shadow model as was used to train the target model</p>
+<p>“The more shadow models, the more accurate the attack model will be.” </p>
+<h2 id="Generating-training-data-for-shadow-models"><a href="#Generating-training-data-for-shadow-models" class="headerlink" title="Generating training data for shadow models"></a>Generating training data for shadow models</h2><h3 id="Model-based-synthesis"><a href="#Model-based-synthesis" class="headerlink" title="Model-based synthesis"></a>Model-based synthesis</h3><p>Using hill-climbing algorithm</p>
+<p><img src="C:\Users\梁韵扬\AppData\Local\Temp\b8623e22-0d80-40b2-838f-fe5752f0e1c9.png" alt="b8623e22-0d80-40b2-838f-fe5752f0e1c9"></p>
+<h3 id="Statistics-based-synthesis"><a href="#Statistics-based-synthesis" class="headerlink" title="Statistics-based synthesis"></a>Statistics-based synthesis</h3><p> The attacker may have some statistical information about the population from which the target model’s training data was drawn</p>
+<h3 id="Noisy-real-data"><a href="#Noisy-real-data" class="headerlink" title="Noisy real data"></a>Noisy real data</h3><p>The attacker may have access to some data that is similar to the target model’s training data and can be considered as a “noisy” version thereof.</p>
+<h2 id="Training-the-attack-model"><a href="#Training-the-attack-model" class="headerlink" title="Training the attack model"></a>Training the attack model</h2><p>it learns to perform a much subtler task: how to distinguish between the training inputs classified with high confidence and other, non-training inputs that are also classified with high confidence.</p>
+<h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h1><h2 id="data"><a href="#data" class="headerlink" title="data"></a>data</h2><p>image, purchase, locations, hospital stays, handwritten digits, census income.</p>
+<h2 id="target-models"><a href="#target-models" class="headerlink" title="target models"></a>target models</h2><p>cloud-based service , neural networks</p>
+<h2 id="Experimental-setup"><a href="#Experimental-setup" class="headerlink" title="Experimental setup"></a>Experimental setup</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/27/Membership-Inference-Attacks-Against-Machine-Learning-Models/" data-id="cly9y5m5j0000gctgh8qo1m60" data-title="Membership Inference Attacks Against Machine Learning Models" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
 
     </footer>
   </div>
@@ -259,11 +394,12 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h1 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h1><p>​	给定由 d 个属性描述的示例 x &#x3D;(x1;x2;…;xd）, 其中xi是 x 在第 i个属 性上的取值,线性模型 （linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 f（x） &#x3D; w1x1 + w2x2 + • • • + wdxd + b ,</p>
-<p>​	线性模型形式简单、易于建模,但却蕴涵着机器学习中一些重要的基本思 想.许多功能更为强大的非线性模型 （nonlinear mod 叫可在线性模型的基础上 通过引入层级结构或高维映射而得.此外，由于付直观表达了各属性在预测中 的重要性，因此线性模型有很好的可解释性 （comprehensibility）</p>
-<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="先考虑只有一个属性的情况"><a href="#先考虑只有一个属性的情况" class="headerlink" title="先考虑只有一个属性的情况"></a>先考虑只有一个属性的情况</h2><p>​	我们可试图让均方误差最小化。均方误差有非常好的几何意义，它对应了常用的欧几里得距离或简称“欧 氏距离” (Euclidean distance). 基于均方误差最小化来进行模型求解的方法称 为“最小二乘法” (least square method). 在线性回归中，最小二乘法就是试图 找到一条直线，使所有样本到直线上的欧氏距离之和最小.</p>
+<p>​	线性模型形式简单、易于建模,但却蕴涵着机器学习中一些重要的基本思想.许多功能更为强大的非线性模型 （nonlinear mod） 可在线性模型的基础上通过引入层级结构或高维映射而得.此外，由于直观表达了各属性在预测中的重要性，因此线性模型有很好的可解释性 （comprehensibility）</p>
+<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="先考虑只有一个属性的情况"><a href="#先考虑只有一个属性的情况" class="headerlink" title="先考虑只有一个属性的情况"></a>先考虑只有一个属性的情况</h2><p>​	我们可试图让均方误差最小化。均方误差有非常好的几何意义，它对应了常用的欧几里得距离或简称“欧氏距离” (Euclidean distance). 基于均方误差最小化来进行模型求解的方法称 为“最小二乘法” (least square method). 在线性回归中，最小二乘法就是试图找到一条直线，使所有样本到直线上的欧氏距离之和最小.</p>
 <h2 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h2><p>​	思想和一个属性时是一样的，只是换成了矩阵的形式。由于现实中往往不一定是满秩矩阵，因此会存在多解的情况。这时引入正则化项。</p>
+<p>​	<strong>正则化项</strong>：正则化项（regularization term）在机器学习和统计学中用于防止模型过拟合。过拟合是指模型在训练数据上表现很好，但在未见过的数据上表现不好。正则化通过在模型的损失函数中添加一个惩罚项来约束模型的复杂度，从而提高模型的泛化能力。通过引入正则化项，模型能够更好地处理噪声数据，并且在面对新数据时具有更强的预测能力。</p>
 <p>​	令模型预测值逼近 y 衍生物，比如 lny，y^2……。这样得到的模型称为“广义线性模型”</p>
-<h1 id="对数几率回归"><a href="#对数几率回归" class="headerlink" title="对数几率回归"></a>对数几率回归</h1><p>​	对于分类任务，只需找一个单调可微函数将分类任务的真实标记 y 与线性回归模型的预测值联系起来.考虑二分类任务，其输出标记y为0或1，而线性回归模型产生的预测值 z 为实值，因此我们需要将 z 转化为0或1.</p>
+<h1 id="对数几率回归"><a href="#对数几率回归" class="headerlink" title="对数几率回归"></a>对数几率回归</h1><p>​	对于分类任务，只需找一个单调可微函数将分类任务的真实标记 y 与线性回归模型的预测值联系起来.考虑<strong>二分类任务</strong>，其输出标记y为0或1，而线性回归模型产生的预测值 z 为实值，因此我们需要将 z 转化为0或1.</p>
 <p>​	这里我们常使用“对数几率函数”：y&#x3D;1&#x2F;(1+e^(-z)).对数几率函数是一种 “Sigmoid 函数”它将 z 值转化为一个 接近 0 或 1 的 g 值,并且其输出值在 z&#x3D; 0 附近变化很陡.</p>
 <h1 id="线性判别分析"><a href="#线性判别分析" class="headerlink" title="线性判别分析"></a>线性判别分析</h1><p>​	给定训练样例集，设法将样例投影到一条直线上, 使得同类样例的投影点尽可能接近、异类样例的投影点尽可能远离；在对新样 本进行分类时，将其投影到同样的这条直线上，再根据投影点的位置来确定新 样本的类别.</p>
 <h1 id="多分类学习"><a href="#多分类学习" class="headerlink" title="多分类学习"></a>多分类学习</h1><h2 id="OvO"><a href="#OvO" class="headerlink" title="OvO"></a>OvO</h2><p>​	OvO将任务的这 N 个类别两两配对,从而产生 N(N - 1)&#x2F;2个二分类任务,例如OvO 将为区分类别 Ci 和 Cj 训练一个分类器，该分类器把数据集中的 Ci 类样例作为正例，Cj 类样例作为反例.在测试阶段，新样本将同时提交给所有分类器，于是我们将得到N(N-1)&#x2F;2个分类结果,最终结果可通过投票产生：即把被预测得最多的类别作为最终分类结果.</p>
@@ -271,12 +407,12 @@
 <p>​	容易看出，OvR 只需训练 N 个分类器，而 OvO 需训练 N（N - 1 ）&#x2F;2 个分 类器，因此，OvO 的存储开销和测试时间开销通常比 OvR 更大.但在训练时, OvR 的每个分类器均使用全部训练样例，而 OvO 的每个分类器仅用到两个类 的样例，因此，在类别很多时，OvO 的训练时间开销通常比 OvR 更小.至于预 测性能，则取决于具体的数据分布,在多数情形下两者差不多.</p>
 <h2 id="MvM"><a href="#MvM" class="headerlink" title="MvM"></a>MvM</h2><p>​	MvM 是绛次将若干个类作为正类,若干个其他类作为反类.显然， OvO 和 OvR 是 MvM 的特例. MvM 的正、反类构造必须有特殊的设计，不能随意选取.</p>
 <p>​	“纠错输出码（EOOC）”，将编码的思想引入类别拆分，并尽可能在解码过程中具有容错性。它的工作过程主要有两步：</p>
-<p><strong>编码</strong>：对 N 个类别做河次划分，每次划分将一部分类别划为正类，一部 分划为反类,从而形成一个二分类训练集；这样一共产生 M 个训练集,可 训练出 M 个分类器</p>
+<p><strong>编码</strong>：对 N 个类别做M次划分，每次划分将一部分类别划为正类，一部 分划为反类,从而形成一个二分类训练集；这样一共产生 M 个训练集,可 训练出 M 个分类器</p>
 <p><strong>解码</strong>：M 个分类器分别对测试样本进行预测，这些预测标记组成一个编码.将这个预测编码与每个类别各自的编码进行比较,返回其中距离（海明距离&#x2F;欧式距离）最小的类别作为最终预测结果.</p>
 <p>​	一般来说,对同一个学习任务, ECOC 编码越长,纠错能力越强.然 而，编码越长，意味着所需训练的分类器越多，计算、存储开销都会增大；另一 方面,对有限类别数，可能的组合数目是有限的，码长超过一定范围后就失去了 意义.</p>
 <h1 id="类别不平衡问题"><a href="#类别不平衡问题" class="headerlink" title="类别不平衡问题"></a>类别不平衡问题</h1><p>​	指分类任务中不同类别的训练样例数目差别很大的情况</p>
-<h2 id="欠采样"><a href="#欠采样" class="headerlink" title="欠采样"></a>欠采样</h2><p>​	去除样例较多的类别的一些样例，使得正反例数据量接近。欠采样法若随机丢弃样例，可能丢失一些重要信息。采样法的代表性算法则是利用集成学习机制，将样例较多的类别划分为若干个集合供不同学习器使用，这样对每个学习器来看都进行了欠采样，但在全局来 看却不会丢失重要信息.</p>
-<h2 id="过采样"><a href="#过采样" class="headerlink" title="过采样"></a>过采样</h2><p>​	增加样例较少的类别的样例数，使得正反例数据量接近。采样法不能简单地对初始正例样本进行重复采样，否则会招致严重的过拟合；过采样法的代表性算法是通过对训练集里的正例进行插值来产生额外的正例。</p>
+<h2 id="欠采样"><a href="#欠采样" class="headerlink" title="欠采样"></a>欠采样</h2><p>​	去除样例较多的类别的一些样例，使得正反例数据量接近。欠采样法若随机丢弃样例，可能丢失一些重要信息。采样法的代表性算法则是利用<strong>集成学习机制</strong>，将样例较多的类别划分为若干个集合供不同学习器使用，这样对每个学习器来看都进行了欠采样，但在全局来 看却不会丢失重要信息.</p>
+<h2 id="过采样"><a href="#过采样" class="headerlink" title="过采样"></a>过采样</h2><p>​	增加样例较少的类别的样例数，使得正反例数据量接近。采样法不能简单地对初始正例样本进行重复采样，否则会招致严重的过拟合；过采样法的代表性算法是通过对训练集里的正例进行<strong>插值</strong>来产生额外的正例。</p>
 <h2 id="阈值移动"><a href="#阈值移动" class="headerlink" title="阈值移动"></a>阈值移动</h2><p>​	当训练集中正、反例的数目不同时，令m+表示正例数目，m-表示 反例数目，则观测几率是m+&#x2F;m-，由于我们通常假设训练集是真实样本总体的无偏采样，因此观测几率就代表了真实几率.于是，只要分类器的预测几率高于观测几率就应判定为正例。</p>
 <p>​	由于我们的分类器是基于：y&#x2F;(1-y)&gt;1，则预测为正例。因此要对预测值进行调整：y’&#x2F;(1-y’)&#x3D;y&#x2F;(1-y)*(m-)&#x2F;(m+).这是类别不平衡学习的一个基本策略——再缩放</p>
 
@@ -328,12 +464,12 @@
 <p>但往往我们只有一个数据集D，因此要对D进行一定的处理，从中产生出训练集 S 和测试集 T.</p>
 <h2 id="留出法"><a href="#留出法" class="headerlink" title="留出法"></a>留出法</h2><p>“留出法”(hold-out) 直接将数据集。划分为两个互斥的集合，在 S 上训 练出模型后，用T 来评估其测试误差，作为对泛化误差的估计</p>
 <p>需要注意的是，训练&#x2F;测试集的划分要尽可能保持<strong>数据分布的一致性</strong></p>
-<p>常见做法：将大约 2&#x2F;3 ~ 4&#x2F;5 的样本用于训练，剩余样本用于测试</p>
+<p>常见做法：将大约 <strong>2&#x2F;3 ~ 4&#x2F;5</strong>的样本用于训练，剩余样本用于测试</p>
 <h2 id="交叉验证法"><a href="#交叉验证法" class="headerlink" title="交叉验证法"></a>交叉验证法</h2><p>​	将数据集划分为 k 个大小相似的互斥子集，每个子集都尽可能保持数据分布的一致性，每次用 k- 1 个子集的并集作为训练集，余下的那个子集作为测试集；这样就可获得 k 组训练&#x2F;测试集，从而可进行 k 次训练和测试，最终返回的是这 k 个测试结果 的均值。其中 k 常取<strong>10</strong>。</p>
-<p>​	与留出法相似，将数据集。划分为 k 个子集同样存在多种划分方式.为 减小因样本划分不同而引入的差别， k 折交叉验证通常要<strong>随机使用不同的划分重复 p 次</strong>，最终的评估结果是这 p 次 k 折交叉验证结果的均值。</p>
+<p>​	与留出法相似，将数据集划分为 k 个子集同样存在多种划分方式.为 减小因样本划分不同而引入的差别， k 折交叉验证通常要<strong>随机使用不同的划分重复 p 次</strong>，最终的评估结果是这 p 次 k 折交叉验证结果的均值。</p>
 <p>​	其中留一法（每个子集只包含一个样本）的评估结果往往被认为比较准确，但是在面对较大的数据集时，其计算开销很大</p>
 <h2 id="自助法"><a href="#自助法" class="headerlink" title="自助法"></a>自助法</h2><p>​	因训练样本规模不同而导致的估计偏差相对小，同时计算复杂度相对较低</p>
-<p>​	给定包含 m 个样 本的数据集。，我们对它进行采样产生数据集每次随机从。中挑选一个 样本,将其拷贝放入D‘ ,然后再将该样本放回初始数据集 D 中,使得该样本在 下次采样时仍有可能被采到；这个过程重复执行 m 次后，我们就得到了包含 m 个样本的数据集 D’, 这就是自助采样的结果.通过自助采样，初始数据集。中约有 36.8% 的样本未出现在采样数据集 D’ 中.于是我们可将。用作训练集, D\D‘ 用作测试集</p>
+<p>​	给定包含 m 个样本的数据集，我们对它进行采样产生数据集每次随机从中挑选一个 样本,将其拷贝放入D‘ ,然后再将该样本放回初始数据集 D 中,使得该样本在 下次采样时仍有可能被采到；这个过程重复执行 m 次后，我们就得到了包含 m 个样本的数据集 D’, 这就是自助采样的结果.通过自助采样，初始数据集。中约有 36.8% 的样本未出现在采样数据集 D’ 中.于是我们可将其用作训练集, D\D‘ 用作测试集</p>
 <p>优点：1.在数据集较小，难以有效划分训练&#x2F;测试集时很有用</p>
 <p>2.能从初始数据集中产生多个不同的训练集，对集成学习很有好处</p>
 <p>缺点：自助法产生的数据集改变了初始数据集的分布，引入估计偏差。因此,在初始数据量足够时，留出法和交叉验证法更常用一些.</p>
@@ -500,121 +636,6 @@
 
 
   
-    <article id="post-Structured-Encryption-and-Controlled-Disclosure" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" class="article-date">
-  <time class="dt-published" datetime="2024-05-22T04:56:21.000Z" itemprop="datePublished">2024-05-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/">Structured Encryption and Controlled Disclosure</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>背景-&gt; 问题-&gt; 方案-&gt; 效果</strong></p>
-<p><strong>Structured Encryption</strong>:generalizes previous work on symmetric searchable encryption to the setting of arbitrarily-structured data.</p>
-<p><strong>controlled disclosure</strong>:a data owner wishes to grant access to only part of a massive dataset.</p>
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在近年来云储存的趋势下，越来越多用户把结构化数据放在<strong>不受信任</strong>的云服务器上储存，而为了保护数据，用户选择先将数据加密，再上传至云服务器</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>数据的加密使得数据失去了它本身的结构，且用户无法对其进行查询，或对其进行一些计算操作</p>
-<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>文章提出了一种结构化加密的模型，一种正式的安全定义，和几种高效的针对某些结构数据（matrix-stuctured data,labeled data,graph data,labeled graph data）的查询的构造方案</p>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>结构化加密，将可搜索加秘密推广到呈现任意结构的数据中，并提出了受控披露的新应用：用于基于云的数据经纪服务</p>
-<h1 id="Search-Queries-on-Labeled-Data"><a href="#Search-Queries-on-Labeled-Data" class="headerlink" title="Search Queries on Labeled Data"></a>Search Queries on Labeled Data</h1><p>m：消息数据项，实际的内容数据</p>
-<p>v：标签数据项，代表与消息数据项相关联的附加信息</p>
-<p>i：索引，用于将m和其对应的v联系起来</p>
-<p>j：经过随机置换后的i</p>
-<p>w：关键词，每一个w都关联到一个或多个数据项的索引（用L（w）表示）</p>
-<p>c：经过加密的m</p>
-<p><strong>m，v通过i相联系，w通过i与v，m联系</strong></p>
-<h2 id="Gen"><a href="#Gen" class="headerlink" title="Gen"></a>Gen</h2><p>K1，K2用于伪随机函数的加密，K3用于m的加密</p>
-<h2 id="Enc"><a href="#Enc" class="headerlink" title="Enc"></a>Enc</h2><p>i随机置换为j</p>
-<p><strong>这里的随机置换，即是PRP（伪随机置换），在这里的作用是切断c与m之间的直接联系</strong></p>
-<p>对v：以字典形式储存。搜索键：以K1进行为随机函数加密的w，值：v与j组成的数组与以K1进行为随机函数加密的w进行异或操作。</p>
-<p>对m：</p>
-<p>随机置换后，用K3进行私钥加密</p>
-<p><strong>需要注意的是m和v都要先填充为一个固定的长度，这是一个常用的保证安全性的手段，如果不padding，存储的字符串长度不相等，攻击者基于这个信息可以打破方案的安全性</strong></p>
-<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>输出以K2进行伪随机函数加密的w，以K1进行为随机函数加密的w</p>
-<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><p>将以K1进行为随机函数加密的w的搜索键所对应的v与j组成的数组与以K1进行为随机函数加密的w进行异或操作，复原出v和j</p>
-<h2 id="Dec"><a href="#Dec" class="headerlink" title="Dec"></a>Dec</h2><p>通过K3解密所有j对应的密文</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" data-id="clx05cvy9001j0otg9n1b9n1a" data-title="Structured Encryption and Controlled Disclosure" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/paper/" rel="tag">paper</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Pytorch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/21/Pytorch/" class="article-date">
-  <time class="dt-published" datetime="2024-05-21T13:19:54.000Z" itemprop="datePublished">2024-05-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/21/Pytorch/">Pytorch</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="张量"><a href="#张量" class="headerlink" title="张量"></a>张量</h1><p>张量（Tensor）是数学和物理学中的一个概念，用于表示多维数组。它是向量和矩阵的推广，可以有任意数量的维度。张量在机器学习和深度学习中非常重要，特别是在使用像 PyTorch 和 TensorFlow 这样的框架时，<strong>数据通常表示为张量</strong>。</p>
-<p>张量的维度类似与数组，从0开始算起</p>
-<hr>
-<h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>1.<code>torch.squeeze(torch,dim)</code>：</p>
-<p>用于且只能删除大小为1的维度</p>
-<p>2.<code>torch.unsqueeze(torch,dim)</code>：</p>
-<p>用于在指定维度插入一个大小为1的新维度</p>
-<p>3.<code>torch.transpose(torch,dim1,dim2)</code>：</p>
-<p>用于交换张量中指定的两个维度，类似于矩阵中的转置</p>
-<p>4.<code>torch.cat(torch,dim)</code>：</p>
-<p>用于沿指定维度连接张量</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/21/Pytorch/" data-id="clx05cvy8001f0otg3arq0jcf" data-title="Pytorch" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -633,7 +654,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paper/" rel="tag">paper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encrypltion/" rel="tag">encrypltion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/paper/" rel="tag">paper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
     </div>
   </div>
 
@@ -643,7 +664,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 14px;">ctf-misc</a> <a href="/tags/machine-learning/" style="font-size: 16px;">machine learning</a> <a href="/tags/paper/" style="font-size: 10px;">paper</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/tip/" style="font-size: 12px;">tip</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18px;">每日一小结</a>
+      <a href="/tags/algorithm-template/" style="font-size: 11.67px;">algorithm-template</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 15px;">ctf-misc</a> <a href="/tags/encrypltion/" style="font-size: 11.67px;">encrypltion</a> <a href="/tags/encryption/" style="font-size: 11.67px;">encryption</a> <a href="/tags/machine-learning/" style="font-size: 16.67px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 11.67px;">machine learning attacks</a> <a href="/tags/paper/" style="font-size: 10px;">paper</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/tip/" style="font-size: 13.33px;">tip</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.33px;">每日一小结</a>
     </div>
   </div>
 
@@ -652,7 +673,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
     </div>
   </div>
 
@@ -665,7 +686,15 @@
       <ul>
         
           <li>
-            <a href="/2024/06/04/%E8%81%9A%E7%B1%BB/">聚类</a>
+            <a href="/2024/07/06/Model-Stealing/">Model Stealing</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/27/SEISA/">SEISA</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/27/Membership-Inference-Attacks-Against-Machine-Learning-Models/">Membership Inference Attacks Against Machine Learning Models</a>
           </li>
         
           <li>
@@ -674,14 +703,6 @@
         
           <li>
             <a href="/2024/05/31/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">神经网络</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/30/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/">线性模型</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/29/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/">模型评估与选择</a>
           </li>
         
       </ul>
