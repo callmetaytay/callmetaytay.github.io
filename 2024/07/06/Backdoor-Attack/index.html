@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Backdoor Attack | TAY&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Backdoor Attack:Inject some attacker-specified patterns in the poisoned iamge and replace the corresponding label with a pre-defined target label. Invisible Backdoor Attack with Sample-Specific Trigge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Backdoor Attack">
+<meta property="og:url" content="http://example.com/2024/07/06/Backdoor-Attack/index.html">
+<meta property="og:site_name" content="TAY&#39;S BLOG">
+<meta property="og:description" content="Backdoor Attack:Inject some attacker-specified patterns in the poisoned iamge and replace the corresponding label with a pre-defined target label. Invisible Backdoor Attack with Sample-Specific Trigge">
+<meta property="og:locale" content="zh_CH">
+<meta property="og:image" content="c:\Users\%E6%A2%81%E9%9F%B5%E6%89%AC\AppData\Local\Temp\aaeb1d75-58c2-49b0-b1ef-e43f44e29276.png">
+<meta property="og:image" content="c:\Users\%E6%A2%81%E9%9F%B5%E6%89%AC\AppData\Local\Temp\f3c6db4b-bb72-4ee2-9459-f5eb2b4c192f.png">
+<meta property="og:image" content="c:\Users\%E6%A2%81%E9%9F%B5%E6%89%AC\AppData\Local\Temp\d25dff5b-4627-4645-a4e9-0ebb4ab6d26b.png">
+<meta property="og:image" content="c:\Users\%E6%A2%81%E9%9F%B5%E6%89%AC\AppData\Local\Temp\38845f87-529c-47ed-ae64-cd66967c6f29.png">
+<meta property="og:image" content="c:\Users\%E6%A2%81%E9%9F%B5%E6%89%AC\AppData\Local\Temp\c272ab46-34ba-46f2-95da-686fe5279e55.png">
+<meta property="article:published_time" content="2024-07-06T10:04:36.000Z">
+<meta property="article:modified_time" content="2024-07-10T11:29:21.445Z">
+<meta property="article:author" content="tay">
+<meta property="article:tag" content="machine learning attacks">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\%E6%A2%81%E9%9F%B5%E6%89%AC\AppData\Local\Temp\aaeb1d75-58c2-49b0-b1ef-e43f44e29276.png">
+  
+    <link rel="alternate" href="/atom.xml" title="TAY'S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">TAY&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Backdoor-Attack" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/06/Backdoor-Attack/" class="article-date">
+  <time class="dt-published" datetime="2024-07-06T10:04:36.000Z" itemprop="datePublished">2024-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Backdoor Attack
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>Backdoor Attack</strong>:Inject some attacker-specified patterns in the poisoned iamge and replace the corresponding label with a pre-defined target label.</p>
+<h1 id="Invisible-Backdoor-Attack-with-Sample-Specific-Triggers"><a href="#Invisible-Backdoor-Attack-with-Sample-Specific-Triggers" class="headerlink" title="Invisible Backdoor Attack with Sample-Specific Triggers"></a>Invisible Backdoor Attack with Sample-Specific Triggers</h1><h1 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h1><p>1.We reveal that the current main-stream backdoor defences all relies on a prerequisite that backdoor triggers are sample-agnostic.</p>
+<p>2.We explore a novel invisible attack paradigm, where the backdoor trigger is sample-specific and invisible.</p>
+<p>3.Extensive experiments are conducted, which verify the effectiveness of the proposed method.</p>
+<h1 id="SSBA"><a href="#SSBA" class="headerlink" title="SSBA"></a>SSBA</h1><h2 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h2><h3 id="Attacker’s-Capacities"><a href="#Attacker’s-Capacities" class="headerlink" title="Attacker’s Capacities"></a>Attacker’s Capacities</h3><p>We assume that attackers are allowed to poison some training data, whereas they have no information on or change other training components.In the inference process, attackers can and only can query the trained model with any image.</p>
+<h3 id="Attacker’s-Goal"><a href="#Attacker’s-Goal" class="headerlink" title="Attacker’s Goal"></a>Attacker’s Goal</h3><p>In general, backdoor attackers intend to embed hidden backdoors in DNNs through data poisoning.Three main goal :effectiveness, stealthiness, and sustainability.</p>
+<h2 id="The-Proposed-Attack"><a href="#The-Proposed-Attack" class="headerlink" title="The Proposed Attack"></a>The Proposed Attack</h2><h3 id="The-Main-Process-of-Backdoor-Attacks"><a href="#The-Main-Process-of-Backdoor-Attacks" class="headerlink" title="The Main Process of Backdoor Attacks"></a>The Main Process of Backdoor Attacks</h3><p>Core: generate the poisoned training data set</p>
+<p> <img src="C:\Users\梁韵扬\AppData\Local\Temp\aaeb1d75-58c2-49b0-b1ef-e43f44e29276.png" alt="aaeb1d75-58c2-49b0-b1ef-e43f44e29276"></p>
+<img src="C:\Users\梁韵扬\AppData\Local\Temp\f3c6db4b-bb72-4ee2-9459-f5eb2b4c192f.png" alt="f3c6db4b-bb72-4ee2-9459-f5eb2b4c192f" style="zoom: 80%;" />
+
+<h1 id="Narcissus-A-Practical-Clean-Label-Backdoor-Attack-with-Limited-Information"><a href="#Narcissus-A-Practical-Clean-Label-Backdoor-Attack-with-Limited-Information" class="headerlink" title="Narcissus: A Practical Clean-Label Backdoor Attack with Limited Information"></a>Narcissus: A Practical Clean-Label Backdoor Attack with Limited Information</h1><img src="C:\Users\梁韵扬\AppData\Local\Temp\d25dff5b-4627-4645-a4e9-0ebb4ab6d26b.png" alt="d25dff5b-4627-4645-a4e9-0ebb4ab6d26b" style="zoom: 80%;" />
+
+<img src="C:\Users\梁韵扬\AppData\Local\Temp\38845f87-529c-47ed-ae64-cd66967c6f29.png" alt="38845f87-529c-47ed-ae64-cd66967c6f29"  />
+
+<img src="C:\Users\梁韵扬\AppData\Local\Temp\c272ab46-34ba-46f2-95da-686fe5279e55.png" alt="c272ab46-34ba-46f2-95da-686fe5279e55" style="zoom:80%;" />
+
+<h1 id="Contributions-1"><a href="#Contributions-1" class="headerlink" title="Contributions"></a>Contributions</h1><p>1.We present a clean-label backdoor attack that leverages only target-class and public out-of-distribution data, controlling 0.05% or even fewer data.</p>
+<p>2.We compare Narcissus with existing attacks and show that it significantly outperforms others despite using less attacker knowledge and less obvious perturbations.</p>
+<p>3.We demonstrate that by adapting the trigger to real-world conditions, Narcissus enables first of its kind successful physical world clean-label attacks.</p>
+<p>4.We show that several popular choices of defenses and stateof-the-art ones, cannot reliably mitigate our attack. We find our triggers exhibit features that are resistant to removal.</p>
+<h1 id="Clean-label-Backdoor-Attacks"><a href="#Clean-label-Backdoor-Attacks" class="headerlink" title="Clean-label Backdoor Attacks"></a>Clean-label Backdoor Attacks</h1><h2 id="Contributions-2"><a href="#Contributions-2" class="headerlink" title="Contributions"></a>Contributions</h2><p>We develop a new approach to synthesizing poisoned inputs that appear plausible to humans. Our approach consists of making small changes to the inputs in order to make them harder to classify , keeping the changes sufficiently minor in order to ensure that the original label remains plausible. We have two methods to perform it.</p>
+<ol>
+<li><p>GAN-based interpolation</p>
+</li>
+<li><p>Adversarial perturbations</p>
+</li>
+</ol>
+<h2 id="Previous-Backdoor-Attack"><a href="#Previous-Backdoor-Attack" class="headerlink" title="Previous Backdoor Attack"></a>Previous Backdoor Attack</h2><p>We argue that the main reason for the attack’s ineffectiveness is that the poisoned samples can be correctly classified by learning a standard classifier. Since relying on the backdoor trigger is not necessary to correctly classify these inputs, the backdoor attack is unlikely to be successful.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/06/Backdoor-Attack/" data-id="clygv34ge001chgtg20pidawn" data-title="Backdoor Attack" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/07/09/Encrypted-Video-Search/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          Encrypted Video Search
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/07/06/Model-Stealing/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Model Stealing</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 14px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 14px;">encryption</a> <a href="/tags/machine-learning/" style="font-size: 16px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 12px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/tip/" style="font-size: 12px;">tip</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18px;">每日一小结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/07/09/Encrypted-Video-Search/">Encrypted Video Search</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/06/Backdoor-Attack/">Backdoor Attack</a>
+          </li>
+        
+          <li>
+            <a href="/2024/07/06/Model-Stealing/">Model Stealing</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/27/SEISA/">SEISA</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/27/Membership-Inference-Attacks-Against-Machine-Learning-Models/">Membership Inference Attacks Against Machine Learning Models</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 tay<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
