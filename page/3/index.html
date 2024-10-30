@@ -73,6 +73,221 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CNN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/22/CNN/" class="article-date">
+  <time class="dt-published" datetime="2024-05-22T07:54:29.000Z" itemprop="datePublished">2024-05-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/22/CNN/">CNN</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>用于影像识别方面的神经网络</p>
+<p>目标：<strong>学习合理设计network架构</strong></p>
+<h1 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>预设图片的大小相同，实际情况中图片大小不同就先把他们裁剪为一样大小，再去进行下一步处理</p>
+<h2 id="如何让计算机可以“看”到图片"><a href="#如何让计算机可以“看”到图片" class="headerlink" title="如何让计算机可以“看”到图片"></a>如何让计算机可以“看”到图片</h2><p>将图片看作一个三维的tensor-&gt;（长，宽，三个channels），（channels指R，G，B三元色），把这三维tensor拉直，即可看作一个向量，作为神经网络的输入</p>
+<h1 id="简化"><a href="#简化" class="headerlink" title="简化"></a>简化</h1><h2 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h2><p>在fully connected network中，因为每一个数据都要对应到全部的神经元，就会产生非常多的参数，使得计算量巨大，且overffting的风险高。图像识别<strong>本质</strong>上是根据物体的某些特征从而判定物体的类别，因此并不需要一次性读完一整张图片，而是将图片截成合适的大小（要注意的是，因为颜色也是判断依据之一，因此只在长和宽的维度（往往设3x3）上进行裁剪），叫Receptive field（可操作性很大，要根据自己的实际需要自定义，截成什么样都可以）.为了让receptive field能覆盖图片的全部区域，对receptive field进行上下左右的同步幅的移动操作，当遇到边角区域，receptive field出现空缺时，要对它进行padding（补值，可选平均值，0…）,最终要保证图片被全覆盖</p>
+<h2 id="step2"><a href="#step2" class="headerlink" title="step2"></a>step2</h2><p>已知每一个receptive field,都有对应的一组neuron来守卫它,但对于判断同一个特征,守卫不同receptive field的两组neuron中应该就会有一个相同的neuron来判断这个特征,它们都在做同样的事情.那么我们可以让这两个做相同事情的neuron共享参数</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>相较于fully connected layer,convolutional layer对neuron的限制更大,bias更大,但是其overfitting的概率减小</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/22/CNN/" data-id="cm2vmjb9x001owwtgc6yv3flv" data-title="CNN" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Structured-Encryption-and-Controlled-Disclosure" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" class="article-date">
+  <time class="dt-published" datetime="2024-05-22T04:56:21.000Z" itemprop="datePublished">2024-05-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/">Structured Encryption and Controlled Disclosure</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><strong>背景-&gt; 问题-&gt; 方案-&gt; 效果</strong></p>
+<p><strong>Structured Encryption</strong>:generalizes previous work on symmetric searchable encryption to the setting of arbitrarily-structured data.</p>
+<p><strong>controlled disclosure</strong>:a data owner wishes to grant access to only part of a massive dataset.</p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在近年来云储存的趋势下，越来越多用户把结构化数据放在<strong>不受信任</strong>的云服务器上储存，而为了保护数据，用户选择先将数据加密，再上传至云服务器</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>数据的加密使得数据失去了它本身的结构，且用户无法对其进行查询，或对其进行一些计算操作</p>
+<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>文章提出了一种结构化加密的模型，一种正式的安全定义，和几种高效的针对某些结构数据（matrix-stuctured data,labeled data,graph data,labeled graph data）的查询的构造方案</p>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>结构化加密，将可搜索加秘密推广到呈现任意结构的数据中，并提出了受控披露的新应用：用于基于云的数据经纪服务</p>
+<h1 id="Search-Queries-on-Labeled-Data"><a href="#Search-Queries-on-Labeled-Data" class="headerlink" title="Search Queries on Labeled Data"></a>Search Queries on Labeled Data</h1><p>m：消息数据项，实际的内容数据</p>
+<p>v：标签数据项，代表与消息数据项相关联的附加信息</p>
+<p>i：索引，用于将m和其对应的v联系起来</p>
+<p>j：经过随机置换后的i</p>
+<p>w：关键词，每一个w都关联到一个或多个数据项的索引（用L（w）表示）</p>
+<p>c：经过加密的m</p>
+<p><strong>m，v通过i相联系，w通过i与v，m联系</strong></p>
+<h2 id="Gen"><a href="#Gen" class="headerlink" title="Gen"></a>Gen</h2><p>K1，K2用于伪随机函数的加密，K3用于m的加密</p>
+<h2 id="Enc"><a href="#Enc" class="headerlink" title="Enc"></a>Enc</h2><p>i随机置换为j</p>
+<p><strong>这里的随机置换，即是PRP（伪随机置换），在这里的作用是切断c与m之间的直接联系</strong></p>
+<p>对v：以字典形式储存。搜索键：以K1进行为随机函数加密的w，值：v与j组成的数组与以K1进行为随机函数加密的w进行异或操作。</p>
+<p>对m：</p>
+<p>随机置换后，用K3进行私钥加密</p>
+<p><strong>需要注意的是m和v都要先填充为一个固定的长度，这是一个常用的保证安全性的手段，如果不padding，存储的字符串长度不相等，攻击者基于这个信息可以打破方案的安全性</strong></p>
+<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>输出以K2进行伪随机函数加密的w，以K1进行为随机函数加密的w</p>
+<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><p>将以K1进行为随机函数加密的w的搜索键所对应的v与j组成的数组与以K1进行为随机函数加密的w进行异或操作，复原出v和j</p>
+<h2 id="Dec"><a href="#Dec" class="headerlink" title="Dec"></a>Dec</h2><p>通过K3解密所有j对应的密文</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" data-id="cm2vmjba00024wwtg2he4czgl" data-title="Structured Encryption and Controlled Disclosure" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Pytorch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/21/Pytorch/" class="article-date">
+  <time class="dt-published" datetime="2024-05-21T13:19:54.000Z" itemprop="datePublished">2024-05-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/21/Pytorch/">Pytorch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="张量"><a href="#张量" class="headerlink" title="张量"></a>张量</h1><p>张量（Tensor）是数学和物理学中的一个概念，用于表示多维数组。它是向量和矩阵的推广，可以有任意数量的维度。张量在机器学习和深度学习中非常重要，特别是在使用像 PyTorch 和 TensorFlow 这样的框架时，<strong>数据通常表示为张量</strong>。</p>
+<p>张量的维度类似与数组，从0开始算起</p>
+<hr>
+<h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>1.<code>torch.squeeze(torch,dim)</code>：</p>
+<p>用于且只能删除大小为1的维度</p>
+<p>2.<code>torch.unsqueeze(torch,dim)</code>：</p>
+<p>用于在指定维度插入一个大小为1的新维度</p>
+<p>3.<code>torch.transpose(torch,dim1,dim2)</code>：</p>
+<p>用于交换张量中指定的两个维度，类似于矩阵中的转置</p>
+<p>4.<code>torch.cat(torch,dim)</code>：</p>
+<p>用于沿指定维度连接张量</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/21/Pytorch/" data-id="cm2vmjb9y001vwwtgairw3osu" data-title="Pytorch" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-数模" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/28/%E6%95%B0%E6%A8%A1/" class="article-date">
+  <time class="dt-published" datetime="2024-04-28T12:52:09.000Z" itemprop="datePublished">2024-04-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/04/28/%E6%95%B0%E6%A8%A1/">数模常见模型及算法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><p><strong>神经网络预测</strong>，灰色预测，拟合插值预测（线性回归，时间序列预测，马尔科夫链预测，微分方程预测，<strong>logistic模型</strong></p>
+<h2 id="优化模型"><a href="#优化模型" class="headerlink" title="优化模型"></a>优化模型</h2><p>规划模型（目标规划，线性规划，非线性规划，整数规划，动态规划），图论模型，排队论模型，神经网络模型，现代优化算法（<strong>遗传算法</strong>，<strong>模拟退火算法</strong>，蚁群算法，禁忌搜索）</p>
+<h2 id="评价模型"><a href="#评价模型" class="headerlink" title="评价模型"></a>评价模型</h2><p>模糊综合评价法，层次分析法，聚类分析法，主成分分析评价法，灰色综合评价法，人工神经网络评价法</p>
+<h2 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h2><p>1.蒙特卡罗算法（随机性模拟算法），通过计算机仿真来解决问题，同时可以通过模拟来检验自己模型的正确性</p>
+<p>2.数据拟合，参数估计，插值等数据处理算法，用于处理大量数据，matlab</p>
+<p>3.线性规划，整数规划，多元规划，二次规划，用于最优化问题，使用lingo</p>
+<p>4.图论算法，用于最短路径，网络流，二分图</p>
+<p>5.动态规划，回溯搜索，分治算法，分支定界，用于算法设计</p>
+<p>6.最优化理论的三大非经典算法：模拟退火，神经网络，遗传算法，对于解决一些较难的最优化问题非常有帮助</p>
+<p>7.网格算法和穷举法，用于暴力搜索最优点，当重点讨论模型本身而轻视算法时可使用</p>
+<p>8.一些连续离散化方法，很多问题中数据是可以连续的，而计算机值认为是离散的数据，因此将其离散化后进行差分代替微分，求和代替积分等思想非常重要</p>
+<p>9.数值分析法算法，采用高级编程语言时，一些数据分析中常用的算法比如方程组求解，矩阵运算，函数积分等算法就需要额外编写库函数进行调用</p>
+<p>10.图像处理算法，matlab处理</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/04/28/%E6%95%B0%E6%A8%A1/" data-id="cm2vmjbae004lwwtg889p84c1" data-title="数模常见模型及算法" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tip/" rel="tag">tip</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-ctf-4-18" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/04/18/ctf-4-18/" class="article-date">
@@ -99,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/18/ctf-4-18/" data-id="cm1xui44u002wd8tg2q646ulo" data-title="ctf 4.18" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/04/18/ctf-4-18/" data-id="cm2vmjba9003pwwtg2v8lgf6j" data-title="ctf 4.18" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -137,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/09/4-9%E5%B0%8F%E7%BB%93/" data-id="cm1xui44k001kd8tg6vya6lq3" data-title="4.9小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/04/09/4-9%E5%B0%8F%E7%BB%93/" data-id="cm2vmjb9u0018wwtgesh82guf" data-title="4.9小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -177,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/09/4-9-ctf/" data-id="cm1xui44h0013d8tg7rjm4s8x" data-title="4.9 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/04/09/4-9-ctf/" data-id="cm2vmjb9u001cwwtg2jgi7wvj" data-title="4.9 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -218,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/08/4-8%E5%B0%8F%E7%BB%93/" data-id="cm1xui44i0015d8tg23oudham" data-title="4.8小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/04/08/4-8%E5%B0%8F%E7%BB%93/" data-id="cm2vmjb9t0012wwtgh3lr3cf0" data-title="4.8小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -260,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/08/ctf-4-8/" data-id="cm1xui44w003ad8tg3zz3etoq" data-title="ctf 4.8" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/04/08/ctf-4-8/" data-id="cm2vmjba9003swwtg5f7keer7" data-title="ctf 4.8" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -315,214 +530,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/07/misc%E4%B9%8B%E7%BC%96%E7%A0%81/" data-id="cm1xui44x003hd8tg0x5e3wf7" data-title="misc之编码和加密" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/04/07/misc%E4%B9%8B%E7%BC%96%E7%A0%81/" data-id="cm2vmjba9003wwwtgbqxv8io7" data-title="misc之编码和加密" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-4-7小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/07/4-7%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-04-07T05:09:44.000Z" itemprop="datePublished">2024-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/07/4-7%E5%B0%8F%E7%BB%93/">4.7小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/07/4-7%E5%B0%8F%E7%BB%93/" data-id="cm1xui44g000xd8tgfvh90sm4" data-title="4.7小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-4-7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/07/ctf-4-7/" class="article-date">
-  <time class="dt-published" datetime="2024-04-07T05:07:56.000Z" itemprop="datePublished">2024-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/07/ctf-4-7/">ctf 4.7</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="黑客帝国"><a href="#黑客帝国" class="headerlink" title="黑客帝国"></a>黑客帝国</h2><p>txt文件里面有一大串疑似十六进制的数据，再一看开头<code>52617221</code>大概率是rar文件，复制到winhex里面保存为rar文件，发现加密，暴力爆破密码，打开发现是一张无法查看的图片，遂拉到winhex里面查看，发现以png的文件头开头，以jpg的文件尾结尾，再仔细观察，发现十六进制数据中包含很多FF（这是jpg文件的标志之一），所以修改文件头，图片显现出来，拿到flag</p>
-<hr>
-<h2 id="伟大的侦探"><a href="#伟大的侦探" class="headerlink" title="伟大的侦探"></a>伟大的侦探</h2><p>用winhex打开txt文件，切换下编码，都试一下（大概率是英文相关的，拿到文件夹的密码，看了别人的解析才知道那些图片是福尔摩斯跳舞小人密码，对应着解密即可</p>
-<hr>
-<h2 id="single-dog"><a href="#single-dog" class="headerlink" title="single dog"></a>single dog</h2><p>图片binwalk一下，提取出了一个txt文件，里面都是颜文字，网上找了个颜文字解密（AAEncode），拿到flag</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/07/ctf-4-7/" data-id="cm1xui44v0034d8tg54zy2npm" data-title="ctf 4.7" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-py" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/06/py/" class="article-date">
-  <time class="dt-published" datetime="2024-04-06T04:03:20.000Z" itemprop="datePublished">2024-04-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/06/py/">py</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><p>显式转换</p>
-<pre><code class="hljs python"><span class="hljs-built_in">int</span>(x)
-<span class="hljs-built_in">float</span>(x)
-<span class="hljs-built_in">str</span>(x)
-<span class="hljs-built_in">chr</span>(x)
-<span class="hljs-built_in">ord</span>(x)
-<span class="hljs-built_in">hex</span>(x):十六进制
-<span class="hljs-built_in">oct</span>(x)：八进制
-<span class="hljs-built_in">bin</span>(x)：二进制</code></pre>
-
-<p>隐式转换</p>
-<pre><code class="hljs python">x=<span class="hljs-number">10</span>
-y=<span class="hljs-number">3</span>
-z=x/y <span class="hljs-comment"># int--&gt;float</span></code></pre>
-
-<hr>
-<h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><pre><code class="hljs python">flag=<span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>())
-<span class="hljs-keyword">if</span> flag==<span class="hljs-number">1</span>:
-	<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;flag==1&#x27;</span>)
-<span class="hljs-keyword">elif</span> flag==<span class="hljs-number">2</span>:
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;flag==2&#x27;</span>)
-<span class="hljs-keyword">else</span>:
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;flag!=2||1&#x27;</span>)
-</code></pre>
-
-<p>通过缩进，控制代码块是否属于if语句</p>
-<hr>
-<h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h3><pre><code class="hljs python">i=<span class="hljs-number">0</span>
-<span class="hljs-keyword">while</span> i&lt;<span class="hljs-number">100</span>:
-	<span class="hljs-comment">#执行代码</span>
-	i++</code></pre>
-
-<p>同理，注意缩进</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/06/py/" data-id="cm1xui44y003kd8tgdyp0fwjd" data-title="py" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-4-6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/06/ctf-4-6/" class="article-date">
-  <time class="dt-published" datetime="2024-04-06T04:03:13.000Z" itemprop="datePublished">2024-04-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/06/ctf-4-6/">ctf 4.6</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="ezmisc"><a href="#ezmisc" class="headerlink" title="ezmisc"></a>ezmisc</h2><p>拿网上扒的crc爆破脚本爆破一下，拿到正确的宽高，修改，拿到flag</p>
-<hr>
-<h2 id="Caesar"><a href="#Caesar" class="headerlink" title="Caesar"></a>Caesar</h2><p>从题目就知道是凯撒密码，但是不知道偏移量，让gpt写了个脚本，把0-25的偏移量都试一遍，出现明文的那个就是flag</p>
-<hr>
-<h2 id="低个头"><a href="#低个头" class="headerlink" title="低个头"></a>低个头</h2><p>这个是真想不到（（</p>
-<p>题目提示低个头，第一眼就是键盘嘛，所以是键盘隐写，EWAZX–&gt;C,RTY+TGB–&gt;T,IIJN+IO+KL–&gt;F,拿到flag</p>
-<p>所谓<strong>键盘隐写</strong>就是指按照密文，将上面的字母和键盘上的位置对应起来，连起来的图案，即是明文</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/06/ctf-4-6/" data-id="cm1xui44v0036d8tg3o498u32" data-title="ctf 4.6" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
 
     </footer>
   </div>
@@ -550,7 +562,7 @@ z=x/y <span class="hljs-comment"># int--&gt;float</span></code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine/" rel="tag">machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%9D%E7%A0%94/" rel="tag">保研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
     </div>
   </div>
 
@@ -560,7 +572,7 @@ z=x/y <span class="hljs-comment"># int--&gt;float</span></code></pre>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 13.33px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 13.33px;">encryption</a> <a href="/tags/machine-learning/" style="font-size: 16.67px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 15px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/tip/" style="font-size: 11.67px;">tip</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.33px;">每日一小结</a>
+      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 10px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 14px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 14px;">encryption</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/machine/" style="font-size: 10px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/tip/" style="font-size: 12px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18px;">每日一小结</a>
     </div>
   </div>
 
@@ -582,23 +594,23 @@ z=x/y <span class="hljs-comment"># int--&gt;float</span></code></pre>
       <ul>
         
           <li>
+            <a href="/2024/10/30/Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective/">Rethinking Graph Backdoor Attacks: A Distribution-Preserving Perspective</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/22/24%E4%BF%9D%E7%A0%94%E5%88%86%E4%BA%AB/">24保研分享</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/09/graph-backdoor/">graph backdoor</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/08/Poisoning-Graph-Neural-Networks-for-Link-Inference/">Poisoning Graph Neural Networks for Link Inference</a>
+          </li>
+        
+          <li>
             <a href="/2024/10/06/poison-attack-in-inductive-GNN/">poison attack in inductive GNN</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/28/Can-Graph-Neural-Networks-Be-Exploited-through-Data-Free-Model-Extraction-Attacks/">Can Graph Neural Networks Be Exploited through Data-Free Model Extraction Attacks?</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/23/Link-Stealing-Attacks-Against-Inductive-GNN/">Link Stealing Attacks Against Inductive GNN</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%EF%BC%9ANarcissus-tensflow/">深度学习代码：Narcissus/tensorflow</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/12/Stealing%20Links%20from%20GNN/">Stealing Links from GNN</a>
           </li>
         
       </ul>

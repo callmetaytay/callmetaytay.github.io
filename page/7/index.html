@@ -73,6 +73,195 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-misc之流量分析" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/22/misc%E4%B9%8B%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" class="article-date">
+  <time class="dt-published" datetime="2024-03-22T10:33:58.000Z" itemprop="datePublished">2024-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/22/misc%E4%B9%8B%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/">misc之流量分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/22/misc%E4%B9%8B%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90/" data-id="cm2vmjbaa003zwwtg8oxk5g1q" data-title="misc之流量分析" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-misc之隐写" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/22/misc%E4%B9%8B%E9%9A%90%E5%86%99/" class="article-date">
+  <time class="dt-published" datetime="2024-03-22T10:33:38.000Z" itemprop="datePublished">2024-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/22/misc%E4%B9%8B%E9%9A%90%E5%86%99/">misc之隐写</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="图片隐写"><a href="#图片隐写" class="headerlink" title="图片隐写"></a>图片隐写</h1><hr>
+<h2 id="修改长宽高"><a href="#修改长宽高" class="headerlink" title="修改长宽高"></a>修改长宽高</h2><p>（固定）八个字节89 50 4E 47 0D 0A 1A 0A为png的文件头<br>（固定）四个字节00 00 00 0D（即为十进制的13）代表数据块的长度为13<br>（固定）四个字节49 48 44 52（即为ASCII码的IHDR）是文件头数据块的标示（IDCH）<br>（可变）13位数据块（IHDR)<br>前四个字节代表该图片的宽<br>后四个字节代表该图片的高<br>后五个字节依次为：<br>Bit depth、ColorType、Compression method、Filter method、Interlace method<br>（可变）剩余四字节为该png的CRC检验码，由从IDCH到IHDR的十七位字节进行crc计算得到。<br>文件尾：AE 42 60 82</p>
+<hr>
+<h2 id="常见文件头的十六进制"><a href="#常见文件头的十六进制" class="headerlink" title="常见文件头的十六进制"></a>常见文件头的十六进制</h2><p>这一般多用于判断文件中是否藏有其它文件（可用binwalk代替）；检查是否有文件头或文件尾的缺漏，导致文件打不开；快速判断一串十六进制数据是否为文件，可能提供有效信息…….</p>
+<h3 id="压缩包"><a href="#压缩包" class="headerlink" title="压缩包"></a>压缩包</h3><p>zip：文件头 50 4B 03 04 ；文件尾 50 4B</p>
+<p>rar：文件头 52 61 72 21</p>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>jpeg（jpg）：文件头 FF D8 ；文件尾 FF D9；文件标志：十六进制中含大量FF（一般jpg文件中含多个标记或段，它们都要以FF开头</p>
+<p>gif：文件头 47 49 46 38 39（37）61 ；文件尾：00 3B</p>
+<p>png：文件头 89 50 4E 47 （0D 0A 1A 0A ）；文件尾 AE 42 60 82</p>
+<hr>
+<h1 id="音频隐写"><a href="#音频隐写" class="headerlink" title="音频隐写"></a>音频隐写</h1><p>常用audacity分离音轨，目前碰到的题，都有一条音轨是对应摩斯密码的，然后进行解码（0对应短，1对应长</p>
+<hr>
+<h1 id="base64隐写"><a href="#base64隐写" class="headerlink" title="base64隐写"></a>base64隐写</h1><p>详见vx收藏夹中中南大学的推文</p>
+<hr>
+<h1 id="键盘隐写"><a href="#键盘隐写" class="headerlink" title="键盘隐写"></a>键盘隐写</h1><p>按照密文，将上面的字母和键盘上的位置对应起来，连起来的图案，即是明文</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/22/misc%E4%B9%8B%E9%9A%90%E5%86%99/" data-id="cm2vmjba9003uwwtge1xz3dfy" data-title="misc之隐写" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-3-22小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/22/3-22%E5%B0%8F%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2024-03-22T06:48:43.000Z" itemprop="datePublished">2024-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/22/3-22%E5%B0%8F%E7%BB%93/">3.22小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>今日buuctf一下午就刷了三题，效率小低<del>我承认是我摆了</del>，晚上回来应该可以再搞一题罢（（</p>
+<p>今早因为那个口语课起得特别早啊，好不容易没早八的wuuu。后面去了图书馆说学下物理，结果都在扣手机。。。<del>我有罪，我有罪，阿弥陀佛</del></p>
+<p>中午看群里聊大类分流，又又又开始焦虑（（，还是太菜了啊啊啊</p>
+<p>早上高数课最后去找老师问了全微分的问题，好像终于会了一点了😭😭感动ing</p>
+<p>希望晚上排练完没有口语课，孩子想去操场唱歌😭😭😭😭😭😭😭😭😭😭</p>
+<hr>
+<p>祈祷生效了，没有英语课，所以去南操快乐的唱了好久的歌（（。回来又刷了道buuctf，卡在了rar文件的分离，明天研究下binwalk的使用，再看看有没有机会刷点acwing，毕竟到时候机试会有c语言的题~~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/22/3-22%E5%B0%8F%E7%BB%93/" data-id="cm2vmjb9n000cwwtg1u5maja6" data-title="3.22小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ctf-3-22" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/03/22/ctf-3-22/" class="article-date">
+  <time class="dt-published" datetime="2024-03-22T06:48:19.000Z" itemprop="datePublished">2024-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/03/22/ctf-3-22/">ctf 3.22</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="被劫持的神秘礼物"><a href="#被劫持的神秘礼物" class="headerlink" title="被劫持的神秘礼物"></a>被劫持的神秘礼物</h2><p>打开发现是流量包，过滤http包，发现有个包比较可疑，追踪它的tcp流，就找到了名字和密码，连起来照题目指示用32位的md5加密，即是flag</p>
+<hr>
+<h2 id="认真你就输了"><a href="#认真你就输了" class="headerlink" title="认真你就输了"></a>认真你就输了</h2><p>winhex打开，明显是个压缩包，且没加密，直接打开，一个个文件找，发现了个flag.txt的文件，拿到flag</p>
+<hr>
+<h2 id="藏藏藏"><a href="#藏藏藏" class="headerlink" title="藏藏藏"></a>藏藏藏</h2><p>打开是一张图片和一个txt文件，打开txt文件，里面是在提示flag的格式，猜测是五个数字？字母？单词？，再看图片，winhex打开，发现有zip压缩包且无加密，提取出来，是个docx文件，里面有一张二维码，扫描一下，拿到flag</p>
+<hr>
+<h2 id="被偷走的文件"><a href="#被偷走的文件" class="headerlink" title="被偷走的文件"></a>被偷走的文件</h2><p>流量包用wireshark打开，查找发现有一个rar文件，用binwalk提取出来（binwalk是网上题解的做法，but我还不会用binwalk，因为好像是要用py，所以目前这个题我还不会😓），发现加密且不是伪加密，暴力破解即可（没明白为什么网上的题解都是默认密码四位数，可能是四位数的密码比较常见？？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/03/22/ctf-3-22/" data-id="cm2vmjba3002nwwtghgh6f82e" data-title="ctf 3.22" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-3-21小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/03/21/3-21%E5%B0%8F%E7%BB%93/" class="article-date">
@@ -102,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/3-21%E5%B0%8F%E7%BB%93/" data-id="cm1xui44a000dd8tg17z27da8" data-title="3.21小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/21/3-21%E5%B0%8F%E7%BB%93/" data-id="cm2vmjb9l0008wwtg4pkn0f2d" data-title="3.21小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -154,7 +343,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/21/ctf-3-21/" data-id="cm1xui44q002cd8tgcjbv1p0j" data-title="ctf 3.21" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/21/ctf-3-21/" data-id="cm2vmjba3002swwtgawh9a3p6" data-title="ctf 3.21" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -198,7 +387,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" data-id="cm1xui4490008d8tg5jtp8ukh" data-title="3.20小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/20/3-20%E5%B0%8F%E7%BB%93/" data-id="cm2vmjb9i0003wwtg3lk5e41z" data-title="3.20小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -247,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="cm1xui44p002ad8tg3qmxbvu4" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/20/ctf-3-20/" data-id="cm2vmjba2002gwwtg0wgn0s3c" data-title="ctf 3.20" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -289,7 +478,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" data-id="cm1xui4470005d8tgd3rbg4w6" data-title="3.19小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/19/3-19%E5%B0%8F%E7%BB%93/" data-id="cm2vmjb9l0009wwtg542ody51" data-title="3.19小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -335,197 +524,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/19/ctf-3-19/" data-id="cm1xui44p0026d8tgaavf54hq" data-title="3.19 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="http://example.com/2024/03/19/ctf-3-19/" data-id="cm2vmjba3002lwwtg00l35jq2" data-title="3.19 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-3-18" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/18/ctf-3-18/" class="article-date">
-  <time class="dt-published" datetime="2024-03-18T14:55:20.000Z" itemprop="datePublished">2024-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/18/ctf-3-18/">3.18 ctf</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="神秘的龙卷风"><a href="#神秘的龙卷风" class="headerlink" title="神秘的龙卷风"></a>神秘的龙卷风</h2><p>发现是有密码的压缩包，根据题目已知是纯数字的四位数，直接暴力破解，打开发现是一串看不懂的“+，-，.，[，&gt;”之类的符号，搜索之后发现是一种叫做brainfuck的语言，其特征是仅由 <code>&lt;&gt;+-.[]</code> 组成；大量的 <code>+-</code> 符号，解码之后得到flag</p>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/18/ctf-3-18/" data-id="cm1xui44o0024d8tg7d9ldfch" data-title="3.18 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-3-18小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/18/3-18%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-03-18T14:46:50.000Z" itemprop="datePublished">2024-03-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/18/3-18%E5%B0%8F%E7%BB%93/">3.18小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>昨天晚上又又又熬夜了，导致高数课状态极差😓，听了个寂寞。改掉熬夜习惯迫在眉睫！！</p>
-<p>晚上参加了英语活动，导致今日份的buuctf还没刷呃呃呃呃啊啊啊啊，计划看的线代也没看，但明天又要上课了。。。。。。今晚肯定又要熬夜🚬，明早咖啡续命</p>
-<p>时间有限，buuctf只刷了一题((，接触了密码的题型，写第二题的时候010editor寄了，太晚了遂作罢，后面考虑重新搞一下，或者改用winhex吧（（</p>
-<p>等下上床再看下线代，争取1点前睡！！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/18/3-18%E5%B0%8F%E7%BB%93/" data-id="cm1xui4460003d8tg877v8ice" data-title="3.18小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-3-17" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/17/ctf-3-17/" class="article-date">
-  <time class="dt-published" datetime="2024-03-17T06:48:00.000Z" itemprop="datePublished">2024-03-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/17/ctf-3-17/">ctf 3.17</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a>爱因斯坦</h2><p>010editor打开，发现里面还藏着一个zip文件，提取出来，发现加密，试着在010editor上改了下，发现是真加密，由于题目没有给出有关密码的任何信息，不知道密码长度的话光是暴力破解需要很久时间，因此我们应该是可以通过其它方法直接拿到密码的。</p>
-<p>打开属性，发现备注那里有信息，试着当作密码填进去，成功打开文件，拿到flag</p>
-<hr>
-<h2 id="小明的保险箱"><a href="#小明的保险箱" class="headerlink" title="小明的保险箱"></a>小明的保险箱</h2><p>看题目就可直接猜测是要转换成zip格式，archpr暴力破解密码</p>
-<p>010editor打开，发现FF D9就是.jpg的文件尾了，但是后面还有内容——52 61 72 21正是.rar的文件头，说明里面藏着一个.rar文件，符合了我们之前的猜想，接下来archpr解开密码即可</p>
-<hr>
-<h2 id="easycap"><a href="#easycap" class="headerlink" title="easycap"></a>easycap</h2><p>发现是.pcap文件，用wireshark打开，在分组字节流中没找到flag，那就追踪数据包的tcp流，拿到flag</p>
-<hr>
-<h2 id="隐藏的钥匙"><a href="#隐藏的钥匙" class="headerlink" title="隐藏的钥匙"></a>隐藏的钥匙</h2><p>010editor打开，发现有flag，同时有base64的提示，猜测是base64编码，解码后拿到flag</p>
-<hr>
-<h2 id="另一个世界"><a href="#另一个世界" class="headerlink" title="另一个世界"></a>另一个世界</h2><p>010editor打开，搜索flag没有结果，拉到最后，发现了一串二进制，将其转化为ascii码，即是flag</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/ctf-3-17/" data-id="cm1xui44o0022d8tg9d7sfrbm" data-title="ctf 3.17" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-3-17小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-03-17T06:34:07.000Z" itemprop="datePublished">2024-03-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/03/17/3-17%E5%B0%8F%E7%BB%93/">3.17小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>昨晚熬夜熬到4.，wuuuuuu，早起计划被完全打乱。。。。。熬夜真是误人，现在两点半了才开始学习</p>
-<p>不管怎么样至少buuctf和线代，高数的计划一定要完成！！！</p>
-<p>buuctf两个小时刷了5道。</p>
-<p>新学了wireshark抓包，但还没太搞懂原理。。。。</p>
-<p>第一次遇到了与二进制有关的题目，猜测转码思路：二进制<del>其它进制</del>ascii码~base或者其它编码</p>
-<p>52 61 72 21是.rar的文件头，50 4B 03 04时.zip的文件头</p>
-<p>对于需要密码打开压缩包但是题目没有给任何有关密码的信息时，一般暴力破解行不通，要去寻找其它地方有没有信息</p>
-<hr>
-<p>线代还是没完成呃呃呃呃呃，高数没预习</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/03/17/3-17%E5%B0%8F%E7%BB%93/" data-id="cm1xui4440001d8tggcu0gtmp" data-title="3.17小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
 
     </footer>
   </div>
@@ -553,7 +556,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine/" rel="tag">machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%9D%E7%A0%94/" rel="tag">保研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
     </div>
   </div>
 
@@ -563,7 +566,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 13.33px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 13.33px;">encryption</a> <a href="/tags/machine-learning/" style="font-size: 16.67px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 15px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/tip/" style="font-size: 11.67px;">tip</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.33px;">每日一小结</a>
+      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 10px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 14px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 14px;">encryption</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/machine/" style="font-size: 10px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/tip/" style="font-size: 12px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18px;">每日一小结</a>
     </div>
   </div>
 
@@ -585,23 +588,23 @@
       <ul>
         
           <li>
+            <a href="/2024/10/30/Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective/">Rethinking Graph Backdoor Attacks: A Distribution-Preserving Perspective</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/22/24%E4%BF%9D%E7%A0%94%E5%88%86%E4%BA%AB/">24保研分享</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/09/graph-backdoor/">graph backdoor</a>
+          </li>
+        
+          <li>
+            <a href="/2024/10/08/Poisoning-Graph-Neural-Networks-for-Link-Inference/">Poisoning Graph Neural Networks for Link Inference</a>
+          </li>
+        
+          <li>
             <a href="/2024/10/06/poison-attack-in-inductive-GNN/">poison attack in inductive GNN</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/28/Can-Graph-Neural-Networks-Be-Exploited-through-Data-Free-Model-Extraction-Attacks/">Can Graph Neural Networks Be Exploited through Data-Free Model Extraction Attacks?</a>
-          </li>
-        
-          <li>
-            <a href="/2024/09/23/Link-Stealing-Attacks-Against-Inductive-GNN/">Link Stealing Attacks Against Inductive GNN</a>
-          </li>
-        
-          <li>
-            <a href="/2024/08/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%EF%BC%9ANarcissus-tensflow/">深度学习代码：Narcissus/tensorflow</a>
-          </li>
-        
-          <li>
-            <a href="/2024/07/12/Stealing%20Links%20from%20GNN/">Stealing Links from GNN</a>
           </li>
         
       </ul>
