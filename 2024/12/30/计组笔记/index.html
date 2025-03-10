@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>计组笔记 | TAY&#39;S BLOG</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="计算机结构及各部件功能冯.诺依曼计算机 由运算器,存储器,控制器,输入设备,输出设备构成 指令和数据以同等地位存放于存储区内,可按地址寻访 指令和数据均用**二进制数表示 指令由操作码和地址码组成,操作码表示操作的性质,地址码表示操作数在存储器中的位置 指令在存储器内按顺序存放,通常,指令是顺序执行的 机器以运算器为中心,但现代计算机已转化为**以存储器为中心  部件功能介绍 运算器: 用来完成算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计组笔记">
+<meta property="og:url" content="http://example.com/2024/12/30/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="TAY&#39;S BLOG">
+<meta property="og:description" content="计算机结构及各部件功能冯.诺依曼计算机 由运算器,存储器,控制器,输入设备,输出设备构成 指令和数据以同等地位存放于存储区内,可按地址寻访 指令和数据均用**二进制数表示 指令由操作码和地址码组成,操作码表示操作的性质,地址码表示操作数在存储器中的位置 指令在存储器内按顺序存放,通常,指令是顺序执行的 机器以运算器为中心,但现代计算机已转化为**以存储器为中心  部件功能介绍 运算器: 用来完成算">
+<meta property="og:locale" content="zh_CH">
+<meta property="article:published_time" content="2024-12-30T02:41:34.000Z">
+<meta property="article:modified_time" content="2024-12-30T21:44:39.821Z">
+<meta property="article:author" content="tay">
+<meta property="article:tag" content="复习">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="TAY'S BLOG" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">TAY&#39;S BLOG</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-计组笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/12/30/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-12-30T02:41:34.000Z" itemprop="datePublished">2024-12-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      计组笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="计算机结构及各部件功能"><a href="#计算机结构及各部件功能" class="headerlink" title="计算机结构及各部件功能"></a>计算机结构及各部件功能</h1><h2 id="冯-诺依曼计算机"><a href="#冯-诺依曼计算机" class="headerlink" title="冯.诺依曼计算机"></a>冯.诺依曼计算机</h2><ol>
+<li>由运算器,存储器,控制器,输入设备,输出设备构成</li>
+<li>指令和数据以<strong>同等地位</strong>存放于存储区内,可<strong>按地址寻访</strong></li>
+<li>指令和数据均用**二进制数表示</li>
+<li>指令由<strong>操作码</strong>和<strong>地址码</strong>组成,操作码表示操作的性质,地址码表示操作数在存储器中的位置</li>
+<li>指令在存储器内按<strong>顺序存放</strong>,<strong>通常,指令是顺序执行的</strong></li>
+<li>机器以<strong>运算器为中心</strong>,但现代计算机已转化为**以存储器为中心</li>
+</ol>
+<h2 id="部件功能介绍"><a href="#部件功能介绍" class="headerlink" title="部件功能介绍"></a>部件功能介绍</h2><ol>
+<li>运算器: 用来完成<strong>算术运算</strong> 和 <strong>逻辑运算</strong> ,并将运算的中间结果暂存在运算器中</li>
+<li>存储器 : 用来存放数据和程序</li>
+<li>控制器 : 用来控制, 指挥程序和数据的输入,运行以及处理运算结果</li>
+<li>输入设备 : 将人们熟悉的信息转化为机器能识别的形式</li>
+<li>输出设备 : 将机器的运算结果转化为人们熟悉的信息形式</li>
+</ol>
+<h2 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h2><ol>
+<li>指令和数据按地址存取</li>
+<li>存储体 -&gt; 存储单元 -&gt; 存储元件, 存储元件就相当于一个bit, 一个存储单元存储n个bit, 称这串二进制代码为一个存储字, 它的位数称为存储字长(一个存储字还可以代表一条指令)</li>
+<li>**注意区分字和字节的区别! : 字是储存单元, 字节是固定的8位二进制代码,一字节 &#x3D; 1B</li>
+<li>每个存储单元都有一个编号, 称为存储单元的地址号</li>
+</ol>
+<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><ol>
+<li>MAR(存储器地址寄存器) : 存放欲访问的存储单元的地址, 其位数对应存储单元的个数</li>
+<li>MDR(存储器寄存器) : 存放从存储体某单元取出的代码或者准备往某存储单元存入的代码, 其位数与存储字长相等</li>
+<li>ACC(累加器) : 存储被加数以及和, 被减数以及差, 乘积高位, 被除数以及余数</li>
+<li>MQ(乘商寄存器) : 存储乘数以及乘积低位, 商</li>
+<li>X(操作数寄存器) : 加数, 减数, 被乘数, 除数</li>
+<li>PC(程序计数器) : 存放当前欲执行指令的地址, 与MAR之间有通路且可以自动加一, 故能自动形成下一条指令的地址</li>
+<li>IR(指令寄存器) : 存放当前的指令, 来自于MDR</li>
+</ol>
+<h2 id="技术指标"><a href="#技术指标" class="headerlink" title="技术指标"></a>技术指标</h2><ol>
+<li>机器字长 : CPU一次能处理数据的位数</li>
+<li>存储容量 : a) 主存容量 : 主存中存放二进制代码的总位数: 存储单元数 * 存储字长 &#x3D; MAR  * MDR b) 辅存容量 : 字节数表示</li>
+<li>运算速度 : a) MIPS : 单位时间内执行n个一百万条指令 b) CPI : 执行一条指令所需的时钟周期数 c) FLOPS : 每秒进行浮点运算的次数<br>主存的作用: 负责临时存储正在使用的数据和程序，提供快速访问。其作用是为CPU提供运行所需的数据和指令，速度快，但断电后数据会丢失。<br>辅存的作用 : 负责长期存储数据和程序，提供大容量存储。其作用是保存不常用但需要长期存储的数据，速度相对较慢，但数据断电后不会丢失。</li>
+</ol>
+<h1 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h1><h2 id="单总线"><a href="#单总线" class="headerlink" title="单总线"></a>单总线</h2><p>CPU, 主存 I&#x2F;O设备都挂在同一总线上<br>优点 : 结构简单, 便于扩充<br>缺点 : 不允许两个以上的部件在同同一时刻向总线传输信息, 控制信号的传播存在严重延迟, 影响系统工作效率</p>
+<h2 id="双总线"><a href="#双总线" class="headerlink" title="双总线"></a>双总线</h2><p>将速度较低的I&#x2F;O设备从单总线上分离, 形成主存总线与I&#x2F;O总线分开的结构.(两个总线通过通道连接)<br>优点 : CPU下放部分功能给通道, 系统吞吐能力更大, 提高了操作间的并行性, 缩短了指令周期<br>缺点 : 增加了硬件复杂度和成本</p>
+<h2 id="三总线"><a href="#三总线" class="headerlink" title="三总线"></a><strong>三总线</strong></h2><ol>
+<li>将速率不同的I&#x2F;O设备分类,接在不同通道上,<strong>主存总线</strong>用于CPU与主存之间的传输; <strong>I&#x2F;O总线</strong>供CPU与各类I&#x2F;O设备之间传递信息; <strong>DMA总线</strong>用于<strong>高速</strong>I&#x2F;O设备与主存之间直接交换信息.(任一时刻只能只用一种总线)</li>
+<li>CPU与Cache由<strong>局部总线</strong>连接, 主存和Cache由<strong>系统总线</strong>连接, <strong>扩展总线</strong>可接入很多接口, 支持I&#x2F;O设备, 同时通过拓展总线接口与系统总线相连.<br>优点 : 提升效率</li>
+</ol>
+<h2 id="四总线"><a href="#四总线" class="headerlink" title="四总线"></a>四总线</h2><p>与三总线类似, 但又多了一条<strong>高速总线</strong>挂接高速I&#x2F;O设备.</p>
+<p>**GPU: graphic processing unit, 图形处理器</p>
+<h1 id="总线判优控制"><a href="#总线判优控制" class="headerlink" title="总线判优控制"></a>总线判优控制</h1><p>用以判断哪个主设备有用总线的优先使用权(主设备对总线有控制权, 从设备只能响应主设备发来的总线命令)</p>
+<h2 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h2><p>将控制逻辑集中在一处(例: CPU)</p>
+<ol>
+<li>链式查询: 离总线控制部件最近的设备具有最高优先级. 特点: 只需很少几根线就能按一定优先次序实现总线控制, 并且很容易扩充设备, 但对电路故障很敏感, 且优先级别低的设备可能很难获得请求</li>
+<li>计数器定时查询: 当某个请求占用总线的设备地址与计数值一致时, 便获得总线使用权. 计数器的初始值可以修改, 因此优先次序可以修改. 特点 : 对电路故障不敏感, 但增加了控制线数, 控制复杂</li>
+<li>独立请求方式: 每台设备单独有一对总线请求线和总线同意线. 总线控制部件通过排队电路, 决定响应哪台设备的请求. 特点 : 响应速度快, 优先次序灵活(通过程序改变) , 但控制线数量多, 总线控制更复杂</li>
+</ol>
+<h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><p>将控制逻辑分散在与总线连接的各个部件或设备上</p>
+<h1 id="总线通信控制"><a href="#总线通信控制" class="headerlink" title="总线通信控制"></a>总线通信控制</h1><p>主要解决通信双方如何获知传输开始和传输结束, 以及通信双方如何协调如何配合.</p>
+<h2 id="同步通信"><a href="#同步通信" class="headerlink" title="同步通信"></a>同步通信</h2><p>通信双方由统一时标(通常是CPU的总线控制部件发出)控制数据传送<br>优点 : 规定明确统一, 模块间的配合简单一致<br>缺点 : 必须按最慢速度的部件来设计公共时钟, 影响工作效率, 给设计带来局限性, 缺乏灵活性<br>一般用于总线长度短, 各部件存取时间比较一致的场合</p>
+<h2 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a>异步通信</h2><p>采用应答方式(握手方式), 主模块发出请求信号,等从模块反馈回来”响应” 信号后才开始通信(主从模块之间要增加两条应答线)<br>应答方式又分三种类型</p>
+<ol>
+<li>不互锁方式: 主模块发出请求信号后,不必等待接到从模块的回答信号, 而是经过一段时间, 确认从模块已收到请求信号, 便撤销其请求信号; 从模块同理</li>
+<li>半互锁方式 : 主模块发出请求信号后, 必须待接到从模块的回答信号后再撤销请求信号; 而从模块不必</li>
+<li>全互锁方式 : 主从模块都必须在接收到对方的回答后再撤销信号</li>
+</ol>
+<h2 id="半同步通信"><a href="#半同步通信" class="headerlink" title="半同步通信"></a>半同步通信</h2><p>所有地址, 命令, 数据信号的发出时间, 都严格参照系统时钟的某个前沿开始, 接收方都采用系统时钟后沿时刻来进行判断识别<br>通过插入时钟(等待)周期的措施来协调通信双方的配合问题</p>
+<h2 id="分离式通信"><a href="#分离式通信" class="headerlink" title="分离式通信"></a>分离式通信</h2><p>在准备数据的过程中, 总线可以接受其他模块的请求, 保证总线在被占用时都在做有效工作</p>
+<h1 id="存储器分类"><a href="#存储器分类" class="headerlink" title="存储器分类"></a>存储器分类</h1><h2 id="随机存储器RAM"><a href="#随机存储器RAM" class="headerlink" title="随机存储器RAM"></a>随机存储器RAM</h2><p>可读可写存, 存储器的任何一个存储单元的内容都可以随机存取, 却存取时间与存储单元的物理位置无关. 计算机系统的主存都采用RAM<br>静态 : SRAM(触发器原理寄存信息)<br>动态 : DRAM(电容充放电原理寄存信息)</p>
+<h2 id="只读存储器ROM"><a href="#只读存储器ROM" class="headerlink" title="只读存储器ROM"></a>只读存储器ROM</h2><p>一旦存入原始信息, 就只能进行读取操作, 不能更改信息<br>用于存放固定不变的程序, 常数, 汉字字库…</p>
+<h2 id="串行访问存储器"><a href="#串行访问存储器" class="headerlink" title="串行访问存储器"></a>串行访问存储器</h2><p>果对存储单元进行读／写操作时，需按其物理位置的先后顺序寻找地址</p>
+<p>![[91ecab13bfb7940d3a8844320b80170.png]]<br>![[0e788b698e75e0535695fe47de54b7f.png]]<br>速度越高, 位价越高; 容量越大, 位价越低, 速度越慢<br>缓存Cache: 比主存速度快,容量更小的高速缓冲存储器, 用以匹配主存与CPU的速度<br>![[f409581f643c753d49a852792e437fb.png]]<br>缓存-主存层次用以解决CPU和主存速度不匹配的问题, 速度接近缓存,高于主存,但容量和位价接近主存<br>主存-辅存层次用以解决存储系统的容量问题, 同理</p>
+<h1 id="主存储器-1"><a href="#主存储器-1" class="headerlink" title="主存储器"></a>主存储器</h1><p>8位二进制一个字节<br>可以按字寻址, 也可以按字节寻址<br>n位 -&gt; 范围 : 2^n<br>2^10 &#x3D; 1KB<br>2^20 &#x3D; 1MB<br>2^30 &#x3D; 1GB<br>2^40 &#x3D; 1TB<br>存储容量 : 存储单元个数 * 存储字长 (字节总数表示的话要除8)</p>
+<h1 id="输入输出系统"><a href="#输入输出系统" class="headerlink" title="输入输出系统"></a>输入输出系统</h1><h2 id="I-O指令"><a href="#I-O指令" class="headerlink" title="I&#x2F;O指令"></a>I&#x2F;O指令</h2><p>机器指令的一类, 与其他机器指令的字长相等<br>![[a9e9f442747b8b7c6ff27dcc0cd12d1.png]]<br>操作码 : I&#x2F;O指令与其他指令的判别代码<br>命令码 : 体现I&#x2F;O设备的具体操作<br>设备码 : 多台I&#x2F;O设备的选择码, 相当于设备的地址</p>
+<h2 id="I-O设备与主机的联系"><a href="#I-O设备与主机的联系" class="headerlink" title="I&#x2F;O设备与主机的联系"></a>I&#x2F;O设备与主机的联系</h2><p>I&#x2F;O设备与主机采用总线连接的优势 : </p>
+<ol>
+<li>数据经过接口既起到缓冲作用, 又可完成串-并的变换</li>
+<li>接口能满足中断请求处理的要求, 使I&#x2F;O设备与CPU可按并行方式工作, 提高效率</li>
+<li>多台I&#x2F;O设备分时占用总线, 使多台I&#x2F;O设备互相之间也可以实现并行工作方式</li>
+</ol>
+<p>I&#x2F;O设备编址方式:</p>
+<ol>
+<li>统一编址 : 将I&#x2F;O地址看作存储器地址的一部分,(在存储器的存储空间中专门划出一段范围的地址作为I&#x2F;O设备的地址) 所用访问指令与访存指令相似</li>
+<li>不统一编址 : I&#x2F;O地址和存储器地址分开, 访问需要专用的I&#x2F;O指令</li>
+</ol>
+<h2 id="I-O设备与主机信息传送的控制方式"><a href="#I-O设备与主机信息传送的控制方式" class="headerlink" title="I&#x2F;O设备与主机信息传送的控制方式"></a>I&#x2F;O设备与主机信息传送的控制方式</h2><p>程序查询方式, 程序中断方式, 直接存储器存取方式(DMA), I&#x2F;O通道方式, I&#x2F;O处理机方式</p>
+<ol>
+<li>程序查询方式 : 由CPU通过程序不断查询I&#x2F;O设备是否已做好准备, 从而控制I&#x2F;O设备与主机交换信息(要求I&#x2F;O接口内设置一个能反映I&#x2F;O谁被是否准备就绪的状态标记, CPU通过它得知I&#x2F;O设备的准备情况)     缺点: CPU需要不断查询; 串行工作 -&gt; 效率低</li>
+<li>程序中断方式 : 当I&#x2F;O设备准备就绪并向CPU发出中断请求后, CPU才中断现行程序, 转至中断服务程序</li>
+<li>DMA方式 : I&#x2F;O设备通过DMA数据通路直接和主存进行信息交换, 跳过CPU, 不需要调用中断服务程序.(若DMA和CPU同时访问主存, DMA有优先权(窃取&#x2F;挪用)占一个存取周期, 这期间CPU仍能进行内部操作)</li>
+</ol>
+<h1 id="计算机的运算方法"><a href="#计算机的运算方法" class="headerlink" title="计算机的运算方法"></a>计算机的运算方法</h1><h2 id="原-补-反-移"><a href="#原-补-反-移" class="headerlink" title="原, 补, 反, 移"></a>原, 补, 反, 移</h2><ol>
+<li>符号位放在最前面, 0正, 1负</li>
+<li>原码 : 符号+绝对值</li>
+<li>补码 : 正数 : 和原码相同; 负数 : 原码取反(符号位除外)加1        补码 -&gt; 原码: 反过来即可</li>
+<li>反码 : 正数 : 和原码相同; 负数 : 原码取反(符号位除外)</li>
+<li>移码: 真值 + 2^n(n为真值的位数)</li>
+</ol>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>类似于科学计数法<br>N &#x3D; S × r^j<br>S: 尾数(纯小数), j为阶码, r为基数(可取2,4,8,16…) ![[05d592e04617afb726d525c0e86d149.png]]</p>
+<h2 id="浮点数的表示范围"><a href="#浮点数的表示范围" class="headerlink" title="浮点数的表示范围:"></a>浮点数的表示范围:</h2><p>阶码m位, 尾数n位<br>![[1e8cabb19d03cf4e8d8fc7fcda367d8.png]]<br>浮点数阶码大于最大阶码时上溢: 机器停止运算, 进行中断溢出处理<br>小于最小阶码时下溢 : 尾数各位强行置零, 机器继续运行</p>
+<h2 id="浮点数的规格化"><a href="#浮点数的规格化" class="headerlink" title="浮点数的规格化"></a>浮点数的规格化</h2><p>基数为2, 尾数最高位为1的数为规格化数<br>基数为4, 尾数的最高两位不全为0的数为规格化数<br>……..剩下同理</p>
+<h2 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a>IEEE 754</h2><p>![[404ac953ff069fdabaa97449fde7e90.png]]<br>![[207aed3d6d16c59081d385502cf169e.png]]</p>
+<h2 id="补码加减法"><a href="#补码加减法" class="headerlink" title="补码加减法"></a>补码加减法</h2><p>![[08610987f294a7ee6530df0a163f0a3.png]]![[2d2ca8886806faf8c292579888b312a.png]]<br>超过数值范围的舍去</p>
+<h2 id="浮点数加减"><a href="#浮点数加减" class="headerlink" title="浮点数加减"></a>浮点数加减</h2><ol>
+<li>对阶 : 两数的小数点位置对齐(使两数的阶码相等)</li>
+<li>尾数求和 : 按顶点加减运算规则求和差</li>
+<li>规格化 : 求和差后的尾数规格化, 增加有效数字的位数, 提高运算精度                                                           ![[c06319320144b54bb8226d6bfcd612a.png]]</li>
+<li>舍入 : 考虑尾数右移时丢失的数值位</li>
+<li>溢出判断</li>
+</ol>
+<h1 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h1><h2 id="指令格式"><a href="#指令格式" class="headerlink" title="指令格式"></a>指令格式</h2><ol>
+<li>操作码 : 用来指明指令所要完成的操作, 位数反应机器允许的指令条数(长度可变可不变)    ![[79f43787c0a021bbd8689a9bea4df15.png]]                       长度不固定时增加指令译码和分析难度,故采用<strong>扩展操作码技术</strong>: 操作码长度随地址数的减少而增加  ![[e186935f4213d2f4646ef4aa3410367.png]]</li>
+<li>地址码 : 用来指出该指令的源操作数的地址(一个&#x2F;两个), 结果的地址, 下一条指令的地址</li>
+</ol>
+<h2 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h2><p>确定本条指令的数据地址以及下一条将要执行的指令地址的方法</p>
+<h3 id="指令寻址"><a href="#指令寻址" class="headerlink" title="指令寻址"></a>指令寻址</h3><p>顺序寻址 : 通过程序计数器PC加一, 自动形成下一条指令的地址<br>跳跃寻址 : 转移类指令实现<br>![[a58f17e0f60c57526ea3722e6ea80f3.png]]<br>jmp 7, 故直接从3跳到7</p>
+<h3 id="数据寻址"><a href="#数据寻址" class="headerlink" title="数据寻址"></a>数据寻址</h3><p>![[19c4ee359e160b1a3f06b419e454347.png]]<br>真实地址 EA, 由寻址方式(寻址特征)和形式地址共同确定</p>
+<ol>
+<li>立即寻址 : “#”立即寻址特征, A存储操作数本身(数据: 补码)   优点 : 可以直接获取操作数  缺点 : 范围限制</li>
+<li>直接寻址 : EA &#x3D; A  优点 : 寻找操作数比较简单  缺点: 寻址范围限制; 改A才能改EA</li>
+<li>隐含寻址 : 指令字中不明显地给出操作数的地址, 其操作数的地址隐含在操作码或者某个寄存器中     优点: 缩短指令字长</li>
+<li>间接寻址 : A指出操作数有效地址所在存储单元地址      ![[a60e8d52d2d6ce773b7ce3d242fa2f2.png]]     优点 : 寻址范围大; 便于编制程序(能很方便完成子程序返回)   ![[fbae0638389600ec1cd74f5532fe8f8.png]]               缺点: 需要访存多次</li>
+<li>寄存器寻址 : EA &#x3D; 寄存器的编号     优点: 无需访问主存,节省时间; 指令字短, 节省存储空间![[26a5c228497c885bd4b59496622b8fc.png]]</li>
+<li>寄存器间接寻址 : EA &#x3D; 寄存器编号, 寄存器储存操作数所在主存单元的地址号(比间接寻址少访存一次)![[a4bb06900c4f5497258e6ef1e435d08.png]]</li>
+<li>基址寻址 : 需设有基址寄存器BR, EA &#x3D; 形式地址A + BR中的内容     隐式: 专门有一个BR, 只需指令的寻址特征位反映出基址寻址即可   显式 : 在一组通用寄存器里, 由用户明确指出哪个寄存器用作基址寄存器, 存放基地址      优点 : 扩大寻址范围</li>
+<li>变址寻址 : EA &#x3D; 形式地址A + 变址寄存器IX的内容![[2557be1f2f68a2a4a0e357abcf1050f.png]]<br><strong>基址和变址的区别</strong> : 应用场合不同 : 基址用于位程序或者数据分配存储空间,因此BR内容不可变, A可变; 变址用于处理数组, A不可变, 而IX变</li>
+<li>相对寻址 : EA &#x3D; 程序计数器PC的内容 + A, 用于转移类指令, 转移后的目标地址与当前指令有一段距离, 为相对位移量由A给出(位移量)</li>
+<li>堆栈寻址</li>
+</ol>
+<h2 id="指令格式设计"><a href="#指令格式设计" class="headerlink" title="指令格式设计"></a>指令格式设计</h2><h2 id="RISC"><a href="#RISC" class="headerlink" title="RISC"></a>RISC</h2><h3 id="主要特征"><a href="#主要特征" class="headerlink" title="主要特征"></a>主要特征</h3><p>计算机执行程序所需时间 &#x3D; 机器指令数 × 每条机器指令所需的平均机器周期 × 每个机器周期的执行时间<br>特点: </p>
+<ol>
+<li>选取频度较高的一些简单指令以及一些很有用但又不复杂的指令, 让复杂指令的功能由频度较高的简单指令的组合来实现</li>
+<li>指令长度固定,指令格式种类少, 寻址方式种类少</li>
+<li>只有存数&#x2F;取数指令访问存储器, 其余指令操作在寄存器内完成</li>
+<li>CPU有多个通用寄存器</li>
+<li>采用流水线技术, 大部分指令在一个时钟周期内完成</li>
+<li>控制器采用组合逻辑控制, 不用微程序控制</li>
+<li>采用优化的编译程序</li>
+</ol>
+<h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><h2 id="指令周期"><a href="#指令周期" class="headerlink" title="指令周期"></a>指令周期</h2><p>CPU每取出并执行一条指令所需的全部时间为指令周期![[161110ab179883e6dd70847a10cb442.png]]<br>![[ff542e9d1d537b4b945ebcd1cca3bcf.png]]<br>![[b47c5f8d47acc7158a11315fe0728b4.png]]</p>
+<h2 id="指令周期的数据流"><a href="#指令周期的数据流" class="headerlink" title="指令周期的数据流"></a>指令周期的数据流</h2><p>![[a9a42ab95334d71b96bd4746851b40f.png]]![[099738f5f19a4769a70c78dad3174b9.png]]<br>![[5eea52359a64daadf6414a9c8dc71d8.png]]</p>
+<h2 id="流水线性能"><a href="#流水线性能" class="headerlink" title="流水线性能"></a>流水线性能</h2><ol>
+<li>吞吐率: 单位时间内流水线所完成指令或输出结果的数量![[9d9b12c740be38d3d1a672571cef098.png]]![[995572dd971f8f99bdbb82b517d45e6.png]]</li>
+<li>加速比: m段流水线的速度与等功能的非流水线的速度比![[a6ca489167877cfbc6d87a21a95eabd.png]]</li>
+</ol>
+<h2 id="中断屏蔽技术"><a href="#中断屏蔽技术" class="headerlink" title="中断屏蔽技术"></a>中断屏蔽技术</h2><p>![[85481cbc56080be538aaa55ec54fb02.png]]<br>置一时表示该中断源被屏蔽</p>
+<h2 id="机器周期"><a href="#机器周期" class="headerlink" title="机器周期"></a>机器周期</h2><p>可看作所有指令执行过程中的一个基准时间, 机器周期取决于指令的功能以及器件的速度<br>通常以访问一次存储器的时间为基准时间作为机器周期</p>
+<h2 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h2><p>控制单元控制一条指令执行的过程可看为依次执行一个确定的微操作序列的过程<br>CU的控制方式 : 如何形成控制不同位操作序列所采用的时序控制方式</p>
+<ol>
+<li>同步控制方式 : 任何一条指令或指令中的任何一个微操作的执行都是事先确定的, 并且都受统一基准时标的时序信号所控制的方式(1. 定长的机器周期 2. 不定长的机器周期 3. 中央控制和局部控制相结合)</li>
+<li>异步控制方式 : 不存在基准时标信号, 操作需要多长时间就占用多长时间, 但需要有应答线路控制</li>
+<li>联合控制方式 : 异步+同步; 大部分统一对待,小部分区别对待</li>
+<li>人工控制方式</li>
+</ol>
+<h2 id="微操作的节拍安排"><a href="#微操作的节拍安排" class="headerlink" title="微操作的节拍安排"></a>微操作的节拍安排</h2><ol>
+<li>有些微操作的次序不能改变</li>
+<li>被控制对象不同的微操作, 若能在一个节拍内执行, 则尽可能安排在一个节拍内</li>
+<li>有些微操作所占时间不长, 尽量安排在一个节拍内完成,并允许有先后次序</li>
+</ol>
+<h2 id="组合逻辑设计"><a href="#组合逻辑设计" class="headerlink" title="组合逻辑设计"></a>组合逻辑设计</h2><p>优点 : 思路清晰, 简单明了<br>缺点: 线路结构庞杂, 调试困难</p>
+<h2 id="微程序设计"><a href="#微程序设计" class="headerlink" title="微程序设计"></a>微程序设计</h2><p>优点 : 不需要队逻辑表达式进行化简, 不用考虑逻辑门级数和门的扇入系数, 使设计简便; 控制信号 -&gt; 二进制代码, 只要修改代码就可以改变操作内容, 利于计算机仿真</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/12/30/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/" data-id="cm82rtbya000ftctg5vpecca3" data-title="计组笔记" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/12/31/ds%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          ds笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/12/05/Data-Importance/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Data Importance</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataStructure/" rel="tag">DataStructure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine/" rel="tag">machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%9D%E7%A0%94/" rel="tag">保研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DataStructure/" style="font-size: 10px;">DataStructure</a> <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 13.33px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 13.33px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 13.33px;">encryption</a> <a href="/tags/learning/" style="font-size: 15px;">learning</a> <a href="/tags/machine/" style="font-size: 15px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16.67px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16.67px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/tip/" style="font-size: 11.67px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 13.33px;">复习</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.33px;">每日一小结</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/10/MPAF/">MPAF</a>
+          </li>
+        
+          <li>
+            <a href="/2025/02/20/Poisoning-Machine-Learning-Models-to-Reveal-Their-Secrets/">Poisoning Machine Learning Models to Reveal Their Secrets</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/22/%E6%95%B0%E6%A8%A1-1/">数模</a>
+          </li>
+        
+          <li>
+            <a href="/2025/01/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+          </li>
+        
+          <li>
+            <a href="/2024/12/31/ds%E7%AC%94%E8%AE%B0/">ds笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 tay<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

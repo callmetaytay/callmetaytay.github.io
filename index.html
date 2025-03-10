@@ -73,6 +73,684 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MPAF" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/10/MPAF/" class="article-date">
+  <time class="dt-published" datetime="2025-03-10T07:57:59.000Z" itemprop="datePublished">2025-03-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/10/MPAF/">MPAF</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/10/MPAF/" data-id="cm82rtbxy0001tctgcetqdhg0" data-title="MPAF" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Poisoning-Machine-Learning-Models-to-Reveal-Their-Secrets" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/02/20/Poisoning-Machine-Learning-Models-to-Reveal-Their-Secrets/" class="article-date">
+  <time class="dt-published" datetime="2025-02-20T10:31:55.000Z" itemprop="datePublished">2025-02-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/02/20/Poisoning-Machine-Learning-Models-to-Reveal-Their-Secrets/">Poisoning Machine Learning Models to Reveal Their Secrets</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="goal"><a href="#goal" class="headerlink" title="goal"></a>goal</h2><p>an adversary who can poison a training dataset can cause models trained on this dataset to leak significant private details of training points belonging to other parties<br>**poison –&gt; leak private data</p>
+<h2 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h2><p>Our adversary $A$ that can inject some data into a machine learning model’s training set, but cannot actively participate in the learning process.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/02/20/Poisoning-Machine-Learning-Models-to-Reveal-Their-Secrets/" data-id="cm82rtby00005tctgeyez5xwo" data-title="Poisoning Machine Learning Models to Reveal Their Secrets" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine/" rel="tag">machine</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-数模-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/01/22/%E6%95%B0%E6%A8%A1-1/" class="article-date">
+  <time class="dt-published" datetime="2025-01-22T13:00:54.000Z" itemprop="datePublished">2025-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/01/22/%E6%95%B0%E6%A8%A1-1/">数模</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>线性回归</p>
+<pre><code class="hljs plaintext">import numpy as np
+from sklearn.linear_model import LinearRegression
+ 
+np.random.seed(0)
+X = np.random.rand(100, 1)
+y = 2 + 3 * X + np.random.rand(100, 1)
+ 
+model = LinearRegression()
+model.fit(X, y)
+
+X_new = np.array([[0.5], [1.0]])
+y_new = model.predict(X_new)</code></pre>
+
+<p>逻辑回归</p>
+<pre><code class="hljs plaintext">import numpy as np
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+ 
+np.random.seed(0)
+X = np.random.rand(100, 3)
+y = np.random.randint(0, 2, 100)
+ 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+ 
+model = LogisticRegression()
+model.fit(X_train, y_train)
+ 
+y_pred = model.predict(X_test)
+ 
+accuracy = accuracy_score(y_test, y_pred)</code></pre>
+
+<p>决策树</p>
+<pre><code class="hljs plaintext">from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+ 
+iris = load_iris()
+ 
+X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2, random_state=42)
+ 
+clf = DecisionTreeClassifier(random_state=42)
+clf.fit(X_train, y_train)
+
+y_pred =</code></pre>
+
+<p>支持向量机</p>
+<pre><code class="hljs plaintext">from sklearn.datasets import load_iris
+from sklearn.svm import SVC
+from sklearn.model_selection import train_test_split
+ 
+iris = load_iris()
+ 
+X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.2, random_state=42)
+ 
+clf = SVC(kernel=&#x27;linear&#x27;, C=1.0, random_state=42)
+clf.fit(X_train, y_train)
+ 
+y_pred = clf.predict(X_test)
+
+accuracy = clf.score(X_test, y_test)</code></pre>
+
+<p>神经网络</p>
+<pre><code class="hljs plaintext">from sklearn.datasets import make_classification
+from sklearn.neural_network import MLPClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+ 
+X, y = make_classification(n_samples=1000, n_features=10, n_classes=2, random_state=1)
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
+ 
+mlp = MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=1)
+mlp.fit(X_train, y_train)
+ 
+y_pred = mlp.predict(X_test)
+ 
+acc = accuracy_score(y_test, y_pred)</code></pre>
+
+<p>模拟退火</p>
+<pre><code class="hljs plaintext">import math
+import random
+ 
+class TSP:
+    def __init__(self, num_cities, distance_matrix):
+        self.num_cities = num_cities
+        self.distance_matrix = distance_matrix
+ 
+    def path_length(self, path):
+        length = 0
+        for i in range(len(path)-1):
+            length += self.distance_matrix[path[i]][path[i+1]]
+        length += self.distance_matrix[path[-1]][path[0]]
+        return length
+ 
+    def random_solution(self):
+        path = list(range(self.num_cities))
+        random.shuffle(path)
+        return path
+ 
+class SimulatedAnnealing:
+    def __init__(self, tsp, T, Tmin, alpha):
+        self.tsp = tsp
+        self.T = T  
+        self.Tmin = Tmin  
+        self.alpha = alpha  
+ 
+    def acceptance_probability(self, old_cost, new_cost, T):
+        if new_cost &lt; old_cost:
+            return 1
+        else:
+            return math.exp(-(new_cost - old_cost) / T)
+ 
+    def solve(self):
+        current_solution = self.tsp.random_solution()
+        current_cost = self.tsp.path_length(current_solution)
+        while self.T &gt; self.Tmin:
+            new_solution = self.tsp.random_solution()
+            new_cost = self.tsp.path_length(new_solution)
+            if self.acceptance_probability(current_cost, new_cost, self.T) &gt; random.random():
+                current_solution = new_solution
+                current_cost = new_cost
+            self.T *= self.alpha
+        return current_solution, current_cost</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/01/22/%E6%95%B0%E6%A8%A1-1/" data-id="cm82rtbya000dtctg63jebuxf" data-title="数模" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-编译原理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/01/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" class="article-date">
+  <time class="dt-published" datetime="2025-01-08T11:59:47.000Z" itemprop="datePublished">2025-01-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/01/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>![[a3d106ceff40baa91ac858932db0e60.png]]<br>转换&#x2F;预处理： 高级语言之间的翻译<br>编译 ： 高级语言 -&gt; 机器语言&#x2F;汇编语言<br>汇编 ： 汇编语言 -&gt; 机器语言<br>交叉汇编 : 一个汇编语言汇编为另一台机器上的机器指令<br>反汇编 ： 机器语言 -&gt; 汇编语言<br>反编译 ： 汇编语言 -&gt; 高级语言</p>
+<h2 id="编译器和解释器"><a href="#编译器和解释器" class="headerlink" title="编译器和解释器"></a>编译器和解释器</h2><p>编译器 ： 源程序翻译和翻译后程序运行分开进行<br>解释器 ： 翻译一段， 就执行它， 翻译与运行结合进行<br>区别 ： 运行目标程序时的控制权在解释器而不在目标程序<br>解释器优点 ： </p>
+<ol>
+<li>较好的动态特性</li>
+<li>较好的可以执行</li>
+</ol>
+<h3 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h3><p>![[Pasted image 20250108203356.png]]<br>前端 ： 词法分析，语法分析，语义分析，中间代码生成<br>后端 ： 中间代码优化， 目标代码生成</p>
+<ol>
+<li>词法分析 ： 根据词法规则识别记号（关键字，标识符，字面量，特殊符号</li>
+<li>语法分析 ： 根据语法规则识别记号流中的结构，并构造语法树</li>
+<li>语义分析 ： 根据语义规则对语法树中的语法单元进行进行静态语义检查，保证语义合法</li>
+</ol>
+<h2 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h2><h3 id="正规式"><a href="#正规式" class="headerlink" title="正规式"></a>正规式</h3><p>记号 &#x3D; 正规式，是用来描述<strong>字符串集合</strong>的模式或规则的形式化语言工具</p>
+<h3 id="正规式-NFA-5c32e7dfb7961080c1f6c73ac146b6c-png"><a href="#正规式-NFA-5c32e7dfb7961080c1f6c73ac146b6c-png" class="headerlink" title="正规式-NFA![[5c32e7dfb7961080c1f6c73ac146b6c.png]]"></a>正规式-NFA![[5c32e7dfb7961080c1f6c73ac146b6c.png]]</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/01/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" data-id="cm82rtbyb000htctg6znl0ji0" data-title="编译原理" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ds笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/12/31/ds%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-12-31T03:29:03.000Z" itemprop="datePublished">2024-12-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/12/31/ds%E7%AC%94%E8%AE%B0/">ds笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><ol>
+<li>逻辑结构 ： 线性和非线性（多个前驱和多个后继）</li>
+<li>存储结构 ： 顺序存储， 链接存储， 索引存储，散列存储（根据节点关键字直接计算存储地址）</li>
+<li>数据的逻辑结构是数据结构的抽象表示； 数据的存储结构（物理结构） 是数据的逻辑结构在计算机中的表示</li>
+<li>算法的特点： 输入性， 输出性， 有穷性， 确定性 ，可行性</li>
+<li>数据结构可归纳为逻辑结构，存储结构，数据的运算三部分</li>
+</ol>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><ol>
+<li>顺序表： 优点：随机存取， 存储位置直观，存储密度高； 缺点： 插入&#x2F;删除效率低， 预先分配空间导致浪费， 容量难以扩充</li>
+</ol>
+<h1 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h1><p>循环队列：<br>队空： q.front &#x3D;&#x3D; q.rear;<br>队满 ： q.front &#x3D;&#x3D; (q.rear + 1) % maxsize</p>
+<p>![[369f6d3e22b65922d2d23f394075912.png]]![[433380077ad7b9b4ab22b10b9c0e5eb.png]]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/12/31/ds%E7%AC%94%E8%AE%B0/" data-id="cm82rtby10008tctg4k02668v" data-title="ds笔记" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-计组笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/12/30/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-12-30T02:41:34.000Z" itemprop="datePublished">2024-12-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/12/30/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/">计组笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="计算机结构及各部件功能"><a href="#计算机结构及各部件功能" class="headerlink" title="计算机结构及各部件功能"></a>计算机结构及各部件功能</h1><h2 id="冯-诺依曼计算机"><a href="#冯-诺依曼计算机" class="headerlink" title="冯.诺依曼计算机"></a>冯.诺依曼计算机</h2><ol>
+<li>由运算器,存储器,控制器,输入设备,输出设备构成</li>
+<li>指令和数据以<strong>同等地位</strong>存放于存储区内,可<strong>按地址寻访</strong></li>
+<li>指令和数据均用**二进制数表示</li>
+<li>指令由<strong>操作码</strong>和<strong>地址码</strong>组成,操作码表示操作的性质,地址码表示操作数在存储器中的位置</li>
+<li>指令在存储器内按<strong>顺序存放</strong>,<strong>通常,指令是顺序执行的</strong></li>
+<li>机器以<strong>运算器为中心</strong>,但现代计算机已转化为**以存储器为中心</li>
+</ol>
+<h2 id="部件功能介绍"><a href="#部件功能介绍" class="headerlink" title="部件功能介绍"></a>部件功能介绍</h2><ol>
+<li>运算器: 用来完成<strong>算术运算</strong> 和 <strong>逻辑运算</strong> ,并将运算的中间结果暂存在运算器中</li>
+<li>存储器 : 用来存放数据和程序</li>
+<li>控制器 : 用来控制, 指挥程序和数据的输入,运行以及处理运算结果</li>
+<li>输入设备 : 将人们熟悉的信息转化为机器能识别的形式</li>
+<li>输出设备 : 将机器的运算结果转化为人们熟悉的信息形式</li>
+</ol>
+<h2 id="主存储器"><a href="#主存储器" class="headerlink" title="主存储器"></a>主存储器</h2><ol>
+<li>指令和数据按地址存取</li>
+<li>存储体 -&gt; 存储单元 -&gt; 存储元件, 存储元件就相当于一个bit, 一个存储单元存储n个bit, 称这串二进制代码为一个存储字, 它的位数称为存储字长(一个存储字还可以代表一条指令)</li>
+<li>**注意区分字和字节的区别! : 字是储存单元, 字节是固定的8位二进制代码,一字节 &#x3D; 1B</li>
+<li>每个存储单元都有一个编号, 称为存储单元的地址号</li>
+</ol>
+<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><ol>
+<li>MAR(存储器地址寄存器) : 存放欲访问的存储单元的地址, 其位数对应存储单元的个数</li>
+<li>MDR(存储器寄存器) : 存放从存储体某单元取出的代码或者准备往某存储单元存入的代码, 其位数与存储字长相等</li>
+<li>ACC(累加器) : 存储被加数以及和, 被减数以及差, 乘积高位, 被除数以及余数</li>
+<li>MQ(乘商寄存器) : 存储乘数以及乘积低位, 商</li>
+<li>X(操作数寄存器) : 加数, 减数, 被乘数, 除数</li>
+<li>PC(程序计数器) : 存放当前欲执行指令的地址, 与MAR之间有通路且可以自动加一, 故能自动形成下一条指令的地址</li>
+<li>IR(指令寄存器) : 存放当前的指令, 来自于MDR</li>
+</ol>
+<h2 id="技术指标"><a href="#技术指标" class="headerlink" title="技术指标"></a>技术指标</h2><ol>
+<li>机器字长 : CPU一次能处理数据的位数</li>
+<li>存储容量 : a) 主存容量 : 主存中存放二进制代码的总位数: 存储单元数 * 存储字长 &#x3D; MAR  * MDR b) 辅存容量 : 字节数表示</li>
+<li>运算速度 : a) MIPS : 单位时间内执行n个一百万条指令 b) CPI : 执行一条指令所需的时钟周期数 c) FLOPS : 每秒进行浮点运算的次数<br>主存的作用: 负责临时存储正在使用的数据和程序，提供快速访问。其作用是为CPU提供运行所需的数据和指令，速度快，但断电后数据会丢失。<br>辅存的作用 : 负责长期存储数据和程序，提供大容量存储。其作用是保存不常用但需要长期存储的数据，速度相对较慢，但数据断电后不会丢失。</li>
+</ol>
+<h1 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h1><h2 id="单总线"><a href="#单总线" class="headerlink" title="单总线"></a>单总线</h2><p>CPU, 主存 I&#x2F;O设备都挂在同一总线上<br>优点 : 结构简单, 便于扩充<br>缺点 : 不允许两个以上的部件在同同一时刻向总线传输信息, 控制信号的传播存在严重延迟, 影响系统工作效率</p>
+<h2 id="双总线"><a href="#双总线" class="headerlink" title="双总线"></a>双总线</h2><p>将速度较低的I&#x2F;O设备从单总线上分离, 形成主存总线与I&#x2F;O总线分开的结构.(两个总线通过通道连接)<br>优点 : CPU下放部分功能给通道, 系统吞吐能力更大, 提高了操作间的并行性, 缩短了指令周期<br>缺点 : 增加了硬件复杂度和成本</p>
+<h2 id="三总线"><a href="#三总线" class="headerlink" title="三总线"></a><strong>三总线</strong></h2><ol>
+<li>将速率不同的I&#x2F;O设备分类,接在不同通道上,<strong>主存总线</strong>用于CPU与主存之间的传输; <strong>I&#x2F;O总线</strong>供CPU与各类I&#x2F;O设备之间传递信息; <strong>DMA总线</strong>用于<strong>高速</strong>I&#x2F;O设备与主存之间直接交换信息.(任一时刻只能只用一种总线)</li>
+<li>CPU与Cache由<strong>局部总线</strong>连接, 主存和Cache由<strong>系统总线</strong>连接, <strong>扩展总线</strong>可接入很多接口, 支持I&#x2F;O设备, 同时通过拓展总线接口与系统总线相连.<br>优点 : 提升效率</li>
+</ol>
+<h2 id="四总线"><a href="#四总线" class="headerlink" title="四总线"></a>四总线</h2><p>与三总线类似, 但又多了一条<strong>高速总线</strong>挂接高速I&#x2F;O设备.</p>
+<p>**GPU: graphic processing unit, 图形处理器</p>
+<h1 id="总线判优控制"><a href="#总线判优控制" class="headerlink" title="总线判优控制"></a>总线判优控制</h1><p>用以判断哪个主设备有用总线的优先使用权(主设备对总线有控制权, 从设备只能响应主设备发来的总线命令)</p>
+<h2 id="集中式"><a href="#集中式" class="headerlink" title="集中式"></a>集中式</h2><p>将控制逻辑集中在一处(例: CPU)</p>
+<ol>
+<li>链式查询: 离总线控制部件最近的设备具有最高优先级. 特点: 只需很少几根线就能按一定优先次序实现总线控制, 并且很容易扩充设备, 但对电路故障很敏感, 且优先级别低的设备可能很难获得请求</li>
+<li>计数器定时查询: 当某个请求占用总线的设备地址与计数值一致时, 便获得总线使用权. 计数器的初始值可以修改, 因此优先次序可以修改. 特点 : 对电路故障不敏感, 但增加了控制线数, 控制复杂</li>
+<li>独立请求方式: 每台设备单独有一对总线请求线和总线同意线. 总线控制部件通过排队电路, 决定响应哪台设备的请求. 特点 : 响应速度快, 优先次序灵活(通过程序改变) , 但控制线数量多, 总线控制更复杂</li>
+</ol>
+<h2 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h2><p>将控制逻辑分散在与总线连接的各个部件或设备上</p>
+<h1 id="总线通信控制"><a href="#总线通信控制" class="headerlink" title="总线通信控制"></a>总线通信控制</h1><p>主要解决通信双方如何获知传输开始和传输结束, 以及通信双方如何协调如何配合.</p>
+<h2 id="同步通信"><a href="#同步通信" class="headerlink" title="同步通信"></a>同步通信</h2><p>通信双方由统一时标(通常是CPU的总线控制部件发出)控制数据传送<br>优点 : 规定明确统一, 模块间的配合简单一致<br>缺点 : 必须按最慢速度的部件来设计公共时钟, 影响工作效率, 给设计带来局限性, 缺乏灵活性<br>一般用于总线长度短, 各部件存取时间比较一致的场合</p>
+<h2 id="异步通信"><a href="#异步通信" class="headerlink" title="异步通信"></a>异步通信</h2><p>采用应答方式(握手方式), 主模块发出请求信号,等从模块反馈回来”响应” 信号后才开始通信(主从模块之间要增加两条应答线)<br>应答方式又分三种类型</p>
+<ol>
+<li>不互锁方式: 主模块发出请求信号后,不必等待接到从模块的回答信号, 而是经过一段时间, 确认从模块已收到请求信号, 便撤销其请求信号; 从模块同理</li>
+<li>半互锁方式 : 主模块发出请求信号后, 必须待接到从模块的回答信号后再撤销请求信号; 而从模块不必</li>
+<li>全互锁方式 : 主从模块都必须在接收到对方的回答后再撤销信号</li>
+</ol>
+<h2 id="半同步通信"><a href="#半同步通信" class="headerlink" title="半同步通信"></a>半同步通信</h2><p>所有地址, 命令, 数据信号的发出时间, 都严格参照系统时钟的某个前沿开始, 接收方都采用系统时钟后沿时刻来进行判断识别<br>通过插入时钟(等待)周期的措施来协调通信双方的配合问题</p>
+<h2 id="分离式通信"><a href="#分离式通信" class="headerlink" title="分离式通信"></a>分离式通信</h2><p>在准备数据的过程中, 总线可以接受其他模块的请求, 保证总线在被占用时都在做有效工作</p>
+<h1 id="存储器分类"><a href="#存储器分类" class="headerlink" title="存储器分类"></a>存储器分类</h1><h2 id="随机存储器RAM"><a href="#随机存储器RAM" class="headerlink" title="随机存储器RAM"></a>随机存储器RAM</h2><p>可读可写存, 存储器的任何一个存储单元的内容都可以随机存取, 却存取时间与存储单元的物理位置无关. 计算机系统的主存都采用RAM<br>静态 : SRAM(触发器原理寄存信息)<br>动态 : DRAM(电容充放电原理寄存信息)</p>
+<h2 id="只读存储器ROM"><a href="#只读存储器ROM" class="headerlink" title="只读存储器ROM"></a>只读存储器ROM</h2><p>一旦存入原始信息, 就只能进行读取操作, 不能更改信息<br>用于存放固定不变的程序, 常数, 汉字字库…</p>
+<h2 id="串行访问存储器"><a href="#串行访问存储器" class="headerlink" title="串行访问存储器"></a>串行访问存储器</h2><p>果对存储单元进行读／写操作时，需按其物理位置的先后顺序寻找地址</p>
+<p>![[91ecab13bfb7940d3a8844320b80170.png]]<br>![[0e788b698e75e0535695fe47de54b7f.png]]<br>速度越高, 位价越高; 容量越大, 位价越低, 速度越慢<br>缓存Cache: 比主存速度快,容量更小的高速缓冲存储器, 用以匹配主存与CPU的速度<br>![[f409581f643c753d49a852792e437fb.png]]<br>缓存-主存层次用以解决CPU和主存速度不匹配的问题, 速度接近缓存,高于主存,但容量和位价接近主存<br>主存-辅存层次用以解决存储系统的容量问题, 同理</p>
+<h1 id="主存储器-1"><a href="#主存储器-1" class="headerlink" title="主存储器"></a>主存储器</h1><p>8位二进制一个字节<br>可以按字寻址, 也可以按字节寻址<br>n位 -&gt; 范围 : 2^n<br>2^10 &#x3D; 1KB<br>2^20 &#x3D; 1MB<br>2^30 &#x3D; 1GB<br>2^40 &#x3D; 1TB<br>存储容量 : 存储单元个数 * 存储字长 (字节总数表示的话要除8)</p>
+<h1 id="输入输出系统"><a href="#输入输出系统" class="headerlink" title="输入输出系统"></a>输入输出系统</h1><h2 id="I-O指令"><a href="#I-O指令" class="headerlink" title="I&#x2F;O指令"></a>I&#x2F;O指令</h2><p>机器指令的一类, 与其他机器指令的字长相等<br>![[a9e9f442747b8b7c6ff27dcc0cd12d1.png]]<br>操作码 : I&#x2F;O指令与其他指令的判别代码<br>命令码 : 体现I&#x2F;O设备的具体操作<br>设备码 : 多台I&#x2F;O设备的选择码, 相当于设备的地址</p>
+<h2 id="I-O设备与主机的联系"><a href="#I-O设备与主机的联系" class="headerlink" title="I&#x2F;O设备与主机的联系"></a>I&#x2F;O设备与主机的联系</h2><p>I&#x2F;O设备与主机采用总线连接的优势 : </p>
+<ol>
+<li>数据经过接口既起到缓冲作用, 又可完成串-并的变换</li>
+<li>接口能满足中断请求处理的要求, 使I&#x2F;O设备与CPU可按并行方式工作, 提高效率</li>
+<li>多台I&#x2F;O设备分时占用总线, 使多台I&#x2F;O设备互相之间也可以实现并行工作方式</li>
+</ol>
+<p>I&#x2F;O设备编址方式:</p>
+<ol>
+<li>统一编址 : 将I&#x2F;O地址看作存储器地址的一部分,(在存储器的存储空间中专门划出一段范围的地址作为I&#x2F;O设备的地址) 所用访问指令与访存指令相似</li>
+<li>不统一编址 : I&#x2F;O地址和存储器地址分开, 访问需要专用的I&#x2F;O指令</li>
+</ol>
+<h2 id="I-O设备与主机信息传送的控制方式"><a href="#I-O设备与主机信息传送的控制方式" class="headerlink" title="I&#x2F;O设备与主机信息传送的控制方式"></a>I&#x2F;O设备与主机信息传送的控制方式</h2><p>程序查询方式, 程序中断方式, 直接存储器存取方式(DMA), I&#x2F;O通道方式, I&#x2F;O处理机方式</p>
+<ol>
+<li>程序查询方式 : 由CPU通过程序不断查询I&#x2F;O设备是否已做好准备, 从而控制I&#x2F;O设备与主机交换信息(要求I&#x2F;O接口内设置一个能反映I&#x2F;O谁被是否准备就绪的状态标记, CPU通过它得知I&#x2F;O设备的准备情况)     缺点: CPU需要不断查询; 串行工作 -&gt; 效率低</li>
+<li>程序中断方式 : 当I&#x2F;O设备准备就绪并向CPU发出中断请求后, CPU才中断现行程序, 转至中断服务程序</li>
+<li>DMA方式 : I&#x2F;O设备通过DMA数据通路直接和主存进行信息交换, 跳过CPU, 不需要调用中断服务程序.(若DMA和CPU同时访问主存, DMA有优先权(窃取&#x2F;挪用)占一个存取周期, 这期间CPU仍能进行内部操作)</li>
+</ol>
+<h1 id="计算机的运算方法"><a href="#计算机的运算方法" class="headerlink" title="计算机的运算方法"></a>计算机的运算方法</h1><h2 id="原-补-反-移"><a href="#原-补-反-移" class="headerlink" title="原, 补, 反, 移"></a>原, 补, 反, 移</h2><ol>
+<li>符号位放在最前面, 0正, 1负</li>
+<li>原码 : 符号+绝对值</li>
+<li>补码 : 正数 : 和原码相同; 负数 : 原码取反(符号位除外)加1        补码 -&gt; 原码: 反过来即可</li>
+<li>反码 : 正数 : 和原码相同; 负数 : 原码取反(符号位除外)</li>
+<li>移码: 真值 + 2^n(n为真值的位数)</li>
+</ol>
+<h2 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h2><p>类似于科学计数法<br>N &#x3D; S × r^j<br>S: 尾数(纯小数), j为阶码, r为基数(可取2,4,8,16…) ![[05d592e04617afb726d525c0e86d149.png]]</p>
+<h2 id="浮点数的表示范围"><a href="#浮点数的表示范围" class="headerlink" title="浮点数的表示范围:"></a>浮点数的表示范围:</h2><p>阶码m位, 尾数n位<br>![[1e8cabb19d03cf4e8d8fc7fcda367d8.png]]<br>浮点数阶码大于最大阶码时上溢: 机器停止运算, 进行中断溢出处理<br>小于最小阶码时下溢 : 尾数各位强行置零, 机器继续运行</p>
+<h2 id="浮点数的规格化"><a href="#浮点数的规格化" class="headerlink" title="浮点数的规格化"></a>浮点数的规格化</h2><p>基数为2, 尾数最高位为1的数为规格化数<br>基数为4, 尾数的最高两位不全为0的数为规格化数<br>……..剩下同理</p>
+<h2 id="IEEE-754"><a href="#IEEE-754" class="headerlink" title="IEEE 754"></a>IEEE 754</h2><p>![[404ac953ff069fdabaa97449fde7e90.png]]<br>![[207aed3d6d16c59081d385502cf169e.png]]</p>
+<h2 id="补码加减法"><a href="#补码加减法" class="headerlink" title="补码加减法"></a>补码加减法</h2><p>![[08610987f294a7ee6530df0a163f0a3.png]]![[2d2ca8886806faf8c292579888b312a.png]]<br>超过数值范围的舍去</p>
+<h2 id="浮点数加减"><a href="#浮点数加减" class="headerlink" title="浮点数加减"></a>浮点数加减</h2><ol>
+<li>对阶 : 两数的小数点位置对齐(使两数的阶码相等)</li>
+<li>尾数求和 : 按顶点加减运算规则求和差</li>
+<li>规格化 : 求和差后的尾数规格化, 增加有效数字的位数, 提高运算精度                                                           ![[c06319320144b54bb8226d6bfcd612a.png]]</li>
+<li>舍入 : 考虑尾数右移时丢失的数值位</li>
+<li>溢出判断</li>
+</ol>
+<h1 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h1><h2 id="指令格式"><a href="#指令格式" class="headerlink" title="指令格式"></a>指令格式</h2><ol>
+<li>操作码 : 用来指明指令所要完成的操作, 位数反应机器允许的指令条数(长度可变可不变)    ![[79f43787c0a021bbd8689a9bea4df15.png]]                       长度不固定时增加指令译码和分析难度,故采用<strong>扩展操作码技术</strong>: 操作码长度随地址数的减少而增加  ![[e186935f4213d2f4646ef4aa3410367.png]]</li>
+<li>地址码 : 用来指出该指令的源操作数的地址(一个&#x2F;两个), 结果的地址, 下一条指令的地址</li>
+</ol>
+<h2 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h2><p>确定本条指令的数据地址以及下一条将要执行的指令地址的方法</p>
+<h3 id="指令寻址"><a href="#指令寻址" class="headerlink" title="指令寻址"></a>指令寻址</h3><p>顺序寻址 : 通过程序计数器PC加一, 自动形成下一条指令的地址<br>跳跃寻址 : 转移类指令实现<br>![[a58f17e0f60c57526ea3722e6ea80f3.png]]<br>jmp 7, 故直接从3跳到7</p>
+<h3 id="数据寻址"><a href="#数据寻址" class="headerlink" title="数据寻址"></a>数据寻址</h3><p>![[19c4ee359e160b1a3f06b419e454347.png]]<br>真实地址 EA, 由寻址方式(寻址特征)和形式地址共同确定</p>
+<ol>
+<li>立即寻址 : “#”立即寻址特征, A存储操作数本身(数据: 补码)   优点 : 可以直接获取操作数  缺点 : 范围限制</li>
+<li>直接寻址 : EA &#x3D; A  优点 : 寻找操作数比较简单  缺点: 寻址范围限制; 改A才能改EA</li>
+<li>隐含寻址 : 指令字中不明显地给出操作数的地址, 其操作数的地址隐含在操作码或者某个寄存器中     优点: 缩短指令字长</li>
+<li>间接寻址 : A指出操作数有效地址所在存储单元地址      ![[a60e8d52d2d6ce773b7ce3d242fa2f2.png]]     优点 : 寻址范围大; 便于编制程序(能很方便完成子程序返回)   ![[fbae0638389600ec1cd74f5532fe8f8.png]]               缺点: 需要访存多次</li>
+<li>寄存器寻址 : EA &#x3D; 寄存器的编号     优点: 无需访问主存,节省时间; 指令字短, 节省存储空间![[26a5c228497c885bd4b59496622b8fc.png]]</li>
+<li>寄存器间接寻址 : EA &#x3D; 寄存器编号, 寄存器储存操作数所在主存单元的地址号(比间接寻址少访存一次)![[a4bb06900c4f5497258e6ef1e435d08.png]]</li>
+<li>基址寻址 : 需设有基址寄存器BR, EA &#x3D; 形式地址A + BR中的内容     隐式: 专门有一个BR, 只需指令的寻址特征位反映出基址寻址即可   显式 : 在一组通用寄存器里, 由用户明确指出哪个寄存器用作基址寄存器, 存放基地址      优点 : 扩大寻址范围</li>
+<li>变址寻址 : EA &#x3D; 形式地址A + 变址寄存器IX的内容![[2557be1f2f68a2a4a0e357abcf1050f.png]]<br><strong>基址和变址的区别</strong> : 应用场合不同 : 基址用于位程序或者数据分配存储空间,因此BR内容不可变, A可变; 变址用于处理数组, A不可变, 而IX变</li>
+<li>相对寻址 : EA &#x3D; 程序计数器PC的内容 + A, 用于转移类指令, 转移后的目标地址与当前指令有一段距离, 为相对位移量由A给出(位移量)</li>
+<li>堆栈寻址</li>
+</ol>
+<h2 id="指令格式设计"><a href="#指令格式设计" class="headerlink" title="指令格式设计"></a>指令格式设计</h2><h2 id="RISC"><a href="#RISC" class="headerlink" title="RISC"></a>RISC</h2><h3 id="主要特征"><a href="#主要特征" class="headerlink" title="主要特征"></a>主要特征</h3><p>计算机执行程序所需时间 &#x3D; 机器指令数 × 每条机器指令所需的平均机器周期 × 每个机器周期的执行时间<br>特点: </p>
+<ol>
+<li>选取频度较高的一些简单指令以及一些很有用但又不复杂的指令, 让复杂指令的功能由频度较高的简单指令的组合来实现</li>
+<li>指令长度固定,指令格式种类少, 寻址方式种类少</li>
+<li>只有存数&#x2F;取数指令访问存储器, 其余指令操作在寄存器内完成</li>
+<li>CPU有多个通用寄存器</li>
+<li>采用流水线技术, 大部分指令在一个时钟周期内完成</li>
+<li>控制器采用组合逻辑控制, 不用微程序控制</li>
+<li>采用优化的编译程序</li>
+</ol>
+<h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><h2 id="指令周期"><a href="#指令周期" class="headerlink" title="指令周期"></a>指令周期</h2><p>CPU每取出并执行一条指令所需的全部时间为指令周期![[161110ab179883e6dd70847a10cb442.png]]<br>![[ff542e9d1d537b4b945ebcd1cca3bcf.png]]<br>![[b47c5f8d47acc7158a11315fe0728b4.png]]</p>
+<h2 id="指令周期的数据流"><a href="#指令周期的数据流" class="headerlink" title="指令周期的数据流"></a>指令周期的数据流</h2><p>![[a9a42ab95334d71b96bd4746851b40f.png]]![[099738f5f19a4769a70c78dad3174b9.png]]<br>![[5eea52359a64daadf6414a9c8dc71d8.png]]</p>
+<h2 id="流水线性能"><a href="#流水线性能" class="headerlink" title="流水线性能"></a>流水线性能</h2><ol>
+<li>吞吐率: 单位时间内流水线所完成指令或输出结果的数量![[9d9b12c740be38d3d1a672571cef098.png]]![[995572dd971f8f99bdbb82b517d45e6.png]]</li>
+<li>加速比: m段流水线的速度与等功能的非流水线的速度比![[a6ca489167877cfbc6d87a21a95eabd.png]]</li>
+</ol>
+<h2 id="中断屏蔽技术"><a href="#中断屏蔽技术" class="headerlink" title="中断屏蔽技术"></a>中断屏蔽技术</h2><p>![[85481cbc56080be538aaa55ec54fb02.png]]<br>置一时表示该中断源被屏蔽</p>
+<h2 id="机器周期"><a href="#机器周期" class="headerlink" title="机器周期"></a>机器周期</h2><p>可看作所有指令执行过程中的一个基准时间, 机器周期取决于指令的功能以及器件的速度<br>通常以访问一次存储器的时间为基准时间作为机器周期</p>
+<h2 id="控制方式"><a href="#控制方式" class="headerlink" title="控制方式"></a>控制方式</h2><p>控制单元控制一条指令执行的过程可看为依次执行一个确定的微操作序列的过程<br>CU的控制方式 : 如何形成控制不同位操作序列所采用的时序控制方式</p>
+<ol>
+<li>同步控制方式 : 任何一条指令或指令中的任何一个微操作的执行都是事先确定的, 并且都受统一基准时标的时序信号所控制的方式(1. 定长的机器周期 2. 不定长的机器周期 3. 中央控制和局部控制相结合)</li>
+<li>异步控制方式 : 不存在基准时标信号, 操作需要多长时间就占用多长时间, 但需要有应答线路控制</li>
+<li>联合控制方式 : 异步+同步; 大部分统一对待,小部分区别对待</li>
+<li>人工控制方式</li>
+</ol>
+<h2 id="微操作的节拍安排"><a href="#微操作的节拍安排" class="headerlink" title="微操作的节拍安排"></a>微操作的节拍安排</h2><ol>
+<li>有些微操作的次序不能改变</li>
+<li>被控制对象不同的微操作, 若能在一个节拍内执行, 则尽可能安排在一个节拍内</li>
+<li>有些微操作所占时间不长, 尽量安排在一个节拍内完成,并允许有先后次序</li>
+</ol>
+<h2 id="组合逻辑设计"><a href="#组合逻辑设计" class="headerlink" title="组合逻辑设计"></a>组合逻辑设计</h2><p>优点 : 思路清晰, 简单明了<br>缺点: 线路结构庞杂, 调试困难</p>
+<h2 id="微程序设计"><a href="#微程序设计" class="headerlink" title="微程序设计"></a>微程序设计</h2><p>优点 : 不需要队逻辑表达式进行化简, 不用考虑逻辑门级数和门的扇入系数, 使设计简便; 控制信号 -&gt; 二进制代码, 只要修改代码就可以改变操作内容, 利于计算机仿真</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/12/30/%E8%AE%A1%E7%BB%84%E7%AC%94%E8%AE%B0/" data-id="cm82rtbya000ftctg5vpecca3" data-title="计组笔记" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Data-Importance" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/12/05/Data-Importance/" class="article-date">
+  <time class="dt-published" datetime="2024-12-05T14:35:50.000Z" itemprop="datePublished">2024-12-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/12/05/Data-Importance/">Data Importance</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>To the <strong>backdoor attack</strong>, poisonning high importance data enhances the efficiency of the poisoning process, <strong>particularly when the size of the poison is small</strong></p>
+<h2 id="Data-Importance"><a href="#Data-Importance" class="headerlink" title="Data Importance"></a>Data Importance</h2><ol>
+<li><p>The importance of a target sample $z$ can be quantified as the difference in utility before and after incorporating the target sample into the training set, expressed as :<br>$$<br>v_{loo}(z) \propto U_{\mathcal{A},D_{val}}(D)- U_{\mathcal{A},D_{val}}(D\setminus{z})<br>$$<br>shortcoming: need to retraining the model N times, resulting in computational heaviness.</p>
+</li>
+<li><p>concerns about the target sample’s ability to capture complex interactions between subsets of data by using <strong>Shapley value</strong>.<br>It also can be seen as the contribution to accuracy in typical scenarios.<br>reducing the time complexity:</p>
+</li>
+<li><p>Data Shapley: Equitable Valuation of Data for Machine Learning.</p>
+</li>
+<li><p>Efficient Task-Specific Data Valuation for Nearest Neighbor Algorithms.*</p>
+</li>
+</ol>
+<h1 id="Data-importance-in-Backdoor"><a href="#Data-importance-in-Backdoor" class="headerlink" title="Data importance in Backdoor"></a>Data importance in Backdoor</h1><p>Poisoning  an  equal number of high importance samples proves to be more effective in increasing the attack success rate compared to poisoning low importance samples.</p>
+<p>The importance value using just a fraction of the training set can provide a good approximation of the true importance.<strong>With 20% of the data, the correlation coefficient exceeds 0.96.</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/12/05/Data-Importance/" data-id="cm82rtbxu0000tctgh2lxgt0b" data-title="Data Importance" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine/" rel="tag">machine</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-GCN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/11/21/GCN/" class="article-date">
+  <time class="dt-published" datetime="2024-11-21T13:32:21.000Z" itemprop="datePublished">2024-11-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/11/21/GCN/">GCN</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="出现原因"><a href="#出现原因" class="headerlink" title="出现原因"></a>出现原因</h1><p>图数据是不规则的结构，因此无法应用于普通的卷积神经网络</p>
+<h1 id="核心思想"><a href="#核心思想" class="headerlink" title="核心思想"></a>核心思想</h1><p>利用<strong>边的信息</strong>对<strong>节点信息</strong>进行<strong>聚合</strong>，从而生成<strong>新的节点表示</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/11/21/GCN/" data-id="cm82rtbxz0003tctg4x8g7t5w" data-title="GCN" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine/" rel="tag">machine</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-链表" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/11/01/%E9%93%BE%E8%A1%A8/" class="article-date">
+  <time class="dt-published" datetime="2024-11-01T08:02:17.000Z" itemprop="datePublished">2024-11-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/11/01/%E9%93%BE%E8%A1%A8/">链表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数组模拟单链表"><a href="#数组模拟单链表" class="headerlink" title="数组模拟单链表"></a>数组模拟单链表</h1><h1 id="数组模拟双链表"><a href="#数组模拟双链表" class="headerlink" title="数组模拟双链表"></a>数组模拟双链表</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/11/01/%E9%93%BE%E8%A1%A8/" data-id="cm82rtbyc000jtctg2hs1ftet" data-title="链表" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DataStructure/" rel="tag">DataStructure</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/10/30/Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective/" class="article-date">
@@ -95,7 +773,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h1><h2 id="In-Distribution-Constraint-on-Triggers"><a href="#In-Distribution-Constraint-on-Triggers" class="headerlink" title="In-Distribution Constraint on Triggers"></a>In-Distribution Constraint on Triggers</h2><p>Our in-distribution constraint on trigger $g_t$ is defined as :<br>$$<br>f_o(g_i) &lt; \tau$$<br>$f_o(g_i)$ is the anomaly score of $g_i$ and $\tau$ is a threshold which can be tuned based on datasets.</p>
+<h2 id="Distribution-Preserving-Graph-Backdoor-Attack"><a href="#Distribution-Preserving-Graph-Backdoor-Attack" class="headerlink" title="Distribution Preserving Graph Backdoor Attack"></a>Distribution Preserving Graph Backdoor Attack</h2><p>This objective si achieved by solving:<br>$$\min_{\theta_{g}}\sum_{v_i\in\nu_L}l(f_{\theta^*<em>s}(\tilde{v}<em>i),y_t)$$<br>$$\theta^*<em>s&#x3D;arg \min</em>{\theta_s}\sum</em>{v_i\in\nu_L}l(f_s(v_i),y_i)+\sum</em>{v_i\in\nu_P}l(f_s(\tilde{v}_i),y_t)$$</p>
+<h1 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h1><h2 id="Chllenges"><a href="#Chllenges" class="headerlink" title="Chllenges"></a>Chllenges</h2><ol>
+<li>how to generate ID triggers that have the capability to bypass outlier detection defense methods</li>
+<li>how to learn the trigger generator to obtain triggers that meet ID constraint while maintaining a high attack success rate.</li>
+</ol>
+<h2 id="In-Distribution-Triggers-Generation"><a href="#In-Distribution-Triggers-Generation" class="headerlink" title="In-Distribution Triggers Generation"></a>In-Distribution Triggers Generation</h2><p><strong>key: the adversarial learning</strong> </p>
+<p>Using an MLP as the adaptive trigger generator $f_g$, which generate triggers based on the target node’s node attributes.<br>$$h^m_i &#x3D; MLP(x_i), \ \ X^g_i &#x3D; W_fh^m_i, \ \ A^g_i &#x3D; W_ah^m_i$$<br>$x_i$ is the node attributes of $v_i$, and $W_f$, $W_a$ are the learnable parameters for feature and structure generation.</p>
+<p>An OOD $f_d$ refines its ability to discern between clean inputs and generated triggers by minimizing the binary classification loss. Concurrently, the generator $f_g$ craft triggers to deceive $f_d$ by maximizing the binary classification loss:<br>$$\min_{\theta_g}\max_{\theta_d} \mathcal{L}<em>D&#x3D;\sum</em>{v_i\sim\mathcal{V}<em>s}log(f_d(v_i))+\sum</em>{g\in\tau_P}log(1-f_d(g))$$<br>To obtain $\mathcal{V}_s$, we pretrain an auto-encoder on the original graph G and select samples whose reconstruction losses are close to the mean loss</p>
+<h1 id="Enhancing-ID-Trigger-Effectiveness"><a href="#Enhancing-ID-Trigger-Effectiveness" class="headerlink" title="Enhancing ID Trigger Effectiveness"></a>Enhancing ID Trigger Effectiveness</h1><h2 id="Enhancing-Memorization-of-Triggers"><a href="#Enhancing-Memorization-of-Triggers" class="headerlink" title="Enhancing Memorization of Triggers"></a>Enhancing Memorization of Triggers</h2><p>Our objective is to ensure that these triggers can guide the surrogate classifier $f_i$ to learn a high cosine similarity between $z_s(\tilde{v}_i)$ and $v_s(\tilde{v}_j)$.<br>This approach ensures that the trigger attributes significantly impact the target node attributes.</p>
+<p>Our goal is to generate triggers that guide the surrogate model to learn a high cosine similarity between enbeddings $z_s(\tilde{v}_i)$ and $z_s(v_j)$, while ensuring the similarity between $z_s(\tilde{v}_i)$ and $z_s(v_k)$ is lower. The loss function is:<br>$$\mathcal{L}<em>E&#x3D;-\sum</em>{v_i\in\mathcal{V}<em>U}\sum</em>{v_j\in\mathcal{V}_U}S(z_s(\tilde{v}_i),z_s(\tilde{v}<em>j))+\sum</em>{v_i\in\mathcal{V}<em>U}\sum</em>{v_j\in\mathcal{V}_t}-log\left(\frac{S(z_s(\tilde{v}_i),z_s(v_j))}{S(z_s(\tilde{v}<em>i),z_s(v_j))+\sum</em>{v_k\in\mathcal{V}_L\backslash\mathcal{V}_t}S(z_s(\tilde{v}_i),z_s(v_k))}\right)$$</p>
+<h2 id="Enhancing-Attack-Effectiveness-against-Unseen-Targets"><a href="#Enhancing-Attack-Effectiveness-against-Unseen-Targets" class="headerlink" title="Enhancing Attack Effectiveness against Unseen Targets"></a>Enhancing Attack Effectiveness against Unseen Targets</h2>
       
     </div>
     <footer class="article-footer">
@@ -113,508 +802,11 @@
 
 
   
-    <article id="post-24保研分享" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/10/22/24%E4%BF%9D%E7%A0%94%E5%88%86%E4%BA%AB/" class="article-date">
-  <time class="dt-published" datetime="2024-10-22T11:02:42.000Z" itemprop="datePublished">2024-10-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/10/22/24%E4%BF%9D%E7%A0%94%E5%88%86%E4%BA%AB/">24保研分享</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="机电"><a href="#机电" class="headerlink" title="机电"></a>机电</h2><p>rk是重点，保证入营</p>
-<p>rk不够，科研凑</p>
-<p><strong>去更好的学校：侧重不同学院的交叉方向</strong></p>
-<p>关注：知乎，xhs，绿，github</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/22/24%E4%BF%9D%E7%A0%94%E5%88%86%E4%BA%AB/" data-id="cm2vmjb9b0000wwtg5g8g7jrk" data-title="24保研分享" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BF%9D%E7%A0%94/" rel="tag">保研</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-graph-backdoor" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/10/09/graph-backdoor/" class="article-date">
-  <time class="dt-published" datetime="2024-10-09T07:53:27.000Z" itemprop="datePublished">2024-10-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/10/09/graph-backdoor/">graph backdoor</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Q: In inductive work, 91.4%, while in transductive work, 69.1%. Why the success rate is differrent?<br>Q: More suitable for federated learning?</p>
-<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><h3 id="Graph-oriented"><a href="#Graph-oriented" class="headerlink" title="Graph-oriented"></a>Graph-oriented</h3><p>graph data is inherently unstructured and discrete</p>
-<h3 id="Input-tailored"><a href="#Input-tailored" class="headerlink" title="Input-tailored"></a>Input-tailored</h3><p>tailors triggers to individual graphs</p>
-<h3 id="Downstream-model-agnostic"><a href="#Downstream-model-agnostic" class="headerlink" title="Downstream-model-agnostic"></a>Downstream-model-agnostic</h3><p>the adversary has no knowledge regarding domstream model or fine-tuning strategies</p>
-<h3 id="Attack-extensible"><a href="#Attack-extensible" class="headerlink" title="Attack-extensible"></a>Attack-extensible</h3><p>inductive &#x2F; transductive</p>
-<h1 id="Attack-overview"><a href="#Attack-overview" class="headerlink" title="Attack overview"></a>Attack overview</h1><ol>
-<li>optimize trigger and theta with  respect to intermediate representations</li>
-<li>we adopt a bi-level optimization formulation, which considers trigger as the hyper-parameters and theta as the model parameters and optimizes them in an interleaving manner;</li>
-<li>mixing function: finds and replace within G the subgraph g most similar to the trigger subgraph</li>
-<li>the trigger subgraph is specifically optimized for each given graph G.</li>
-</ol>
-<h1 id="Bi-level-optimization"><a href="#Bi-level-optimization" class="headerlink" title="Bi-level optimization"></a>Bi-level optimization</h1><h2 id="update-thata"><a href="#update-thata" class="headerlink" title="update thata"></a>update thata</h2><p>ensure that the difference of the theta won’t influence theprediction accuracy in other classes<br>$$<br>g^*<em>t &#x3D; arg\ \min</em>{g_t}\ \ell_{atk}(\theta^*(g_t),g_t) \<br>$$<br>$$<br>\ell_{atk}(\theta, g_t) &#x3D; \mathbb{E}<em>{G \in D[\backslash y_t],G’ \in D[y_t]}\Delta(f</em>{\theta}(m(G;g_t)),f_{\theta}(G’))<br>$$</p>
-<h2 id="update-trigger-subgraph"><a href="#update-trigger-subgraph" class="headerlink" title="update trigger subgraph"></a>update trigger subgraph</h2><p>force the prediction of the graph in other classes with trigger subgraph to the prediction of the graph in the target class.<br>$$<br>\theta^*(g_t) &#x3D; arg \ \min_{\theta} \ \ell_{ret}(\theta, g_t)<br>$$<br>$$<br>\ell_{ret}(\theta, g_t)&#x3D;\mathbb{E}<em>{G \in D}\Delta(f</em>{\theta}(G),f_{\theta_{\circ}}(G))<br>$$</p>
-<h1 id="Mixing-function"><a href="#Mixing-function" class="headerlink" title="Mixing function"></a>Mixing function</h1><h2 id="two-purposes"><a href="#two-purposes" class="headerlink" title="two purposes:"></a>two purposes:</h2><ol>
-<li>for given a trigger $g_t$ , it identifies the optimmal to-be-replaced subgraph $g$ within a given graph $G$.</li>
-<li>it performs the substistution of $g$ with $g_t$</li>
-</ol>
-<h2 id="Plan"><a href="#Plan" class="headerlink" title="Plan"></a>Plan</h2><p>A backtracking-based algorithm :<br>mapping the next node in $g_t$ to a node in $G$ if feasible, and backtracks otherwise.</p>
-<h1 id="Trigger-generation"><a href="#Trigger-generation" class="headerlink" title="Trigger generation"></a>Trigger generation</h1><h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>generate triggers tailored to individual graphs to maximize the attack effectiveness and evasiveness</p>
-<h2 id="Encode-g-’s-features-and-contex"><a href="#Encode-g-’s-features-and-contex" class="headerlink" title="Encode $g$’s features and contex"></a>Encode $g$’s features and contex</h2><p>Using the graph attention mechanisms:<br>generate $i$’s encoding as the aggregation of its neighboring encodings (weighted by their corresponding attention conefficients) after applying a non-linearity transformation.<br>This non-linearity transformation can help the model to capture more complex features.</p>
-<h2 id="Map-g-’s-encoding-to-g-t"><a href="#Map-g-’s-encoding-to-g-t" class="headerlink" title="Map $g$’s encoding to $g_t$"></a>Map $g$’s encoding to $g_t$</h2><h3 id="Topological-structure"><a href="#Topological-structure" class="headerlink" title="Topological structure"></a>Topological structure</h3><p>Define their corresponding connnectivity $\tilde{A}_{ij}$ in $g_t$ using their parameterized consine similarity. $i$ and $j$ are connected in $g_t$ if their similarity score exceeds 0.5.</p>
-<h3 id="Node-feature"><a href="#Node-feature" class="headerlink" title="Node feature"></a>Node feature</h3><p>Define $i$’s feature $\tilde{X}_{i}$ in $g_t$ as<br>$$\tilde{X}_i &#x3D; \sigma(W_fz_i+b_f)$$</p>
-<h2 id="Resolve-the-dependence-of-g-and-g-t"><a href="#Resolve-the-dependence-of-g-and-g-t" class="headerlink" title="Resolve the dependence of $g$ and $g_t$"></a>Resolve the dependence of $g$ and $g_t$</h2><p>The generation of $g_t$ relies on $g$, while the selection of $g$ depends on $g_t$. So we update $g$ and $g_t$ in an interleaving manner.</p>
-<p>Q: $W_c, W_f,b_f$ learn the target class’s feature?How?</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/09/graph-backdoor/" data-id="cm2vmjba7003hwwtg6fm570r6" data-title="graph backdoor" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Poisoning-Graph-Neural-Networks-for-Link-Inference" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/10/08/Poisoning-Graph-Neural-Networks-for-Link-Inference/" class="article-date">
-  <time class="dt-published" datetime="2024-10-08T14:11:36.000Z" itemprop="datePublished">2024-10-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/10/08/Poisoning-Graph-Neural-Networks-for-Link-Inference/">Poisoning Graph Neural Networks for Link Inference</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="VertexSerum"><a href="#VertexSerum" class="headerlink" title="VertexSerum"></a>VertexSerum</h1><h2 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h2><h3 id="Adversary’s-Goal"><a href="#Adversary’s-Goal" class="headerlink" title="Adversary’s Goal"></a>Adversary’s Goal</h3><p>target: GNN-based classifiers, aiming to predict the label  for querying nodes.</p>
-<h3 id="Adversary’s-Knowledge"><a href="#Adversary’s-Knowledge" class="headerlink" title="Adversary’s Knowledge"></a>Adversary’s Knowledge</h3><ol>
-<li><p>can only acquire the interested node’s posteriors through querise</p>
-</li>
-<li><p>has access to a portion of the graph</p>
-</li>
-<li><p>stricter: can only poison the features of their own data.</p>
-</li>
-</ol>
-<h2 id="Attack-Flow-of-VertexSerum"><a href="#Attack-Flow-of-VertexSerum" class="headerlink" title="Attack Flow of  VertexSerum"></a>Attack Flow of  VertexSerum</h2><ol>
-<li>chooses a target class </li>
-<li>generates a partial dataset with a poisoned graph, and sends it to the vendor</li>
-<li>The vendor trains a GNN model</li>
-<li>construct binary link detectors by query the model with the possessed poisoned partial graph and generates similarities of posteriors</li>
-</ol>
-<h2 id="Requirements-of-the-Poisoning-Nodes"><a href="#Requirements-of-the-Poisoning-Nodes" class="headerlink" title="Requirements of the Poisoning Nodes"></a>Requirements of the Poisoning Nodes</h2><ol>
-<li>The node classification accuracy for the victim task is not evidently affected</li>
-<li>requires a balance between the attraction and repulsion of the node features</li>
-<li>we utilize adversarial training to increase the model’s adversarial robustness, guiding linked nodes with similar features to produce similar posteriors</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/08/Poisoning-Graph-Neural-Networks-for-Link-Inference/" data-id="cm2vmjb9y001swwtg6a858xj3" data-title="Poisoning Graph Neural Networks for Link Inference" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-poison-attack-in-inductive-GNN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/10/06/poison-attack-in-inductive-GNN/" class="article-date">
-  <time class="dt-published" datetime="2024-10-06T13:41:15.000Z" itemprop="datePublished">2024-10-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/10/06/poison-attack-in-inductive-GNN/">poison attack in inductive GNN</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p> 通过改边&#x2F;改点的方式，影响点分类和图分类任务的成功率，达到中毒攻击的目的。</p>
-<p>看论文重点：如何改边，如何改点（深层：GNN模型是如何训练出来的，看它是如何学习到边&#x2F;点的特征的</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/10/06/poison-attack-in-inductive-GNN/" data-id="cm2vmjbab0043wwtg8d30gqoj" data-title="poison attack in inductive GNN" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Can-Graph-Neural-Networks-Be-Exploited-through-Data-Free-Model-Extraction-Attacks" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/28/Can-Graph-Neural-Networks-Be-Exploited-through-Data-Free-Model-Extraction-Attacks/" class="article-date">
-  <time class="dt-published" datetime="2024-09-28T04:43:03.000Z" itemprop="datePublished">2024-09-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/28/Can-Graph-Neural-Networks-Be-Exploited-through-Data-Free-Model-Extraction-Attacks/">Can Graph Neural Networks Be Exploited through Data-Free Model Extraction Attacks?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><p>A key innovation of STEALGNN lies in its ability to conduct model extraction without the need for access to real-world graph data</p>
-<ol>
-<li>stealGNN: a poineering research endeavor that addresses data-free model extraction attacks on GNN. By <strong>developing a trainable graph generator</strong>(Similar to the GAN.), stealGNN demostrates its ability to train a high-quality surrogate model from black-box GNN models, even when only hard labels are available.</li>
-<li>Systematic Study: We conduct a comprehensive investigation and propose three extraction attack scenarios based on the updating scheme of the graph generator parameters. These scenarios provide a systematic understanding of different approaches within the stealGNN framework. </li>
-<li>Task Flexibility: STEALGNN is highly adaptable and robust, capable of effectively handling various tasks. It can be applied to both node classification and link prediction tasks, showcasing its versatility.</li>
-</ol>
-<h1 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h1><h2 id="Attacker’s-Setting"><a href="#Attacker’s-Setting" class="headerlink" title="Attacker’s Setting"></a>Attacker’s Setting</h2><p>Attackers are constrained to rely on **synthetic datasets **to query the victim model and extract valuable information. The adversary can not access to the victim model’s original training data. </p>
-<h2 id="Attacker’s-Goal"><a href="#Attacker’s-Goal" class="headerlink" title="Attacker’s Goal"></a>Attacker’s Goal</h2><p>(1) The attacker aims to obtain a model that achieves **comparable accuracy **to the target model. (2) The attacker attempts to replicate the **decision boundary **of the target model.</p>
-<h2 id="Attacker’s-Taxonomy"><a href="#Attacker’s-Taxonomy" class="headerlink" title="Attacker’s Taxonomy"></a>Attacker’s Taxonomy</h2><ol>
-<li>type 1: use the victim model and the surrogate model to compute the loss</li>
-<li>type 2: only use the surrogate model to compute</li>
-<li>type 3: use two surrogate model to compute</li>
-</ol>
-<h1 id="stealGNN"><a href="#stealGNN" class="headerlink" title="stealGNN"></a>stealGNN</h1><h2 id="Attack-Framework"><a href="#Attack-Framework" class="headerlink" title="Attack Framework"></a>Attack Framework</h2><p>featrue generate -&gt; structrue generate -&gt; a graph G</p>
-<p>graph G -&gt; victim model &#x2F; surrogate model -&gt; compute the loss function based on the outputs of the victim model and the surrogate model. -&gt; update the surrogate model</p>
-<p>The loss funtion can also be a measure of how well  the surrogate model  can emulate the victim model. </p>
-<h2 id="Graph-Generator"><a href="#Graph-Generator" class="headerlink" title="Graph Generator"></a>Graph Generator</h2><h3 id="Feature-Generator"><a href="#Feature-Generator" class="headerlink" title="Feature Generator"></a>Feature Generator</h3><p>goal: generate the attributes of the nodes. </p>
-<p>one-dimensional noise vector -&gt; two-dimensional node feature matrix F (n*d)(the number of nodes in the graph x the dimension of the node featrues). </p>
-<p>q : how to decide the n and d when we don’t know the training data of the victim model.</p>
-<h3 id="Structure-Generator"><a href="#Structure-Generator" class="headerlink" title="Structure Generator"></a>Structure Generator</h3><p>goal: decide whether there is a link between two nodes. generate the graph structure. </p>
-<h4 id="Cosine-similarity-graph-structure-generator"><a href="#Cosine-similarity-graph-structure-generator" class="headerlink" title="Cosine similarity graph structure generator"></a>Cosine similarity graph structure generator</h4><p>We construct a similarity graph using the cosine similarity of the node feature.</p>
-<p>When the values between two nodes if smaller than a given threshold t, it represents there is  no link between these two nodes. </p>
-<h4 id="Full-parameterization-graph-structure-generator"><a href="#Full-parameterization-graph-structure-generator" class="headerlink" title="Full parameterization graph structure generator"></a>Full parameterization graph structure generator</h4><p>the generator disregards the input node features and directly optimizes the adjacency matrix</p>
-<h2 id="Training-Surrogate-Model"><a href="#Training-Surrogate-Model" class="headerlink" title="Training Surrogate Model"></a>Training Surrogate Model</h2><p>generated graph G is used to query victim model and surrogate model. </p>
-<p>The surrogate mdoel paramenters are updated using the cross-entropy loss functim to minimize the discrepancy between the output of the victim model and surrogate model, so that we can extract the knowledge embedded in victim model. </p>
-<h2 id="Training-Graph-Generator"><a href="#Training-Graph-Generator" class="headerlink" title="Training Graph Generator"></a>Training Graph Generator</h2><p>The generator model  is  trained to maximize the disagreement between the predictions of the victim model and the surrogate model. </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/09/28/Can-Graph-Neural-Networks-Be-Exploited-through-Data-Free-Model-Extraction-Attacks/" data-id="cm2vmjb9w001kwwtg1yf53ob1" data-title="Can Graph Neural Networks Be Exploited through Data-Free Model Extraction Attacks?" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Link-Stealing-Attacks-Against-Inductive-GNN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/23/Link-Stealing-Attacks-Against-Inductive-GNN/" class="article-date">
-  <time class="dt-published" datetime="2024-09-23T07:14:09.000Z" itemprop="datePublished">2024-09-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/23/Link-Stealing-Attacks-Against-Inductive-GNN/">Link Stealing Attacks Against Inductive GNN</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>The core idea of GNN is to leverage neighbor informatin among nodes to obtain node embeddings.</p>
-<p>Two settings for GNNs: the  transductive setting and the inductive setting.</p>
-<p>Two types of link stealing attacks:the posterior-only attack,the combined attack</p>
-<p>Goal:given a node  pair in the target training graph , the adversary’s goal is to infer whether there exists a link between these two nodes. </p>
-<h1 id="Our-Attacks"><a href="#Our-Attacks" class="headerlink" title="Our Attacks"></a>Our Attacks</h1><h2 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h2><h3 id="Adversary’s-Background-Knowledge"><a href="#Adversary’s-Background-Knowledge" class="headerlink" title="Adversary’s Background Knowledge"></a>Adversary’s Background Knowledge</h3><p>To obtain the posteriors of v, the adversary needs to construct gkv that contains node attributes and graph structures. </p>
-<p>Using shadow dataset to train shadow model to mimic the train model.</p>
-<h3 id="Posterior-Only-Attacks"><a href="#Posterior-Only-Attacks" class="headerlink" title="Posterior-Only Attacks"></a>Posterior-Only Attacks</h3><p>This type of attack only uses the posteriors of the node pair (u, v) obtained from the GNN models to design attack input features.</p>
-<h3 id="Combined-Attacks"><a href="#Combined-Attacks" class="headerlink" title="Combined Attacks"></a>Combined Attacks</h3><p>We propose combined attacks that combine posteriors with traditional link prediction features, i.e., node attributes and graph features.</p>
-<h2 id="Attack-Methodology"><a href="#Attack-Methodology" class="headerlink" title="Attack Methodology"></a>Attack Methodology</h2><h3 id="Shadow-Model-Training"><a href="#Shadow-Model-Training" class="headerlink" title="Shadow Model Training"></a>Shadow Model Training</h3><h3 id="Attack-Model-Training"><a href="#Attack-Model-Training" class="headerlink" title="Attack Model Training"></a>Attack Model Training</h3><p>The attack  model is a binary classifier that can predict if two given nodes have a connection in target training dataset. (Output is 1&#x2F;0). </p>
-<p>Specifically, we follow the strategy in [15] and leverage four pairwise, commutative operations to ensure attack input features are the same even if nodes are presented in a different order for the given pair.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/09/23/Link-Stealing-Attacks-Against-Inductive-GNN/" data-id="cm2vmjb9v001hwwtgecfkdzk8" data-title="Link Stealing Attacks Against Inductive GNN" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-深度学习代码：Narcissus-tensflow" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/08/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%EF%BC%9ANarcissus-tensflow/" class="article-date">
-  <time class="dt-published" datetime="2024-08-09T15:34:15.000Z" itemprop="datePublished">2024-08-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/08/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%EF%BC%9ANarcissus-tensflow/">深度学习代码：Narcissus/tensorflow</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Epoch-Batch-Size-Iteration"><a href="#Epoch-Batch-Size-Iteration" class="headerlink" title="Epoch&#x2F;Batch Size&#x2F;Iteration"></a>Epoch&#x2F;Batch Size&#x2F;Iteration</h1><h2 id="Epoch"><a href="#Epoch" class="headerlink" title="Epoch"></a>Epoch</h2><p>一个<strong>完整</strong>的数据集通过了神经网络一次并返回了一次</p>
-<h2 id="Batch-Size"><a href="#Batch-Size" class="headerlink" title="Batch Size"></a>Batch Size</h2><p>一个batch中的样本总量</p>
-<h2 id="Iteration"><a href="#Iteration" class="headerlink" title="Iteration"></a>Iteration</h2><p>一个batch需要完成一个epoch的次数</p>
-<p>比如对于一个有 2000 个训练样本的数据集。将 2000 个样本分成4个500的batch size，那么完成一个 epoch 需要 4 个 iteration。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/08/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%BB%A3%E7%A0%81%EF%BC%9ANarcissus-tensflow/" data-id="cm2vmjbaf004nwwtg044qekwo" data-title="深度学习代码：Narcissus/tensorflow" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Stealing Links from GNN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/12/Stealing%20Links%20from%20GNN/" class="article-date">
-  <time class="dt-published" datetime="2024-07-12T07:01:15.000Z" itemprop="datePublished">2024-07-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/12/Stealing%20Links%20from%20GNN/">Stealing Links from GNN</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Our-Contributions"><a href="#Our-Contributions" class="headerlink" title="Our Contributions"></a>Our Contributions</h2><p>Given a black-box access to a target GNN model, our attacks aim to predict whether there exists a link between any pair of nodes in the gragh used to train the target GNN model.</p>
-<h2 id="Background-knowledge"><a href="#Background-knowledge" class="headerlink" title="Background knowledge"></a>Background knowledge</h2><p>Three dimensions: the target dataset’s nodes’ attributes, the target dataset’s partial gragh, and an auxiliaty dataset(called shadow dataset) which also contains its own gragh and nodes’ attributes.</p>
-<h2 id="Attacks-Methodology"><a href="#Attacks-Methodology" class="headerlink" title="Attacks Methodology"></a>Attacks Methodology</h2><p>The key intuition of our attacks: two nodes are more likely to be linked if they share more similat attributes and&#x2F;or predictions from the target GNN model.</p>
-<h1 id="Gragh-Neural-Networks"><a href="#Gragh-Neural-Networks" class="headerlink" title="Gragh Neural Networks"></a>Gragh Neural Networks</h1><h2 id="training"><a href="#training" class="headerlink" title="training"></a>training</h2><p>Given a graph, attributes for each node in the graph, and a small number of labeled nodes, GNN trains a neural network to predict labels of the remaining unlabeled nodes via analyzing the graph structure and node attributes.</p>
-<h2 id="Prediction"><a href="#Prediction" class="headerlink" title="Prediction"></a>Prediction</h2><p>Since all nodes’ attributes and the whole graph have been fed into the GNN model in the training phase to predict the label of a node, we only need to provide the node’s ID to the trained model and obtain the prediction result.</p>
-<h1 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h1><h2 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h2><h3 id="Adversary’s-Goal"><a href="#Adversary’s-Goal" class="headerlink" title="Adversary’s Goal"></a>Adversary’s Goal</h3><p>Infering whether a given pair of nodes are connected in the target dataset.</p>
-<h3 id="Adversary’s-Background-Knowledge"><a href="#Adversary’s-Background-Knowledge" class="headerlink" title="Adversary’s Background Knowledge"></a>Adversary’s Background Knowledge</h3><ol>
-<li>Target Dataset’s Nodes’ Attributes</li>
-<li>Target Dataset’s Partial Graph</li>
-<li>A Shadow Dataset</li>
-</ol>
-<h2 id="Link-Stealing-Attack"><a href="#Link-Stealing-Attack" class="headerlink" title="Link Stealing Attack"></a>Link Stealing Attack</h2><p>Given a black-box access to a GNN model that is trained on a target dataset, a pair of nodes u and v in the target dataset, and an adversary’s background knowledge K , link stealing attack aims to infer whether there is a link between u and v in the target dataset.</p>
-<h1 id="Attack-Taxonomy"><a href="#Attack-Taxonomy" class="headerlink" title="Attack Taxonomy"></a>Attack Taxonomy</h1><p>Two problem: </p>
-<ol>
-<li><p>As we consider undirected gragh, the output should be the same regardless of the input node pair order.</p>
-</li>
-<li><p>The shadow dataset and the target dataset normally have different dimensions with respect to attributes and posteriors. It is crucial to keep the attack model’s input features’ dimension consistent no matter which shadow dataset she has during the transferring attacks.</p>
-</li>
-</ol>
-<h2 id="Attack-Methodologies"><a href="#Attack-Methodologies" class="headerlink" title="Attack Methodologies"></a>Attack Methodologies</h2><img src="C:\Users\梁韵扬\AppData\Local\Temp\1eedd3d4-adb7-40b8-af29-2efefaddfff9.png" alt="1eedd3d4-adb7-40b8-af29-2efefaddfff9" style="zoom:67%;" />
-
-<h3 id="Attack-0-Attack-2"><a href="#Attack-0-Attack-2" class="headerlink" title="Attack-0,Attack-2"></a>Attack-0,Attack-2</h3><p>The adversary can use distance metrics for posteriors or nodes’ attributes to infer the link.</p>
-<h3 id="Attack-3-Attack-6"><a href="#Attack-3-Attack-6" class="headerlink" title="Attack-3,Attack-6"></a>Attack-3,Attack-6</h3><p>The adversary can use different distances and pairwise vector operations over nodes’ posteriors (and the corresponding entropies) from the target model and their attributes to build features.</p>
-<h3 id="Attack-1-Attack-4-Attack-5-Attack-7"><a href="#Attack-1-Attack-4-Attack-5-Attack-7" class="headerlink" title="Attack-1,Attack-4,Attack-5,Attack-7"></a>Attack-1,Attack-4,Attack-5,Attack-7</h3><p>The adversary can use distance metrics over posteriors&#x2F;nodes’ attributes and pairwise operations over posteriors’ entropies as the bridge to transfer the knowledge from the shadow dataset to perform link stealing attacks.</p>
-<p>​    </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/12/Stealing%20Links%20from%20GNN/" data-id="cm2vmjba10029wwtg1tvb27e1" data-title="Stealing Links from GNN" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Encrypted-Video-Search" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/09/Encrypted-Video-Search/" class="article-date">
-  <time class="dt-published" datetime="2024-07-09T03:45:14.000Z" itemprop="datePublished">2024-07-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/09/Encrypted-Video-Search/">Encrypted Video Search</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Aiming at an encrypted video search framework from only lightweight cryptography: Scalability, content-based similarity, Modular design</p>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ol>
-<li><p>Our framework is generic for integrating different up-to-date primitives. It is optimal in search time and incurs small storage at the server.</p>
-</li>
-<li><p>We formalize the syntax of our framework in a modular fashion and prove the adaptive security.</p>
-</li>
-<li><p>To balance efficiency and security, we present two concrete instantiations. We conduct experiments over real-world datasets to show the efficiency, accuracy, and practicality.</p>
-</li>
-</ol>
-<img src="C:\Users\梁韵扬\AppData\Local\Temp\f11ab940-eefa-4a5c-b172-a0b8ac9b6f44.png" alt="f11ab940-eefa-4a5c-b172-a0b8ac9b6f44" style="zoom:67%;" />
-
-<img src="C:\Users\梁韵扬\AppData\Local\Temp\79d5975d-659f-49ee-845c-262d9f8131ed.png" alt="79d5975d-659f-49ee-845c-262d9f8131ed" style="zoom:67%;" />
-
-<h1 id="Modularization-and-Ingredients"><a href="#Modularization-and-Ingredients" class="headerlink" title="Modularization and Ingredients"></a>Modularization and Ingredients</h1><h2 id="Video-Preprocessing-and-setup"><a href="#Video-Preprocessing-and-setup" class="headerlink" title="Video Preprocessing and setup"></a>Video Preprocessing and setup</h2><img src="C:\Users\梁韵扬\AppData\Local\Temp\b50a6917-5b1e-482c-872b-0363fdeab34c.png" alt="b50a6917-5b1e-482c-872b-0363fdeab34c" style="zoom: 67%;" />
-
-<img src="C:\Users\梁韵扬\AppData\Local\Temp\f93c6952-5570-4072-a6d5-10c858c53b7b.png" alt="f93c6952-5570-4072-a6d5-10c858c53b7b" style="zoom: 50%;" />
-
-<h2 id="Hierarchial-Search"><a href="#Hierarchial-Search" class="headerlink" title="Hierarchial Search"></a>Hierarchial Search</h2><img src="C:\Users\梁韵扬\AppData\Local\Temp\a2ec30c9-cec5-4abe-bad6-086b28098c5a.png" alt="a2ec30c9-cec5-4abe-bad6-086b28098c5a" style="zoom:67%;" />
-
-<h2 id="Ranking-with-Similarity"><a href="#Ranking-with-Similarity" class="headerlink" title="Ranking with Similarity"></a>Ranking with Similarity</h2><img src="C:\Users\梁韵扬\AppData\Local\Temp\7ca4c107-540a-4d29-b0a8-1be8e98d100d.png" alt="7ca4c107-540a-4d29-b0a8-1be8e98d100d" style="zoom:67%;" />
-
-<h2 id="Databse-Update-with-dynamic-Security"><a href="#Databse-Update-with-dynamic-Security" class="headerlink" title="Databse Update with dynamic Security"></a>Databse Update with dynamic Security</h2><img src="C:\Users\梁韵扬\AppData\Local\Temp\76a9db27-db95-488d-a6e1-a85b9c36dff6.png" alt="76a9db27-db95-488d-a6e1-a85b9c36dff6" style="zoom:67%;" />
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/09/Encrypted-Video-Search/" data-id="cm2vmjb9w001nwwtgccw16639" data-title="Encrypted Video Search" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -628,7 +820,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine/" rel="tag">machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%9D%E7%A0%94/" rel="tag">保研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataStructure/" rel="tag">DataStructure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine/" rel="tag">machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%9D%E7%A0%94/" rel="tag">保研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
     </div>
   </div>
 
@@ -638,7 +830,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 10px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 14px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 14px;">encryption</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/machine/" style="font-size: 10px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/tip/" style="font-size: 12px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18px;">每日一小结</a>
+      <a href="/tags/DataStructure/" style="font-size: 10px;">DataStructure</a> <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 13.33px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 13.33px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 13.33px;">encryption</a> <a href="/tags/learning/" style="font-size: 15px;">learning</a> <a href="/tags/machine/" style="font-size: 15px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16.67px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16.67px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/tip/" style="font-size: 11.67px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 13.33px;">复习</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.33px;">每日一小结</a>
     </div>
   </div>
 
@@ -647,7 +839,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
     </div>
   </div>
 
@@ -660,23 +852,23 @@
       <ul>
         
           <li>
-            <a href="/2024/10/30/Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective/">Rethinking Graph Backdoor Attacks: A Distribution-Preserving Perspective</a>
+            <a href="/2025/03/10/MPAF/">MPAF</a>
           </li>
         
           <li>
-            <a href="/2024/10/22/24%E4%BF%9D%E7%A0%94%E5%88%86%E4%BA%AB/">24保研分享</a>
+            <a href="/2025/02/20/Poisoning-Machine-Learning-Models-to-Reveal-Their-Secrets/">Poisoning Machine Learning Models to Reveal Their Secrets</a>
           </li>
         
           <li>
-            <a href="/2024/10/09/graph-backdoor/">graph backdoor</a>
+            <a href="/2025/01/22/%E6%95%B0%E6%A8%A1-1/">数模</a>
           </li>
         
           <li>
-            <a href="/2024/10/08/Poisoning-Graph-Neural-Networks-for-Link-Inference/">Poisoning Graph Neural Networks for Link Inference</a>
+            <a href="/2025/01/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
           </li>
         
           <li>
-            <a href="/2024/10/06/poison-attack-in-inductive-GNN/">poison attack in inductive GNN</a>
+            <a href="/2024/12/31/ds%E7%AC%94%E8%AE%B0/">ds笔记</a>
           </li>
         
       </ul>
@@ -692,7 +884,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2024 tay<br>
+      &copy; 2025 tay<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

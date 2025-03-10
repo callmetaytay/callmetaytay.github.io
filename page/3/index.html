@@ -73,6 +73,522 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Model-Stealing" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/07/06/Model-Stealing/" class="article-date">
+  <time class="dt-published" datetime="2024-07-06T07:57:34.000Z" itemprop="datePublished">2024-07-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/07/06/Model-Stealing/">Model Stealing</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Formal model stealing</p>
+<p><img src="C:\Users\梁韵扬\AppData\Local\Temp\0003d5ef-cf56-4605-91c5-e81b7c6d19f0.png" alt="0003d5ef-cf56-4605-91c5-e81b7c6d19f0"></p>
+<p>data-free model stealing<img src="C:\Users\梁韵扬\AppData\Local\Temp\74d6f4d8-6993-4a01-bc65-3cfb68ce3dcb.png" alt="74d6f4d8-6993-4a01-bc65-3cfb68ce3dcb"></p>
+<p>similar to GAN</p>
+<p>use <strong>zeroth-order gradient estimation</strong> to approximate the gradient of the loss function LG.In black-box model we can’t comput the gradient directly so we use <strong>zeroth-order gradient estimation</strong> to comput the gradient indirectly by using the output of the model.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/07/06/Model-Stealing/" data-id="cm2vmjb9w001jwwtgbreohq56" data-title="Model Stealing" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-SEISA" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/27/SEISA/" class="article-date">
+  <time class="dt-published" datetime="2024-06-27T11:54:28.000Z" itemprop="datePublished">2024-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/27/SEISA/">SEISA</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h1><h2 id="Practical-problem"><a href="#Practical-problem" class="headerlink" title="Practical problem"></a>Practical problem</h2><p>Many organizations currently prefer to host their data and services on public cloud platforms, but it will cause privacy breaches and evenn legal issues.</p>
+<h2 id="Past-solutions"><a href="#Past-solutions" class="headerlink" title="Past solutions"></a>Past solutions</h2><p>1.Design over encrypted datasets by utilizing order preserving encryption (maintains the order of plaintext data in its encrypted form) and Min-Hashf (a probabilistic algorithm used to estimate the similarity between large sets).</p>
+<p>drawback:</p>
+<p>Only suitable for image search algorithm based on visual words representation of images and performed low search accuracy.</p>
+<p>2.Based on homomorphic encryption.</p>
+<p>drawback:</p>
+<p>High accuracy but more cost and also need frequent user engagement.</p>
+<h2 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h2><p>efficiency</p>
+<p>accuracy</p>
+<p>search access control:</p>
+<p>Existing secure image search techniques and access control techniques have different encryption mechanisms.</p>
+<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><p>Design a lightweight encryption tool that makes search operations over ciphertexts have the same complexity as searches over plaintexts and can support search access control.</p>
+<h2 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h2><p><strong>SEISA</strong>:</p>
+<p>A secure and efficient image search scheme over encrypted dataset with access control .</p>
+<h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h3><p>The search access control doesn’t need additional authorizing steps. </p>
+<p>High efficiency and accuracy</p>
+<h3 id="Measure"><a href="#Measure" class="headerlink" title="Measure"></a>Measure</h3><p>1.Using matrix based encryption design and encrypt image features based on the vector space model for high efficiency and accuracy.</p>
+<p>2.Design an efficient tree-based index construction by utilizing the k-means clustering algorithm for efficiency.</p>
+<p>3.Propose a secure k-means outsourcing algorithm ,which allows the data owner to delegate most computational tasks to the cloud.</p>
+<p>4.Achieve search access control by desingning a novel and lightweight polynommial based access policy.</p>
+<p>[3] [4] can be used as independent rools for other related fields.</p>
+<h3 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h3><p>Implemented a prototype of SEISA on Amazon EC2 cloud over 10 million images.</p>
+<h1 id="Backgrounds-And-Preliminarise"><a href="#Backgrounds-And-Preliminarise" class="headerlink" title="Backgrounds And Preliminarise"></a>Backgrounds And Preliminarise</h1><h2 id="Background-of-Image-Search"><a href="#Background-of-Image-Search" class="headerlink" title="Background of Image Search"></a>Background of Image Search</h2><p>BOF:</p>
+<p>Assign image descriptors into visual words and then compress them into a binary vector.</p>
+<p>Fisher vector:</p>
+<p>more accuracy than BOF.In this work,we use fisher vector to extract image descriptor vectors.</p>
+<h2 id="Mean-Average-Precision"><a href="#Mean-Average-Precision" class="headerlink" title="Mean Average Precision"></a>Mean Average Precision</h2><p>It is a way to measure the search accuracy of image search .</p>
+<h1 id="System-Model-And-Threat-Model"><a href="#System-Model-And-Threat-Model" class="headerlink" title="System Model And Threat Model"></a>System Model And Threat Model</h1><h2 id="System-Model"><a href="#System-Model" class="headerlink" title="System Model"></a>System Model</h2><p>three major entities: </p>
+<p>the cloud server, the data owner and users.</p>
+<h2 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h2><p>cloud server : curious but honest </p>
+<p>Preventing the cloud server from learning the following information: 1) Privacy of all images and their corresponding descriptor vectors; 2) Privacy of all search images from search requests; 3) Privacy of all data associated with the index construction; 4) Query unlinkability, attackers should not be able to tell whether or not two or more search are from the same search image.</p>
+<h3 id="Known-Ciphertext-Model"><a href="#Known-Ciphertext-Model" class="headerlink" title="Known Ciphertext Model"></a>Known Ciphertext Model</h3><p>encrypted images and corresponding descriptor vectors, encrypted searchable index construction, encrypted search requests.</p>
+<h3 id="Known-Background-Model"><a href="#Known-Background-Model" class="headerlink" title="Known Background Model"></a>Known Background Model</h3><p>A stronger threat model and may extract the statistical information of a specific encrypted image in the dataset. </p>
+<h1 id="Our-Construction"><a href="#Our-Construction" class="headerlink" title="Our  Construction"></a>Our  Construction</h1><h2 id="Construction-of-SEIS"><a href="#Construction-of-SEIS" class="headerlink" title="Construction  of  SEIS"></a>Construction  of  SEIS</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/27/SEISA/" data-id="cm2vmjba00022wwtgfmtm8ibm" data-title="SEISA" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Membership-Inference-Attacks-Against-Machine-Learning-Models" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/27/Membership-Inference-Attacks-Against-Machine-Learning-Models/" class="article-date">
+  <time class="dt-published" datetime="2024-06-27T11:39:06.000Z" itemprop="datePublished">2024-06-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/27/Membership-Inference-Attacks-Against-Machine-Learning-Models/">Membership Inference Attacks Against Machine Learning Models</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p>1.<strong>Membership inference attack</strong>: given a data record and black-box access to a model,determine if the record was in the model’s training dataset.</p>
+<p>2.Train our own inference model to recoginze differences in the target model’s predictions on the inputs that it trained on versus the inputs that it did not train on</p>
+<p>3.Some models cen be vulnerable to membership inference attacks.We then investigate the factors that influence this leakage and evaluate mitigation strategies.</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>The intenet giants offering “machine learning as a service” to the customer in possession of a dataset and a data classification task.And the dataset is usually made by the activities of individual users.</p>
+<h2 id="Our-contributions"><a href="#Our-contributions" class="headerlink" title="Our contributions"></a>Our contributions</h2><p>Quanitify membership information leakage through the prediction outputs of machine learning models.</p>
+<p>We turn machine learning against itself and train an attack model whose purpose is to distinguish the target model’s behavior on the training inputs from its behavior on the inputs that it did not encounter during training.<strong>turn this problem into a classification problem.</strong></p>
+<h1 id="Menbership-Inderence"><a href="#Menbership-Inderence" class="headerlink" title="Menbership Inderence"></a>Menbership Inderence</h1><h2 id="Overview-of-the-attack"><a href="#Overview-of-the-attack" class="headerlink" title="Overview of the attack"></a>Overview of the attack</h2><p>Principle of utilization：“behave differently on the data that they were trained on versus the data that they “see” for the first time.” </p>
+<p>Method: build multiple “shadow” models intended to behave similarly to the target model.So that we can know the ground truth for each shadow model.</p>
+<h2 id="Shadow-models"><a href="#Shadow-models" class="headerlink" title="Shadow models"></a>Shadow models</h2><p>Here the type and structure of the target model are not known, but the attacker can use exactly the same service (e.g., Google Prediction API) to train the shadow model as was used to train the target model</p>
+<p>“The more shadow models, the more accurate the attack model will be.” </p>
+<h2 id="Generating-training-data-for-shadow-models"><a href="#Generating-training-data-for-shadow-models" class="headerlink" title="Generating training data for shadow models"></a>Generating training data for shadow models</h2><h3 id="Model-based-synthesis"><a href="#Model-based-synthesis" class="headerlink" title="Model-based synthesis"></a>Model-based synthesis</h3><p>Using hill-climbing algorithm</p>
+<p><img src="C:\Users\梁韵扬\AppData\Local\Temp\b8623e22-0d80-40b2-838f-fe5752f0e1c9.png" alt="b8623e22-0d80-40b2-838f-fe5752f0e1c9"></p>
+<h3 id="Statistics-based-synthesis"><a href="#Statistics-based-synthesis" class="headerlink" title="Statistics-based synthesis"></a>Statistics-based synthesis</h3><p> The attacker may have some statistical information about the population from which the target model’s training data was drawn</p>
+<h3 id="Noisy-real-data"><a href="#Noisy-real-data" class="headerlink" title="Noisy real data"></a>Noisy real data</h3><p>The attacker may have access to some data that is similar to the target model’s training data and can be considered as a “noisy” version thereof.</p>
+<h2 id="Training-the-attack-model"><a href="#Training-the-attack-model" class="headerlink" title="Training the attack model"></a>Training the attack model</h2><p>it learns to perform a much subtler task: how to distinguish between the training inputs classified with high confidence and other, non-training inputs that are also classified with high confidence.</p>
+<h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h1><h2 id="data"><a href="#data" class="headerlink" title="data"></a>data</h2><p>image, purchase, locations, hospital stays, handwritten digits, census income.</p>
+<h2 id="target-models"><a href="#target-models" class="headerlink" title="target models"></a>target models</h2><p>cloud-based service , neural networks</p>
+<h2 id="Experimental-setup"><a href="#Experimental-setup" class="headerlink" title="Experimental setup"></a>Experimental setup</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/27/Membership-Inference-Attacks-Against-Machine-Learning-Models/" data-id="cm2vmjb9x001qwwtg7isrb0c7" data-title="Membership Inference Attacks Against Machine Learning Models" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-贝叶斯分类器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/04/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/" class="article-date">
+  <time class="dt-published" datetime="2024-06-04T07:53:14.000Z" itemprop="datePublished">2024-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/04/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/">贝叶斯分类器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="贝叶斯决策论"><a href="#贝叶斯决策论" class="headerlink" title="贝叶斯决策论"></a>贝叶斯决策论</h1><h2 id="贝叶斯决策论-1"><a href="#贝叶斯决策论-1" class="headerlink" title="贝叶斯决策论"></a>贝叶斯决策论</h2><p>贝叶斯决策论是概率框架下实施决策的基本方法。对分类任务来说，在所有相关概率都已知的理想情况下，贝叶斯决策论考虑如何基于这些概率和误判损失来选择最优的类别标记。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/06/04/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8/" data-id="cm2vmjbaf004qwwtg368q4m3w" data-title="贝叶斯分类器" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-神经网络" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/31/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="article-date">
+  <time class="dt-published" datetime="2024-05-31T12:19:17.000Z" itemprop="datePublished">2024-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/31/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">神经网络</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="神经元模型"><a href="#神经元模型" class="headerlink" title="神经元模型"></a>神经元模型</h1><p><strong>神经网络的定义</strong>：神经网络是由具有适应性的简单单元组成的广泛并行互连的网络，它的组织能够模拟生物神经系统对真实世界物体所作出的交互反应</p>
+<p><strong>神经元</strong>：神经网络中最基本的成分是神经元 (neuron) 模型，即上述定义中的“简单单元”</p>
+<h2 id="M-P神经元模型"><a href="#M-P神经元模型" class="headerlink" title="M-P神经元模型"></a>M-P神经元模型</h2><p>​	这个模型中，神经元接收到来自几个其他神经元传递过来的输入信号，这些输入信号通过带<strong>权重</strong>的连接进行传递，神经元接收到的总输入值将与神经元的阈值进行比较，然后通过“激活函数”处理以产生神经元的输出。</p>
+<p>​	理想的激活函数为阶跃函数，它将输入值映射为0或1.但它具有不连续，不光滑等不太好的性质，因此常使用Sigmoid函数作为激活函数。</p>
+<h1 id="感知机与多层网络"><a href="#感知机与多层网络" class="headerlink" title="感知机与多层网络"></a>感知机与多层网络</h1><p>​	感知机由两层神经元组成（输入层，输出层），输入层接受外界输入信号后传递给输出层，输出层是M-P神经元（亦称“阈值逻辑单元”）。感知机能容易地实现逻辑与，或，非运算。</p>
+<p>​	更一般地，给定训练数据集,权重 wi ( i&#x3D;1,2,…, n) 以及阈值 xita 可通过学习得到.阈值。可看作一个固定输入为-1.0的“哑结点”(dummy node)所对 应的连接权重w(n+1)这样，权重和阈值的学习就可统一为权重的学习.</p>
+<p>​	调整权重：deta（wi）&#x3D;n（y-y‘）xi，wi更新为wi+deta（wi），其中n的范围为（0，1），成为学习率（一般取0.1</p>
+<p>​	当预测正确时，y&#x3D;y’，感知机不发生变化，否则将根据错误的程度进行权重调整.</p>
+<p>​	但对于只有两层神经元的感知机，它只能处理线性可分的问题，而无法解决非线性可分的问题，因此要考虑使用<strong>多层功能神经元</strong></p>
+<p><strong>隐层或隐含层</strong>：位于输出层与输入层之间的一层拥有激活函数的功能神经元</p>
+<p><strong>多层前馈神经网络</strong>：每一层神经元与下一层神经元全互连，神经元之间不存在同层连接，也不存在跨层连接。其中输入层神经元接受外界输入，隐层和输出层神经元对信号进行加工，最终结果由输出层神经元输出。</p>
+<p><strong>神经网络“学”到的东西，蕴含在连接权与阈值中</strong></p>
+<h1 id="误差逆传播算法"><a href="#误差逆传播算法" class="headerlink" title="误差逆传播算法"></a>误差逆传播算法</h1><p>​	每个训练样例， BP 算法(误差逆传播算法)执行以下操作：先将输入示 例提供给输入层神经元，然后逐层将信号前传，直到产生输出层的结果；然后计算输出层的误差，再将误差逆向传播至隐层神经元,最后根据隐层神经元的误差来对连接权和阈值进行调整. 该迭代过程循环进行，直到达到某些停止条件为止，例如训练误差已达到一个很小的值 。</p>
+<p>累计误差逆传播算法：类似bp算法，但是基于累计误差最小的更新规则，以降低参数更新频率</p>
+<h2 id="缓解过拟合"><a href="#缓解过拟合" class="headerlink" title="缓解过拟合"></a>缓解过拟合</h2><p>​	由于强大的表示能力，bp神经网络常遭遇过拟合</p>
+<p><strong>早停</strong>：将数据分成训练集和验证集，训练集用来计算梯度、更新连接权和阈值，验证集用来估计误差，若训练集误差降低但验证集误差升高，则停止训练，同时返回具有最小验证集误差的连接权和阈值.</p>
+<p><strong>正则化</strong>：其基本思想是在误差目标函数中增加一个用于描述网络复杂度的部分</p>
+<h1 id="全局最小与局部极小"><a href="#全局最小与局部极小" class="headerlink" title="全局最小与局部极小"></a>全局最小与局部极小</h1><p>​	局部极小解是参数空间中的某个点，其邻域点的误差函数值均不小于该点的函数值;全局最小解则是指参数空间中所有点的误差函数值均不小于该点的误差函数值。在参数空间中可能存在多个局部极小值，但却只会有一个全局最小值</p>
+<p>​	“跳出”局部极小，逼近全局最小：</p>
+<p>1.以多组不同参数值初始化多个神经网络，按标准方法训练后，取其中误差最小的解作为最终参数.这相当于从多个不同的初始点开始搜索，这样就可能陷入不同的局部极小，从中进行选择有可能获得更接近全局最小的结果.</p>
+<p>2.使用“模拟退火” 技术 ，模拟退火在每一步都以一定的概率接受比当前解更差的结果，从而有助 于“跳出”局部极小在每步迭代过程中，接受“次优解”的概率要随着 时间的推移而逐渐降低，从而保证算法稳定.</p>
+<p>3.使用随机梯度下降.与标准梯度下降法精确计算梯度不同，随机梯度下降 法在计算梯度时加入了随机因素.于是，即便陷入局部极小点，它计算出 的梯度仍可能不为零，这样就有机会跳出局部极小继续搜索.</p>
+<p>4.遗传算法</p>
+<h1 id="其它常见神经网络"><a href="#其它常见神经网络" class="headerlink" title="其它常见神经网络"></a>其它常见神经网络</h1><h2 id="PBR网络"><a href="#PBR网络" class="headerlink" title="PBR网络"></a>PBR网络</h2><p>​	它使用径向基函数作为隐层神经元激活函数，而输出层则是对隐层神经元输出的线性组合.</p>
+<h2 id="ART网络"><a href="#ART网络" class="headerlink" title="ART网络"></a>ART网络</h2><p>​	<strong>竞争型学习</strong>是神经网络中一种常用的无监督学习策略，在使用该策略时，网络的输出神经元相互竞争，每一时刻仅有一个竞争获胜的神经元被激活，其他神经元的状态被抑制.这种机制亦称“胜者通吃”原则.</p>
+<p>​	ART网络由比较层，识别层，识别阈值，重置模块构成。其中比较层负责接收输入样本，并将其传递给识别层神经元。识别层每一个神经元对应一个模式类，神经元数目可在训练过程中动态增长以增加新的模式类</p>
+<p>​	在接收到比较层的输入信号后，识别层神经元之间相互竞争以产生获胜神经元.竞争的最简单方式是，计算输入向量与每个识别层神经元所对应的模式 类的代表向量之间的距离，距离最小者胜.获胜神经元将向其他识别层神经元发送信号，抑制其激活.若输入向量与获胜神经元所对应的代表向量之间的相似度大于识别阈值，则当前输入样本将被归为该代表向量所属类别，同时，网络 连接权将会更新，使得以后在接收到相似输入样本时该模式类会计算出更大的 相似度，从而使该获胜神经元有更大可能获胜；若相似度不大于识别阈值,则重 置模块将在识别层增设一个新的神经元,其代表向量就设置为当前输入向量.</p>
+<h2 id="SOM网络"><a href="#SOM网络" class="headerlink" title="SOM网络"></a>SOM网络</h2><p>​	SOM网络是一种竞争学习型的无监督神经网络，它能将高维输入数据映射到低维空间，同时保持输入数据在高维空间的拓扑结构</p>
+<p>​	SOM 的训练过程很简单：在接收到一个训练样本后，每个输出层神经元会计算该样本与自身携带的权向量之间的距离，距离最近的神经元成为竞争获胜者，称为最佳匹配单元(best matching unit). 然后，最佳匹配单元及其邻近神经元的权向量将被调整，以使得这些权向量与当前输入样本的距离缩小.这个过程不断迭代，直至收敛.</p>
+<h2 id="级联相关网络"><a href="#级联相关网络" class="headerlink" title="级联相关网络"></a>级联相关网络</h2><p>​	结构自适应网络将网络结构也作为学习的目标之一，并希望能在训练过程中找到最符合数据特点的网络结构。</p>
+<p>​	级联相关网络有两个主要成分：“级联”和“相关”.级联是指建立层次连接的层级结构.在开始训练时，网络只有输入层和输出层，处于最小拓扑结 构；随着训练的进行，新的隐层神经元逐渐加入，从而创建起层级结构.当新的隐层神经元加入时，其输入端连接权值是冻结固定的.相关是指通过最大化新神经元的输出与网络误差之间的相关性来训练相关的参数.</p>
+<h2 id="Elman网络"><a href="#Elman网络" class="headerlink" title="Elman网络"></a>Elman网络</h2><p>​	“递归神经网络”允许网络中出现环形结构，从而可让一些神经元的输出反馈回来作为输入信号。这使得网络在 t 时刻的输出状态不仅与 t 时刻的输入有关，还与 t-1 时刻的网络状态有关，从而能处理与时间有关的动态变化。</p>
+<p>​	Elman网络时最常见的递归神经网络之一。它的结构与多层前馈网络很相似,但隐层神经元的输出被反馈回来，与下 一时刻输入层神经元提供的信号一起，作为隐层神经元在下一时刻的输入.隐层神经元通常采用 Sigmoid 激活函数，而网络的训练则常通过推广的 BP 算法进行</p>
+<h2 id="Boltzmann机"><a href="#Boltzmann机" class="headerlink" title="Boltzmann机"></a>Boltzmann机</h2><p>​	神经网络中有一类模型是为网络状态定义一个“能量” , 能量最小化时网络达到理想状态，而网络的训练就是在最小化这个能量函数. Boltzmann 机就是一种“基于能量的模型” 。其神经元分为两层：显层与隐层.显层用 于表示数据的输入与输出，隐层则被理解为数据的内在表达. Boltzmann 机中的神经元都是布尔型的，即只能取 0 或 1 两种状态，状态 1 表示激活，状态 0 表 示抑制.</p>
+<h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><p>​	随着计算能力的大幅提高，我们可以从单纯的增加隐层神经元的数目，变为增加隐层的数目，更为有效。</p>
+<h2 id="无监督逐层训练"><a href="#无监督逐层训练" class="headerlink" title="无监督逐层训练"></a>无监督逐层训练</h2><p>​	基本思想是每一次训练一层隐结点，训练时将上一层隐结点的输出作为输入，而本层隐结点的输出作为下一层隐结点的输入，称为“预训练”。在预训练全部完成后，再对整个网络进行“微调”。</p>
+<p>​	事实上，“预训练+微调”的做法可视为将大量参数分组,对每组先找到局部看来比较好的设置，然后再基于这些局部较优的结果联合起来进行全局寻优. 这样就在利用了模型大量参数所提供的自由度的同时,有效地节省了训练开销.</p>
+<h2 id="权共享"><a href="#权共享" class="headerlink" title="权共享"></a>权共享</h2><p>​	即让一组神经元使用相同的连接权。</p>
+<p>​	CNN 复合 多个“卷积层”和“采样层”对输入信号进行加工，然后-在连接层实现与输出目标之间的映射.每个卷积层都包 含多个特征映射 , 每个特征映 射是一个由多个神经元构成的“平面”，通过一种卷积滤波器提取输入的一种特征.样层亦称为“汇合” 层，其作用是基于局部相关性原理进行亚采样，从而在减少数据量的同时保留有用信息.无论是卷积层还是采样层，其每一组神经元都是 用相同的连接权，从而大幅减少了需要训练的参数数目.</p>
+<p>​	论是 DBN 还是 CNN, 其多隐层堆叠、每层对上一层的输出进行处理的机制，可看作是在对输入信号进行逐层加工，从而把初始的、与输出目标之间联系不太密切的输入表示，转化成与输出目标联系更密切的表示，使得原来仅基于最后一层输出映射难以完成的任务成为可能.换言之，通过多层处理，逐渐将初始的“低层”特征表示 转化为“高层”特征表示后，用“简单模型”即可完成复杂的分类等学习任务.由此可将深度学习理解为进行“特征学习” 或“表示学 习 ”.</p>
+<p>​	</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/31/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" data-id="cm2vmjbad004dwwtgeeqpaijk" data-title="神经网络" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-线性模型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/30/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" class="article-date">
+  <time class="dt-published" datetime="2024-05-30T12:13:27.000Z" itemprop="datePublished">2024-05-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/30/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/">线性模型</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h1><p>​	给定由 d 个属性描述的示例 x &#x3D;(x1;x2;…;xd）, 其中xi是 x 在第 i个属 性上的取值,线性模型 （linear model）试图学得一个通过属性的线性组合来进行预测的函数，即 f（x） &#x3D; w1x1 + w2x2 + • • • + wdxd + b ,</p>
+<p>​	线性模型形式简单、易于建模,但却蕴涵着机器学习中一些重要的基本思想.许多功能更为强大的非线性模型 （nonlinear mod） 可在线性模型的基础上通过引入层级结构或高维映射而得.此外，由于直观表达了各属性在预测中的重要性，因此线性模型有很好的可解释性 （comprehensibility）</p>
+<h1 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h1><h2 id="先考虑只有一个属性的情况"><a href="#先考虑只有一个属性的情况" class="headerlink" title="先考虑只有一个属性的情况"></a>先考虑只有一个属性的情况</h2><p>​	我们可试图让均方误差最小化。均方误差有非常好的几何意义，它对应了常用的欧几里得距离或简称“欧氏距离” (Euclidean distance). 基于均方误差最小化来进行模型求解的方法称 为“最小二乘法” (least square method). 在线性回归中，最小二乘法就是试图找到一条直线，使所有样本到直线上的欧氏距离之和最小.</p>
+<h2 id="多元线性回归"><a href="#多元线性回归" class="headerlink" title="多元线性回归"></a>多元线性回归</h2><p>​	思想和一个属性时是一样的，只是换成了矩阵的形式。由于现实中往往不一定是满秩矩阵，因此会存在多解的情况。这时引入正则化项。</p>
+<p>​	<strong>正则化项</strong>：正则化项（regularization term）在机器学习和统计学中用于防止模型过拟合。过拟合是指模型在训练数据上表现很好，但在未见过的数据上表现不好。正则化通过在模型的损失函数中添加一个惩罚项来约束模型的复杂度，从而提高模型的泛化能力。通过引入正则化项，模型能够更好地处理噪声数据，并且在面对新数据时具有更强的预测能力。</p>
+<p>​	令模型预测值逼近 y 衍生物，比如 lny，y^2……。这样得到的模型称为“广义线性模型”</p>
+<h1 id="对数几率回归"><a href="#对数几率回归" class="headerlink" title="对数几率回归"></a>对数几率回归</h1><p>​	对于分类任务，只需找一个单调可微函数将分类任务的真实标记 y 与线性回归模型的预测值联系起来.考虑<strong>二分类任务</strong>，其输出标记y为0或1，而线性回归模型产生的预测值 z 为实值，因此我们需要将 z 转化为0或1.</p>
+<p>​	这里我们常使用“对数几率函数”：y&#x3D;1&#x2F;(1+e^(-z)).对数几率函数是一种 “Sigmoid 函数”它将 z 值转化为一个 接近 0 或 1 的 g 值,并且其输出值在 z&#x3D; 0 附近变化很陡.</p>
+<h1 id="线性判别分析"><a href="#线性判别分析" class="headerlink" title="线性判别分析"></a>线性判别分析</h1><p>​	给定训练样例集，设法将样例投影到一条直线上, 使得同类样例的投影点尽可能接近、异类样例的投影点尽可能远离；在对新样 本进行分类时，将其投影到同样的这条直线上，再根据投影点的位置来确定新 样本的类别.</p>
+<h1 id="多分类学习"><a href="#多分类学习" class="headerlink" title="多分类学习"></a>多分类学习</h1><h2 id="OvO"><a href="#OvO" class="headerlink" title="OvO"></a>OvO</h2><p>​	OvO将任务的这 N 个类别两两配对,从而产生 N(N - 1)&#x2F;2个二分类任务,例如OvO 将为区分类别 Ci 和 Cj 训练一个分类器，该分类器把数据集中的 Ci 类样例作为正例，Cj 类样例作为反例.在测试阶段，新样本将同时提交给所有分类器，于是我们将得到N(N-1)&#x2F;2个分类结果,最终结果可通过投票产生：即把被预测得最多的类别作为最终分类结果.</p>
+<h2 id="OvR"><a href="#OvR" class="headerlink" title="OvR"></a>OvR</h2><p>​	OvR则是每次将一个类的样例作为正例、所有其他类的样例作为反例来 训练N个分类器.在测试时若仅有一个分类器预测为正类，则对应的类别标记作为最终分类结果。有多个分类器预测为正类，则通常考虑各分类器的预测置信度，取置信度最大的类别标记作为分类结果</p>
+<p>​	容易看出，OvR 只需训练 N 个分类器，而 OvO 需训练 N（N - 1 ）&#x2F;2 个分 类器，因此，OvO 的存储开销和测试时间开销通常比 OvR 更大.但在训练时, OvR 的每个分类器均使用全部训练样例，而 OvO 的每个分类器仅用到两个类 的样例，因此，在类别很多时，OvO 的训练时间开销通常比 OvR 更小.至于预 测性能，则取决于具体的数据分布,在多数情形下两者差不多.</p>
+<h2 id="MvM"><a href="#MvM" class="headerlink" title="MvM"></a>MvM</h2><p>​	MvM 是绛次将若干个类作为正类,若干个其他类作为反类.显然， OvO 和 OvR 是 MvM 的特例. MvM 的正、反类构造必须有特殊的设计，不能随意选取.</p>
+<p>​	“纠错输出码（EOOC）”，将编码的思想引入类别拆分，并尽可能在解码过程中具有容错性。它的工作过程主要有两步：</p>
+<p><strong>编码</strong>：对 N 个类别做M次划分，每次划分将一部分类别划为正类，一部 分划为反类,从而形成一个二分类训练集；这样一共产生 M 个训练集,可 训练出 M 个分类器</p>
+<p><strong>解码</strong>：M 个分类器分别对测试样本进行预测，这些预测标记组成一个编码.将这个预测编码与每个类别各自的编码进行比较,返回其中距离（海明距离&#x2F;欧式距离）最小的类别作为最终预测结果.</p>
+<p>​	一般来说,对同一个学习任务, ECOC 编码越长,纠错能力越强.然 而，编码越长，意味着所需训练的分类器越多，计算、存储开销都会增大；另一 方面,对有限类别数，可能的组合数目是有限的，码长超过一定范围后就失去了 意义.</p>
+<h1 id="类别不平衡问题"><a href="#类别不平衡问题" class="headerlink" title="类别不平衡问题"></a>类别不平衡问题</h1><p>​	指分类任务中不同类别的训练样例数目差别很大的情况</p>
+<h2 id="欠采样"><a href="#欠采样" class="headerlink" title="欠采样"></a>欠采样</h2><p>​	去除样例较多的类别的一些样例，使得正反例数据量接近。欠采样法若随机丢弃样例，可能丢失一些重要信息。采样法的代表性算法则是利用<strong>集成学习机制</strong>，将样例较多的类别划分为若干个集合供不同学习器使用，这样对每个学习器来看都进行了欠采样，但在全局来 看却不会丢失重要信息.</p>
+<h2 id="过采样"><a href="#过采样" class="headerlink" title="过采样"></a>过采样</h2><p>​	增加样例较少的类别的样例数，使得正反例数据量接近。采样法不能简单地对初始正例样本进行重复采样，否则会招致严重的过拟合；过采样法的代表性算法是通过对训练集里的正例进行<strong>插值</strong>来产生额外的正例。</p>
+<h2 id="阈值移动"><a href="#阈值移动" class="headerlink" title="阈值移动"></a>阈值移动</h2><p>​	当训练集中正、反例的数目不同时，令m+表示正例数目，m-表示 反例数目，则观测几率是m+&#x2F;m-，由于我们通常假设训练集是真实样本总体的无偏采样，因此观测几率就代表了真实几率.于是，只要分类器的预测几率高于观测几率就应判定为正例。</p>
+<p>​	由于我们的分类器是基于：y&#x2F;(1-y)&gt;1，则预测为正例。因此要对预测值进行调整：y’&#x2F;(1-y’)&#x3D;y&#x2F;(1-y)*(m-)&#x2F;(m+).这是类别不平衡学习的一个基本策略——再缩放</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/30/%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/" data-id="cm2vmjbad004iwwtghkwnf0q4" data-title="线性模型" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-模型评估与选择" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/29/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" class="article-date">
+  <time class="dt-published" datetime="2024-05-29T12:53:57.000Z" itemprop="datePublished">2024-05-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/29/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/">模型评估与选择</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="经验误差与过拟合"><a href="#经验误差与过拟合" class="headerlink" title="经验误差与过拟合"></a>经验误差与过拟合</h1><p>错误率：分类错误的样本数占样本总数的比例；精度&#x3D;1-错误率</p>
+<p>误差：学习器的实际预测输出与样本的真实输出之间的差异；学习器在训练集上的误差为“训练误差”或“经验误差”；在新样本上的误差为“泛化误差”</p>
+<p>目标：在新样本上表现良好的学习器</p>
+<p>过拟合：训练得“太好”了，以至于把训练样本自身的一些特点当作了所有潜在样本都会具有的一般性质，导致泛化性能下降；与之相对的是“欠拟合”</p>
+<p>过拟合是不可避免的</p>
+<h1 id="评估方法"><a href="#评估方法" class="headerlink" title="评估方法"></a>评估方法</h1><p>​	使用测试集来测试学习器对新样本的判断能力，对学习器的泛化误差进行评估进而做出选择，<strong>注意</strong>：测试集应尽可能与训练集互斥</p>
+<p>但往往我们只有一个数据集D，因此要对D进行一定的处理，从中产生出训练集 S 和测试集 T.</p>
+<h2 id="留出法"><a href="#留出法" class="headerlink" title="留出法"></a>留出法</h2><p>“留出法”(hold-out) 直接将数据集。划分为两个互斥的集合，在 S 上训 练出模型后，用T 来评估其测试误差，作为对泛化误差的估计</p>
+<p>需要注意的是，训练&#x2F;测试集的划分要尽可能保持<strong>数据分布的一致性</strong></p>
+<p>常见做法：将大约 <strong>2&#x2F;3 ~ 4&#x2F;5</strong>的样本用于训练，剩余样本用于测试</p>
+<h2 id="交叉验证法"><a href="#交叉验证法" class="headerlink" title="交叉验证法"></a>交叉验证法</h2><p>​	将数据集划分为 k 个大小相似的互斥子集，每个子集都尽可能保持数据分布的一致性，每次用 k- 1 个子集的并集作为训练集，余下的那个子集作为测试集；这样就可获得 k 组训练&#x2F;测试集，从而可进行 k 次训练和测试，最终返回的是这 k 个测试结果 的均值。其中 k 常取<strong>10</strong>。</p>
+<p>​	与留出法相似，将数据集划分为 k 个子集同样存在多种划分方式.为 减小因样本划分不同而引入的差别， k 折交叉验证通常要<strong>随机使用不同的划分重复 p 次</strong>，最终的评估结果是这 p 次 k 折交叉验证结果的均值。</p>
+<p>​	其中留一法（每个子集只包含一个样本）的评估结果往往被认为比较准确，但是在面对较大的数据集时，其计算开销很大</p>
+<h2 id="自助法"><a href="#自助法" class="headerlink" title="自助法"></a>自助法</h2><p>​	因训练样本规模不同而导致的估计偏差相对小，同时计算复杂度相对较低</p>
+<p>​	给定包含 m 个样本的数据集，我们对它进行采样产生数据集每次随机从中挑选一个 样本,将其拷贝放入D‘ ,然后再将该样本放回初始数据集 D 中,使得该样本在 下次采样时仍有可能被采到；这个过程重复执行 m 次后，我们就得到了包含 m 个样本的数据集 D’, 这就是自助采样的结果.通过自助采样，初始数据集。中约有 36.8% 的样本未出现在采样数据集 D’ 中.于是我们可将其用作训练集, D\D‘ 用作测试集</p>
+<p>优点：1.在数据集较小，难以有效划分训练&#x2F;测试集时很有用</p>
+<p>2.能从初始数据集中产生多个不同的训练集，对集成学习很有好处</p>
+<p>缺点：自助法产生的数据集改变了初始数据集的分布，引入估计偏差。因此,在初始数据量足够时，留出法和交叉验证法更常用一些.</p>
+<h2 id="调参与最终模型"><a href="#调参与最终模型" class="headerlink" title="调参与最终模型"></a>调参与最终模型</h2><p>将训练数据另外划分为训练集和验证集，基于验证集上的性能来进行模型选择和调参</p>
+<h1 id="性能度量"><a href="#性能度量" class="headerlink" title="性能度量"></a>性能度量</h1><p>定义：衡量模型泛化能力的评价标准</p>
+<p>性能度量反映了任务需求，在对比不同模型的能力时，使用不同的性能度量往 往会导致不同的评判结果；这意味着模型的“好坏”是相对的，什么样的模型 是好的，不仅取决于算法和数据，还决定于任务需求.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/29/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9/" data-id="cm2vmjbad004gwwtgb16b7yuj" data-title="模型评估与选择" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-machine-learning" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/25/machine-learning/" class="article-date">
+  <time class="dt-published" datetime="2024-05-25T03:19:20.000Z" itemprop="datePublished">2024-05-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/25/machine-learning/">deep learning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Basic-Data-Explpration"><a href="#Basic-Data-Explpration" class="headerlink" title="Basic Data Explpration"></a>Basic Data Explpration</h1><h1 id="Machine-Learning-Model"><a href="#Machine-Learning-Model" class="headerlink" title="Machine Learning Model"></a>Machine Learning Model</h1><h1 id="Model-Validation"><a href="#Model-Validation" class="headerlink" title="Model Validation"></a>Model Validation</h1><h2 id="effect"><a href="#effect" class="headerlink" title="effect"></a>effect</h2><p>measure the quality of your model.<strong>It is the key to iteratively improving your model.</strong></p>
+<h2 id="metrics-for-summarizing-model-quality"><a href="#metrics-for-summarizing-model-quality" class="headerlink" title="metrics for summarizing model quality"></a>metrics for summarizing model quality</h2><p><strong>Mean Absolute Error</strong>(MAE):the average of those absolute errors.(error &#x3D; actual-predicted)</p>
+<h2 id="Split"><a href="#Split" class="headerlink" title="Split"></a>Split</h2><p>use the function <code>train_test_split</code> to break up the data into two pieces,<strong>training data and validation data.</strong></p>
+<h1 id="Underfitting-and-Overfitting"><a href="#Underfitting-and-Overfitting" class="headerlink" title="Underfitting and Overfitting"></a>Underfitting and Overfitting</h1><h2 id="Overfitting"><a href="#Overfitting" class="headerlink" title="Overfitting"></a>Overfitting</h2><p>As the tree gets deeper,the dataset gets sliced up into leaves with fewer data.This will make predictions that are quite close to the actual data,but they make very unreliable predictions for the new data because of the small training data.</p>
+<h2 id="Underfitting"><a href="#Underfitting" class="headerlink" title="Underfitting"></a>Underfitting</h2><p>If the tree is very shallow,the model will fails to capture important distinctions and patterns in the data,so it performs poorly even in training data.</p>
+<p><strong>So the things we want to do is to find a compromise between underfitting and overfitting.</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/25/machine-learning/" data-id="cm2vmjbaa0041wwtgc7hve2s6" data-title="deep learning" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Overfitting" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/23/Overfitting/" class="article-date">
+  <time class="dt-published" datetime="2024-05-23T11:45:06.000Z" itemprop="datePublished">2024-05-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/05/23/Overfitting/">Overfitting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h1><p>model的弹性过大，同时training data不足</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><h2 id="增加training-data"><a href="#增加training-data" class="headerlink" title="增加training data"></a>增加training data</h2><p>1.直接收集数据，增加training data</p>
+<p>2.data augmentation：根据数据的特性，人为的创造新的资料。<strong>例</strong>：若要增加图片类型的数据数量，可以将图片进行左右翻转</p>
+<h2 id="constrained-model"><a href="#constrained-model" class="headerlink" title="constrained model"></a>constrained model</h2><p>1.Less parameters and sharing paramenters</p>
+<p>2.Less features</p>
+<p>3.Early stopping</p>
+<p>4.Regularization</p>
+<p>5.Dropout</p>
+<h1 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h1><p>先将training data中取一部分出来作为validation data，剩余的仍作为training data来训练model。训练出来的model用validation data来检验mse是否够小，如果合适了，再放到test data上进行测试</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/23/Overfitting/" data-id="cm2vmjb9z0020wwtggo9cdojx" data-title="Overfitting" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-CNN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/05/22/CNN/" class="article-date">
@@ -120,435 +636,11 @@
 
 
   
-    <article id="post-Structured-Encryption-and-Controlled-Disclosure" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" class="article-date">
-  <time class="dt-published" datetime="2024-05-22T04:56:21.000Z" itemprop="datePublished">2024-05-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/">Structured Encryption and Controlled Disclosure</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>背景-&gt; 问题-&gt; 方案-&gt; 效果</strong></p>
-<p><strong>Structured Encryption</strong>:generalizes previous work on symmetric searchable encryption to the setting of arbitrarily-structured data.</p>
-<p><strong>controlled disclosure</strong>:a data owner wishes to grant access to only part of a massive dataset.</p>
-<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>在近年来云储存的趋势下，越来越多用户把结构化数据放在<strong>不受信任</strong>的云服务器上储存，而为了保护数据，用户选择先将数据加密，再上传至云服务器</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>数据的加密使得数据失去了它本身的结构，且用户无法对其进行查询，或对其进行一些计算操作</p>
-<h3 id="方案"><a href="#方案" class="headerlink" title="方案"></a>方案</h3><p>文章提出了一种结构化加密的模型，一种正式的安全定义，和几种高效的针对某些结构数据（matrix-stuctured data,labeled data,graph data,labeled graph data）的查询的构造方案</p>
-<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><p>结构化加密，将可搜索加秘密推广到呈现任意结构的数据中，并提出了受控披露的新应用：用于基于云的数据经纪服务</p>
-<h1 id="Search-Queries-on-Labeled-Data"><a href="#Search-Queries-on-Labeled-Data" class="headerlink" title="Search Queries on Labeled Data"></a>Search Queries on Labeled Data</h1><p>m：消息数据项，实际的内容数据</p>
-<p>v：标签数据项，代表与消息数据项相关联的附加信息</p>
-<p>i：索引，用于将m和其对应的v联系起来</p>
-<p>j：经过随机置换后的i</p>
-<p>w：关键词，每一个w都关联到一个或多个数据项的索引（用L（w）表示）</p>
-<p>c：经过加密的m</p>
-<p><strong>m，v通过i相联系，w通过i与v，m联系</strong></p>
-<h2 id="Gen"><a href="#Gen" class="headerlink" title="Gen"></a>Gen</h2><p>K1，K2用于伪随机函数的加密，K3用于m的加密</p>
-<h2 id="Enc"><a href="#Enc" class="headerlink" title="Enc"></a>Enc</h2><p>i随机置换为j</p>
-<p><strong>这里的随机置换，即是PRP（伪随机置换），在这里的作用是切断c与m之间的直接联系</strong></p>
-<p>对v：以字典形式储存。搜索键：以K1进行为随机函数加密的w，值：v与j组成的数组与以K1进行为随机函数加密的w进行异或操作。</p>
-<p>对m：</p>
-<p>随机置换后，用K3进行私钥加密</p>
-<p><strong>需要注意的是m和v都要先填充为一个固定的长度，这是一个常用的保证安全性的手段，如果不padding，存储的字符串长度不相等，攻击者基于这个信息可以打破方案的安全性</strong></p>
-<h2 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h2><p>输出以K2进行伪随机函数加密的w，以K1进行为随机函数加密的w</p>
-<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><p>将以K1进行为随机函数加密的w的搜索键所对应的v与j组成的数组与以K1进行为随机函数加密的w进行异或操作，复原出v和j</p>
-<h2 id="Dec"><a href="#Dec" class="headerlink" title="Dec"></a>Dec</h2><p>通过K3解密所有j对应的密文</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/22/Structured-Encryption-and-Controlled-Disclosure/" data-id="cm2vmjba00024wwtg2he4czgl" data-title="Structured Encryption and Controlled Disclosure" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Pytorch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/21/Pytorch/" class="article-date">
-  <time class="dt-published" datetime="2024-05-21T13:19:54.000Z" itemprop="datePublished">2024-05-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/21/Pytorch/">Pytorch</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="张量"><a href="#张量" class="headerlink" title="张量"></a>张量</h1><p>张量（Tensor）是数学和物理学中的一个概念，用于表示多维数组。它是向量和矩阵的推广，可以有任意数量的维度。张量在机器学习和深度学习中非常重要，特别是在使用像 PyTorch 和 TensorFlow 这样的框架时，<strong>数据通常表示为张量</strong>。</p>
-<p>张量的维度类似与数组，从0开始算起</p>
-<hr>
-<h1 id="Pytorch"><a href="#Pytorch" class="headerlink" title="Pytorch"></a>Pytorch</h1><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>1.<code>torch.squeeze(torch,dim)</code>：</p>
-<p>用于且只能删除大小为1的维度</p>
-<p>2.<code>torch.unsqueeze(torch,dim)</code>：</p>
-<p>用于在指定维度插入一个大小为1的新维度</p>
-<p>3.<code>torch.transpose(torch,dim1,dim2)</code>：</p>
-<p>用于交换张量中指定的两个维度，类似于矩阵中的转置</p>
-<p>4.<code>torch.cat(torch,dim)</code>：</p>
-<p>用于沿指定维度连接张量</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/05/21/Pytorch/" data-id="cm2vmjb9y001vwwtgairw3osu" data-title="Pytorch" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数模" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/28/%E6%95%B0%E6%A8%A1/" class="article-date">
-  <time class="dt-published" datetime="2024-04-28T12:52:09.000Z" itemprop="datePublished">2024-04-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/28/%E6%95%B0%E6%A8%A1/">数模常见模型及算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="预测模型"><a href="#预测模型" class="headerlink" title="预测模型"></a>预测模型</h2><p><strong>神经网络预测</strong>，灰色预测，拟合插值预测（线性回归，时间序列预测，马尔科夫链预测，微分方程预测，<strong>logistic模型</strong></p>
-<h2 id="优化模型"><a href="#优化模型" class="headerlink" title="优化模型"></a>优化模型</h2><p>规划模型（目标规划，线性规划，非线性规划，整数规划，动态规划），图论模型，排队论模型，神经网络模型，现代优化算法（<strong>遗传算法</strong>，<strong>模拟退火算法</strong>，蚁群算法，禁忌搜索）</p>
-<h2 id="评价模型"><a href="#评价模型" class="headerlink" title="评价模型"></a>评价模型</h2><p>模糊综合评价法，层次分析法，聚类分析法，主成分分析评价法，灰色综合评价法，人工神经网络评价法</p>
-<h2 id="常用算法"><a href="#常用算法" class="headerlink" title="常用算法"></a>常用算法</h2><p>1.蒙特卡罗算法（随机性模拟算法），通过计算机仿真来解决问题，同时可以通过模拟来检验自己模型的正确性</p>
-<p>2.数据拟合，参数估计，插值等数据处理算法，用于处理大量数据，matlab</p>
-<p>3.线性规划，整数规划，多元规划，二次规划，用于最优化问题，使用lingo</p>
-<p>4.图论算法，用于最短路径，网络流，二分图</p>
-<p>5.动态规划，回溯搜索，分治算法，分支定界，用于算法设计</p>
-<p>6.最优化理论的三大非经典算法：模拟退火，神经网络，遗传算法，对于解决一些较难的最优化问题非常有帮助</p>
-<p>7.网格算法和穷举法，用于暴力搜索最优点，当重点讨论模型本身而轻视算法时可使用</p>
-<p>8.一些连续离散化方法，很多问题中数据是可以连续的，而计算机值认为是离散的数据，因此将其离散化后进行差分代替微分，求和代替积分等思想非常重要</p>
-<p>9.数值分析法算法，采用高级编程语言时，一些数据分析中常用的算法比如方程组求解，矩阵运算，函数积分等算法就需要额外编写库函数进行调用</p>
-<p>10.图像处理算法，matlab处理</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/28/%E6%95%B0%E6%A8%A1/" data-id="cm2vmjbae004lwwtg889p84c1" data-title="数模常见模型及算法" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tip/" rel="tag">tip</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-4-18" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/18/ctf-4-18/" class="article-date">
-  <time class="dt-published" datetime="2024-04-18T14:04:31.000Z" itemprop="datePublished">2024-04-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/18/ctf-4-18/">ctf 4.18</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/18/ctf-4-18/" data-id="cm2vmjba9003pwwtg2v8lgf6j" data-title="ctf 4.18" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-4-9小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/09/4-9%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-04-09T10:54:01.000Z" itemprop="datePublished">2024-04-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/09/4-9%E5%B0%8F%E7%BB%93/">4.9小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/09/4-9%E5%B0%8F%E7%BB%93/" data-id="cm2vmjb9u0018wwtgesh82guf" data-title="4.9小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-4-9-ctf" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/09/4-9-ctf/" class="article-date">
-  <time class="dt-published" datetime="2024-04-09T10:53:51.000Z" itemprop="datePublished">2024-04-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/09/4-9-ctf/">4.9 ctf</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="我吃三明治"><a href="#我吃三明治" class="headerlink" title="我吃三明治"></a>我吃三明治</h2><p>winhex打开，发现了里面有两个FF D8，说明其实是两张图片，那么他们中间可能会有有用的信息。然后果然找到了一串字符，base32解码，拿到flag</p>
-<hr>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/09/4-9-ctf/" data-id="cm2vmjb9u001cwwtg2jgi7wvj" data-title="4.9 ctf" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-4-8小结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/08/4-8%E5%B0%8F%E7%BB%93/" class="article-date">
-  <time class="dt-published" datetime="2024-04-08T14:13:58.000Z" itemprop="datePublished">2024-04-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/08/4-8%E5%B0%8F%E7%BB%93/">4.8小结</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>今天完全靠自己写了道感觉还挺有难度的题？？开心！！最近准备期中考了，还有好多东西没有复习，所以ctf先放一边了，不过还是尽量保持至少一天一道吧（（<br>今天高数是一点没听，完全自学了，就是说，不过感觉效率还蛮高的🤔🤔<br>晚上做实验时被ftx盒了😭😭啊啊啊啊</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/08/4-8%E5%B0%8F%E7%BB%93/" data-id="cm2vmjb9t0012wwtgh3lr3cf0" data-title="4.8小结" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-ctf-4-8" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/08/ctf-4-8/" class="article-date">
-  <time class="dt-published" datetime="2024-04-08T14:13:45.000Z" itemprop="datePublished">2024-04-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/08/ctf-4-8/">ctf 4.8</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="你能看懂音符吗"><a href="#你能看懂音符吗" class="headerlink" title="你能看懂音符吗"></a>你能看懂音符吗</h2><p>压缩包打不开，拉到winhex里面，发现头文件有问题，修改之后成功解压。发现是一个word文档，但是里面没有什么有用的信息，binwalk一下，开出了很多个文件，一个个看，在word&#x2F;document.xml中发现了被藏起来的音符，猜测是一种加密方法，找个网站解密，即是flag</p>
-<p>看了别人的解析，还有一种方法是在word的显示选项中，勾选隐藏文字的选项，就可以看到音符了，但发现无法复制，把音符全选，右键选择字体，删除隐藏效果，就可以正常复制下来，拿去解密了</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/08/ctf-4-8/" data-id="cm2vmjba9003swwtg5f7keer7" data-title="ctf 4.8" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-misc之编码" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/04/07/misc%E4%B9%8B%E7%BC%96%E7%A0%81/" class="article-date">
-  <time class="dt-published" datetime="2024-04-07T07:20:26.000Z" itemprop="datePublished">2024-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/04/07/misc%E4%B9%8B%E7%BC%96%E7%A0%81/">misc之编码和加密</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="base编码"><a href="#base编码" class="headerlink" title="base编码"></a>base编码</h2><p>可能会存在<strong>套娃解码</strong>，需要反复进行多次解码</p>
-<p><strong>base64</strong>：最常见，由<strong>A-Z，a-z，0-9，+，&#x2F;，&#x3D;，</strong>组成</p>
-<p><strong>base32</strong>：由<strong>A-Z，2-7，&#x3D;，</strong>组成</p>
-<p><strong>base16</strong>：由<strong>A-F，0-9，</strong>组成</p>
-<hr>
-<h2 id="js加密"><a href="#js加密" class="headerlink" title="js加密"></a>js加密</h2><p><strong>JJEncode</strong>：JJencode 是一种将 JavaScript 代码转化为只包含字母、数字和部分特殊字符的形式的混淆方法。JJencode 会将每个 JavaScript 语句转化为一个字符串，然后使用特殊的转义字符将这些字符串拼接起来。一般里面会含有大量的**$**</p>
-<p><strong>AAEncode</strong>： 是一种JavaScript 代码转化为表情符号的混淆方法。它通常是把JS代码转化成人无法理解的<strong>颜文字</strong>表情。</p>
-<hr>
-<h2 id="福尔摩斯跳舞小人密码"><a href="#福尔摩斯跳舞小人密码" class="headerlink" title="福尔摩斯跳舞小人密码"></a>福尔摩斯跳舞小人密码</h2><p>没什么好说的，对应图片解密即可</p>
-<p><img src="C:\blog\tay_blog\source_posts\福尔摩斯跳舞小人密码.jpg"></p>
-<hr>
-<h2 id="凯撒密码"><a href="#凯撒密码" class="headerlink" title="凯撒密码"></a>凯撒密码</h2><p>明文中的所有字母都在字母表上向后（或向前）按照一个固定数目进行<strong>偏移</strong>后被替换成密文</p>
-<p>在一些题目中不知道这个固定数目是多少，可以用个脚本，把每一种情况都输出出来，最后有明文的那个即是答案</p>
-<hr>
-<h2 id="qwe加密"><a href="#qwe加密" class="headerlink" title="qwe加密"></a>qwe加密</h2><p>从电脑键盘上的字母从Q开始数，顺序是Q W E R T Y U I…<br>对应的字母顺序依次是A B C D E F G H 也就是说Q&#x3D;A,W&#x3D;B,E&#x3D;C，依次类推</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/04/07/misc%E4%B9%8B%E7%BC%96%E7%A0%81/" data-id="cm2vmjba9003wwwtgbqxv8io7" data-title="misc之编码和加密" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; zurück</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -562,7 +654,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine/" rel="tag">machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%9D%E7%A0%94/" rel="tag">保研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DataStructure/" rel="tag">DataStructure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm-template/" rel="tag">algorithm-template</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf/" rel="tag">ctf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ctf-misc/" rel="tag">ctf-misc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/encryption/" rel="tag">encryption</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine/" rel="tag">machine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/" rel="tag">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tip/" rel="tag">tip</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%9D%E7%A0%94/" rel="tag">保研</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%8D%E4%B9%A0/" rel="tag">复习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" rel="tag">每日一小结</a></li></ul>
     </div>
   </div>
 
@@ -572,7 +664,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 10px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 14px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 14px;">encryption</a> <a href="/tags/learning/" style="font-size: 10px;">learning</a> <a href="/tags/machine/" style="font-size: 10px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/tip/" style="font-size: 12px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18px;">每日一小结</a>
+      <a href="/tags/DataStructure/" style="font-size: 10px;">DataStructure</a> <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 13.33px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 13.33px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 13.33px;">encryption</a> <a href="/tags/learning/" style="font-size: 15px;">learning</a> <a href="/tags/machine/" style="font-size: 15px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16.67px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16.67px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/tip/" style="font-size: 11.67px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 13.33px;">复习</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.33px;">每日一小结</a>
     </div>
   </div>
 
@@ -581,7 +673,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">February 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/08/">August 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">June 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">May 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li></ul>
     </div>
   </div>
 
@@ -594,23 +686,23 @@
       <ul>
         
           <li>
-            <a href="/2024/10/30/Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective/">Rethinking Graph Backdoor Attacks: A Distribution-Preserving Perspective</a>
+            <a href="/2025/03/10/MPAF/">MPAF</a>
           </li>
         
           <li>
-            <a href="/2024/10/22/24%E4%BF%9D%E7%A0%94%E5%88%86%E4%BA%AB/">24保研分享</a>
+            <a href="/2025/02/20/Poisoning-Machine-Learning-Models-to-Reveal-Their-Secrets/">Poisoning Machine Learning Models to Reveal Their Secrets</a>
           </li>
         
           <li>
-            <a href="/2024/10/09/graph-backdoor/">graph backdoor</a>
+            <a href="/2025/01/22/%E6%95%B0%E6%A8%A1-1/">数模</a>
           </li>
         
           <li>
-            <a href="/2024/10/08/Poisoning-Graph-Neural-Networks-for-Link-Inference/">Poisoning Graph Neural Networks for Link Inference</a>
+            <a href="/2025/01/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
           </li>
         
           <li>
-            <a href="/2024/10/06/poison-attack-in-inductive-GNN/">poison attack in inductive GNN</a>
+            <a href="/2024/12/31/ds%E7%AC%94%E8%AE%B0/">ds笔记</a>
           </li>
         
       </ul>
@@ -626,7 +718,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2024 tay<br>
+      &copy; 2025 tay<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
