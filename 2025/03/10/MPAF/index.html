@@ -6,14 +6,19 @@
   
   <title>MPAF | TAY&#39;S BLOG</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="article">
+  <meta name="description" content="WorkMPAF, the first model poisoning attack to FL that is based on fake clients. challenge: the fake clients provide no extra knowledge about the FL system, beyond the global models they receive from t">
+<meta property="og:type" content="article">
 <meta property="og:title" content="MPAF">
 <meta property="og:url" content="http://example.com/2025/03/10/MPAF/index.html">
 <meta property="og:site_name" content="TAY&#39;S BLOG">
+<meta property="og:description" content="WorkMPAF, the first model poisoning attack to FL that is based on fake clients. challenge: the fake clients provide no extra knowledge about the FL system, beyond the global models they receive from t">
 <meta property="og:locale" content="zh_CH">
 <meta property="article:published_time" content="2025-03-10T07:57:59.000Z">
-<meta property="article:modified_time" content="2025-03-10T07:57:59.793Z">
+<meta property="article:modified_time" content="2025-03-11T08:19:59.379Z">
 <meta property="article:author" content="tay">
+<meta property="article:tag" content="machine">
+<meta property="article:tag" content="learning">
+<meta property="article:tag" content="attacks">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="TAY'S BLOG" type="application/atom+xml">
@@ -95,7 +100,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Work"><a href="#Work" class="headerlink" title="Work"></a>Work</h1><p>MPAF, the first model poisoning attack to FL that is based on fake clients.</p>
+<p><strong>challenge:</strong> the fake clients provide no extra knowledge about the FL system, beyond the global models they receive from the cloud server during training</p>
+<h1 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h1><h2 id="Atacker’s-Goal"><a href="#Atacker’s-Goal" class="headerlink" title="Atacker’s Goal"></a>Atacker’s Goal</h2><p>Decrease the test accuracy of the learnt global model.</p>
+<h2 id="Attacker’s-Capability"><a href="#Attacker’s-Capability" class="headerlink" title="Attacker’s Capability"></a>Attacker’s Capability</h2><p>The attacker can inject many fake clients into FL systems. </p>
+<h2 id="Attacker’s-Knowledge"><a href="#Attacker’s-Knowledge" class="headerlink" title="Attacker’s Knowledge"></a>Attacker’s Knowledge</h2><p>The attacker has no knowledge about local training data or local model updates on ant genuine client. The attacker also does not know the FL aggregation rule or the global learing rate that the cloud server usus. </p>
+<h1 id="Our-attack"><a href="#Our-attack" class="headerlink" title="Our attack"></a>Our attack</h1><p>Force the global model to mimic the base model</p>
+<p>In the t-th round of FL, the fake clients compute the direction of fake local model updates by subtracting the current global model from the base model</p>
+
       
     </div>
     <footer class="article-footer">
@@ -103,11 +115,22 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine/" rel="tag">machine</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
+  
+    <a href="/2025/03/11/BinarizedAttack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          BinarizedAttack
+        
+      </div>
+    </a>
   
   
     <a href="/2025/02/20/Poisoning-Machine-Learning-Models-to-Reveal-Their-Secrets/" id="article-nav-older" class="article-nav-link-wrap">
@@ -142,7 +165,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/DataStructure/" style="font-size: 10px;">DataStructure</a> <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 13.33px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 13.33px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 13.33px;">encryption</a> <a href="/tags/learning/" style="font-size: 15px;">learning</a> <a href="/tags/machine/" style="font-size: 15px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16.67px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16.67px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/tip/" style="font-size: 11.67px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 13.33px;">复习</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.33px;">每日一小结</a>
+      <a href="/tags/DataStructure/" style="font-size: 10px;">DataStructure</a> <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 15px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 12.5px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 12.5px;">encryption</a> <a href="/tags/learning/" style="font-size: 16.25px;">learning</a> <a href="/tags/machine/" style="font-size: 16.25px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 17.5px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 17.5px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 13.75px;">python</a> <a href="/tags/tip/" style="font-size: 11.25px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 12.5px;">复习</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.75px;">每日一小结</a>
     </div>
   </div>
 
@@ -164,6 +187,10 @@
       <ul>
         
           <li>
+            <a href="/2025/03/11/BinarizedAttack/">BinarizedAttack</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/10/MPAF/">MPAF</a>
           </li>
         
@@ -177,10 +204,6 @@
         
           <li>
             <a href="/2025/01/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
-          </li>
-        
-          <li>
-            <a href="/2024/12/31/ds%E7%AC%94%E8%AE%B0/">ds笔记</a>
           </li>
         
       </ul>

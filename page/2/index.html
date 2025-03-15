@@ -73,6 +73,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/10/30/Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective/" class="article-date">
+  <time class="dt-published" datetime="2024-10-30T08:31:21.000Z" itemprop="datePublished">2024-10-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/10/30/Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective/">Rethinking Graph Backdoor Attacks: A Distribution-Preserving Perspective</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h1><h2 id="In-Distribution-Constraint-on-Triggers"><a href="#In-Distribution-Constraint-on-Triggers" class="headerlink" title="In-Distribution Constraint on Triggers"></a>In-Distribution Constraint on Triggers</h2><p>Our in-distribution constraint on trigger $g_t$ is defined as :<br>$$<br>f_o(g_i) &lt; \tau$$<br>$f_o(g_i)$ is the anomaly score of $g_i$ and $\tau$ is a threshold which can be tuned based on datasets.</p>
+<h2 id="Distribution-Preserving-Graph-Backdoor-Attack"><a href="#Distribution-Preserving-Graph-Backdoor-Attack" class="headerlink" title="Distribution Preserving Graph Backdoor Attack"></a>Distribution Preserving Graph Backdoor Attack</h2><p>This objective si achieved by solving:<br>$$\min_{\theta_{g}}\sum_{v_i\in\nu_L}l(f_{\theta^*<em>s}(\tilde{v}<em>i),y_t)$$<br>$$\theta^*<em>s&#x3D;arg \min</em>{\theta_s}\sum</em>{v_i\in\nu_L}l(f_s(v_i),y_i)+\sum</em>{v_i\in\nu_P}l(f_s(\tilde{v}_i),y_t)$$</p>
+<h1 id="Methodology"><a href="#Methodology" class="headerlink" title="Methodology"></a>Methodology</h1><h2 id="Chllenges"><a href="#Chllenges" class="headerlink" title="Chllenges"></a>Chllenges</h2><ol>
+<li>how to generate ID triggers that have the capability to bypass outlier detection defense methods</li>
+<li>how to learn the trigger generator to obtain triggers that meet ID constraint while maintaining a high attack success rate.</li>
+</ol>
+<h2 id="In-Distribution-Triggers-Generation"><a href="#In-Distribution-Triggers-Generation" class="headerlink" title="In-Distribution Triggers Generation"></a>In-Distribution Triggers Generation</h2><p><strong>key: the adversarial learning</strong> </p>
+<p>Using an MLP as the adaptive trigger generator $f_g$, which generate triggers based on the target node’s node attributes.<br>$$h^m_i &#x3D; MLP(x_i), \ \ X^g_i &#x3D; W_fh^m_i, \ \ A^g_i &#x3D; W_ah^m_i$$<br>$x_i$ is the node attributes of $v_i$, and $W_f$, $W_a$ are the learnable parameters for feature and structure generation.</p>
+<p>An OOD $f_d$ refines its ability to discern between clean inputs and generated triggers by minimizing the binary classification loss. Concurrently, the generator $f_g$ craft triggers to deceive $f_d$ by maximizing the binary classification loss:<br>$$\min_{\theta_g}\max_{\theta_d} \mathcal{L}<em>D&#x3D;\sum</em>{v_i\sim\mathcal{V}<em>s}log(f_d(v_i))+\sum</em>{g\in\tau_P}log(1-f_d(g))$$<br>To obtain $\mathcal{V}_s$, we pretrain an auto-encoder on the original graph G and select samples whose reconstruction losses are close to the mean loss</p>
+<h1 id="Enhancing-ID-Trigger-Effectiveness"><a href="#Enhancing-ID-Trigger-Effectiveness" class="headerlink" title="Enhancing ID Trigger Effectiveness"></a>Enhancing ID Trigger Effectiveness</h1><h2 id="Enhancing-Memorization-of-Triggers"><a href="#Enhancing-Memorization-of-Triggers" class="headerlink" title="Enhancing Memorization of Triggers"></a>Enhancing Memorization of Triggers</h2><p>Our objective is to ensure that these triggers can guide the surrogate classifier $f_i$ to learn a high cosine similarity between $z_s(\tilde{v}_i)$ and $v_s(\tilde{v}_j)$.<br>This approach ensures that the trigger attributes significantly impact the target node attributes.</p>
+<p>Our goal is to generate triggers that guide the surrogate model to learn a high cosine similarity between enbeddings $z_s(\tilde{v}_i)$ and $z_s(v_j)$, while ensuring the similarity between $z_s(\tilde{v}_i)$ and $z_s(v_k)$ is lower. The loss function is:<br>$$\mathcal{L}<em>E&#x3D;-\sum</em>{v_i\in\mathcal{V}<em>U}\sum</em>{v_j\in\mathcal{V}_U}S(z_s(\tilde{v}_i),z_s(\tilde{v}<em>j))+\sum</em>{v_i\in\mathcal{V}<em>U}\sum</em>{v_j\in\mathcal{V}_t}-log\left(\frac{S(z_s(\tilde{v}_i),z_s(v_j))}{S(z_s(\tilde{v}<em>i),z_s(v_j))+\sum</em>{v_k\in\mathcal{V}_L\backslash\mathcal{V}_t}S(z_s(\tilde{v}_i),z_s(v_k))}\right)$$</p>
+<h2 id="Enhancing-Attack-Effectiveness-against-Unseen-Targets"><a href="#Enhancing-Attack-Effectiveness-against-Unseen-Targets" class="headerlink" title="Enhancing Attack Effectiveness against Unseen Targets"></a>Enhancing Attack Effectiveness against Unseen Targets</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/10/30/Rethinking-Graph-Backdoor-Attacks-A-Distribution-Preserving-Perspective/" data-id="cm2vmjb9z001xwwtg1amha8vo" data-title="Rethinking Graph Backdoor Attacks: A Distribution-Preserving Perspective" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/attacks/" rel="tag">attacks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/learning/" rel="tag">learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine/" rel="tag">machine</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-24保研分享" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/10/22/24%E4%BF%9D%E7%A0%94%E5%88%86%E4%BA%AB/" class="article-date">
@@ -573,74 +624,6 @@
 
 
   
-    <article id="post-Backdoor-Attack" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/07/06/Backdoor-Attack/" class="article-date">
-  <time class="dt-published" datetime="2024-07-06T10:04:36.000Z" itemprop="datePublished">2024-07-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/07/06/Backdoor-Attack/">Backdoor Attack</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><strong>Backdoor Attack</strong>:Inject some attacker-specified patterns in the poisoned iamge and replace the corresponding label with a pre-defined target label.</p>
-<h1 id="Invisible-Backdoor-Attack-with-Sample-Specific-Triggers"><a href="#Invisible-Backdoor-Attack-with-Sample-Specific-Triggers" class="headerlink" title="Invisible Backdoor Attack with Sample-Specific Triggers"></a>Invisible Backdoor Attack with Sample-Specific Triggers</h1><h1 id="Contributions"><a href="#Contributions" class="headerlink" title="Contributions"></a>Contributions</h1><p>1.We reveal that the current main-stream backdoor defences all relies on a prerequisite that backdoor triggers are sample-agnostic.</p>
-<p>2.We explore a novel invisible attack paradigm, where the backdoor trigger is sample-specific and invisible.</p>
-<p>3.Extensive experiments are conducted, which verify the effectiveness of the proposed method.</p>
-<h1 id="SSBA"><a href="#SSBA" class="headerlink" title="SSBA"></a>SSBA</h1><h2 id="Threat-Model"><a href="#Threat-Model" class="headerlink" title="Threat Model"></a>Threat Model</h2><h3 id="Attacker’s-Capacities"><a href="#Attacker’s-Capacities" class="headerlink" title="Attacker’s Capacities"></a>Attacker’s Capacities</h3><p>We assume that attackers are allowed to poison some training data, whereas they have no information on or change other training components.In the inference process, attackers can and only can query the trained model with any image.</p>
-<h3 id="Attacker’s-Goal"><a href="#Attacker’s-Goal" class="headerlink" title="Attacker’s Goal"></a>Attacker’s Goal</h3><p>In general, backdoor attackers intend to embed hidden backdoors in DNNs through data poisoning.Three main goal :effectiveness, stealthiness, and sustainability.</p>
-<h2 id="The-Proposed-Attack"><a href="#The-Proposed-Attack" class="headerlink" title="The Proposed Attack"></a>The Proposed Attack</h2><h3 id="The-Main-Process-of-Backdoor-Attacks"><a href="#The-Main-Process-of-Backdoor-Attacks" class="headerlink" title="The Main Process of Backdoor Attacks"></a>The Main Process of Backdoor Attacks</h3><p>Core: generate the poisoned training data set</p>
-<p> <img src="C:\Users\梁韵扬\AppData\Local\Temp\aaeb1d75-58c2-49b0-b1ef-e43f44e29276.png" alt="aaeb1d75-58c2-49b0-b1ef-e43f44e29276"></p>
-<img src="C:\Users\梁韵扬\AppData\Local\Temp\f3c6db4b-bb72-4ee2-9459-f5eb2b4c192f.png" alt="f3c6db4b-bb72-4ee2-9459-f5eb2b4c192f" style="zoom: 80%;" />
-
-<h1 id="Narcissus-A-Practical-Clean-Label-Backdoor-Attack-with-Limited-Information"><a href="#Narcissus-A-Practical-Clean-Label-Backdoor-Attack-with-Limited-Information" class="headerlink" title="Narcissus: A Practical Clean-Label Backdoor Attack with Limited Information"></a>Narcissus: A Practical Clean-Label Backdoor Attack with Limited Information</h1><img src="C:\Users\梁韵扬\AppData\Local\Temp\d25dff5b-4627-4645-a4e9-0ebb4ab6d26b.png" alt="d25dff5b-4627-4645-a4e9-0ebb4ab6d26b" style="zoom: 80%;" />
-
-<img src="C:\Users\梁韵扬\AppData\Local\Temp\38845f87-529c-47ed-ae64-cd66967c6f29.png" alt="38845f87-529c-47ed-ae64-cd66967c6f29"  />
-
-<img src="C:\Users\梁韵扬\AppData\Local\Temp\c272ab46-34ba-46f2-95da-686fe5279e55.png" alt="c272ab46-34ba-46f2-95da-686fe5279e55" style="zoom:80%;" />
-
-<h1 id="Contributions-1"><a href="#Contributions-1" class="headerlink" title="Contributions"></a>Contributions</h1><p>1.We present a clean-label backdoor attack that leverages only target-class and public out-of-distribution data, controlling 0.05% or even fewer data.</p>
-<p>2.We compare Narcissus with existing attacks and show that it significantly outperforms others despite using less attacker knowledge and less obvious perturbations.</p>
-<p>3.We demonstrate that by adapting the trigger to real-world conditions, Narcissus enables first of its kind successful physical world clean-label attacks.</p>
-<p>4.We show that several popular choices of defenses and stateof-the-art ones, cannot reliably mitigate our attack. We find our triggers exhibit features that are resistant to removal.</p>
-<h1 id="Clean-label-Backdoor-Attacks"><a href="#Clean-label-Backdoor-Attacks" class="headerlink" title="Clean-label Backdoor Attacks"></a>Clean-label Backdoor Attacks</h1><h2 id="Contributions-2"><a href="#Contributions-2" class="headerlink" title="Contributions"></a>Contributions</h2><p>We develop a new approach to synthesizing poisoned inputs that appear plausible to humans. Our approach consists of making small changes to the inputs in order to make them harder to classify , keeping the changes sufficiently minor in order to ensure that the original label remains plausible. We have two methods to perform it.</p>
-<ol>
-<li><p>GAN-based interpolation</p>
-</li>
-<li><p>Adversarial perturbations</p>
-</li>
-</ol>
-<h2 id="Previous-Backdoor-Attack"><a href="#Previous-Backdoor-Attack" class="headerlink" title="Previous Backdoor Attack"></a>Previous Backdoor Attack</h2><p>We argue that the main reason for the attack’s ineffectiveness is that the poisoned samples can be correctly classified by learning a standard classifier. Since relying on the backdoor trigger is not necessary to correctly classify these inputs, the backdoor attack is unlikely to be successful.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2024/07/06/Backdoor-Attack/" data-id="cm2vmjb9v001ewwtg23as8rd2" data-title="Backdoor Attack" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning-attacks/" rel="tag">machine learning attacks</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -669,7 +652,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/DataStructure/" style="font-size: 10px;">DataStructure</a> <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 13.33px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 13.33px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 13.33px;">encryption</a> <a href="/tags/learning/" style="font-size: 15px;">learning</a> <a href="/tags/machine/" style="font-size: 15px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 16.67px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 16.67px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/tip/" style="font-size: 11.67px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 13.33px;">复习</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.33px;">每日一小结</a>
+      <a href="/tags/DataStructure/" style="font-size: 10px;">DataStructure</a> <a href="/tags/algorithm-template/" style="font-size: 10px;">algorithm-template</a> <a href="/tags/attacks/" style="font-size: 15px;">attacks</a> <a href="/tags/ctf/" style="font-size: 20px;">ctf</a> <a href="/tags/ctf-misc/" style="font-size: 12.5px;">ctf-misc</a> <a href="/tags/encryption/" style="font-size: 12.5px;">encryption</a> <a href="/tags/learning/" style="font-size: 16.25px;">learning</a> <a href="/tags/machine/" style="font-size: 16.25px;">machine</a> <a href="/tags/machine-learning/" style="font-size: 17.5px;">machine learning</a> <a href="/tags/machine-learning-attacks/" style="font-size: 17.5px;">machine learning attacks</a> <a href="/tags/python/" style="font-size: 13.75px;">python</a> <a href="/tags/tip/" style="font-size: 11.25px;">tip</a> <a href="/tags/%E4%BF%9D%E7%A0%94/" style="font-size: 10px;">保研</a> <a href="/tags/%E5%A4%8D%E4%B9%A0/" style="font-size: 12.5px;">复习</a> <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%B0%8F%E7%BB%93/" style="font-size: 18.75px;">每日一小结</a>
     </div>
   </div>
 
@@ -691,6 +674,10 @@
       <ul>
         
           <li>
+            <a href="/2025/03/11/BinarizedAttack/">BinarizedAttack</a>
+          </li>
+        
+          <li>
             <a href="/2025/03/10/MPAF/">MPAF</a>
           </li>
         
@@ -704,10 +691,6 @@
         
           <li>
             <a href="/2025/01/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a>
-          </li>
-        
-          <li>
-            <a href="/2024/12/31/ds%E7%AC%94%E8%AE%B0/">ds笔记</a>
           </li>
         
       </ul>
